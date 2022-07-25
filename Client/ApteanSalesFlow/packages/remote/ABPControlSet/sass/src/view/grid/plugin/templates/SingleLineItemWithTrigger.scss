@@ -1,0 +1,71 @@
+.abp-list-view-template-singleLineItemWithTrigger {
+    .abp-panel-list-view .abp-list-view > .x-list-outer-ct .x-listitem .x-gridcell-trigger.x-gridcell:not([id*='abpimagecell']) {
+        display: flex !important;
+        width: auto !important;
+    }
+}
+
+.abp-list-view-template-singleLineItemWithTrigger {
+    position: relative;
+    .abp-list-view .abp-list-view-cellColumn {
+        flex: unset;
+        flex-grow: unset;
+        overflow: unset;
+        display: flex;
+    }
+    .x-body-el.x-gridcell-body-el {
+        // Cell Text
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .x-cells-el {
+        display: flex;
+        flex-wrap: wrap;
+        //height: auto;
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-0 {
+            // Image
+            //position: absolute;
+            height: $abpforms-template-min-row-height;
+            top: 2px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-1 {
+            // First Text Line
+            position: absolute;
+            display: flex;
+            align-items: center;
+            .abp-list-view-field.abp-list-view-field-1,
+            tbody,
+            tr,
+            td {
+                display: flex;
+                align-items: center;
+            }
+            left: $abpforms-template-min-col-width;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-2 {
+            // Trigger
+            position: absolute;
+            //visibility: hidden;
+            right: 0;
+            width: auto;
+            //flex-grow: unset;
+            justify-content: flex-end;
+            flex-basis: unset;
+            display: flex;
+            .abp-list-view-field.abp-list-view-field-1,
+            tbody,
+            tr,
+            .abp-list-view-field-value,
+            .a-gridcell-trigger {
+                display: flex !important;
+                align-items: center;
+                width: auto !important;
+            }
+        }
+        // cell wrapper
+        .abp-forms-list-view-image-cell {
+            position: absolute;
+        }
+    }
+}

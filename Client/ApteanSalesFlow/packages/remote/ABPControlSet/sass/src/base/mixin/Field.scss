@@ -1,0 +1,76 @@
+ /* Styles for row-reverse right aligned fields to allow sizing to their content. */
+.abp-size-to-content-input.x-field {
+    justify-content: flex-end;
+    .x-body-wrap-el {
+        max-width: 0px;
+    }
+}
+
+/* styles for relative date / date+time / time fields */
+.abp-relative-readonly {
+    pointer-events: all;
+
+    .x-form-trigger-wrap-default {
+        border-width: 0px;
+
+        .x-form-text-wrap-default, .x-form-text-default {
+            background-color: transparent;
+            font-weight: $abp-font-bold;
+        }
+    }
+}
+
+/* styles for relative date / date+time / time tooltip including theme integration */
+@mixin abp-rpt-client-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .abp-relative-tip {
+                .x-tip-body {
+                    background-color: $base-color;
+                }
+            }
+        }
+    }
+}
+
+@include abp-rpt-client-theme();
+
+.abp-relative-tip {
+    border: 2px solid $abp-black !important;
+    padding: 0 !important;
+
+    * {
+        text-align: left;
+    }
+
+    .x-tip-header {
+        padding: 6px 0;
+    }
+
+    .x-tip-header * {
+        line-height: 1.2em;
+        display: block;
+        font-size: $abp-font-form;
+    }
+
+    .tip-date {
+        font-weight: $abp-font-normal;
+        padding: 4px 8px 0;
+        color: $abp-dark-grey;
+    }
+
+    .tip-time {
+        font-weight: $abp-font-bold;
+        padding: 4px 8px 0;
+        color: $abp-deep-grey;
+    }
+
+    .x-tip-body {
+        color: $white;
+        border-top: 2px solid $abp-deep-grey !important;
+        padding: 4px 8px;
+        white-space: nowrap;
+    }
+}

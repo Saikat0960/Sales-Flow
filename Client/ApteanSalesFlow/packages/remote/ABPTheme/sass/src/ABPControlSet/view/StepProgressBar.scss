@@ -1,0 +1,183 @@
+
+.abp-step-progress-container {
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.abp-step-progress-list {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.abp-step-progress-list:before {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.abp-step-progress-list:after {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.abp-step-progress-undone ~ li > .abp-step-progress-btn-wrapper {
+  color: darkgrey;
+  background: lightgrey !important;
+}
+
+li.abp-step-progress-undone:not(:first-child):before {
+  content: '';
+  position: absolute;
+  left: -50%; 
+  top: 28%;
+  width: 100%;
+  height: 3px;
+  background: #9bb940;
+  z-index: -1;
+}
+
+li.abp-step-progress-complete:after {
+  content: '';
+  position: absolute;
+  left: 50%; 
+  top: 28%;
+  width: 100%;
+  height: 3px;
+  background: #9bb940;
+  z-index: -1;
+
+}
+
+li.abp-step-progress-current:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: -50%; 
+    top: 28%;
+    width: 100%;
+    height: 3px;
+    background: #9bb940;
+    z-index: -1;
+    animation: linegrow 1.5s forwards !important;
+}
+
+
+.abp-step-progress-current:before {
+    width: 100%;
+    background: #45b5e1 !important;
+}
+
+.abp-step-progress-current > .abp-step-progress-btn-wrapper {
+    background: lightgrey;
+    color: darkgrey;
+    animation: undonetocurrent 1s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}
+
+.abp-step-progress-current > .abp-step-progress-step-label {
+    font-weight:bold;
+}
+
+.abp-step-progress-complete > .abp-step-progress-step-label {
+    font-weight:bold;
+}
+
+.abp-step-progress-undone > .abp-step-progress-step-label {
+    color: darkgrey;
+}
+
+.abp-step-progress-undone:before {
+    color: darkgrey;
+    background: lightgrey !important;
+}
+
+.abp-step-progress-undone > .abp-step-progress-btn-wrapper {
+    color: darkgrey;
+    background: lightgrey !important;
+}
+
+.abp-step-progress-current ~ li:not(.abp-step-progress-undone):before {
+    background: lightgrey !important;
+}
+
+.abp-step-progress-complete ~ li:not(.abp-step-progress-undone):before {
+    background: #45b5e1;
+}
+
+.abp-step-progress-step {
+    height: 100px;
+    width: 100%;
+    display: inline-grid;
+    text-align: center;
+    margin: auto;
+    position:relative;
+}
+
+.abp-step-progress-btn-wrapper {
+    
+    margin: auto;
+    height: 36px;
+    width: 36px;
+    padding-top: 6px;
+    border-radius: 50%;
+    position: relative;
+    vertical-align: middle;
+    color: white;
+    background-color: #9bb940;
+}
+
+.abp-step-progress-step-button {
+      margin: 0;
+      line-height: 24px;
+      font-size: 24px;
+      font-weight: 500;
+}
+
+.abp-step-progress-step-label {
+    flex: 1;
+    width: 100%;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes linegrow {
+    from {background: lightgrey;}
+    to {background:  #9bb940}
+  }
+  
+  /* Standard syntax */
+  @keyframes linegrow {
+    from {background: lightgrey;
+          width: 0%}
+    to {background:  #9bb940;
+        width: 100%;}
+  }
+
+  @-webkit-keyframes undonetocurrent {
+    from {background: lightgrey;
+          color: darkgrey;}
+    to {background:  #45b5e1;
+        color: white;}
+  }
+  
+  /* Standard syntax */
+  @keyframes undonetocurrent {
+    from {background: lightgrey;
+        color: darkgrey;}
+    to {background:  #45b5e1;
+        color: white;}
+  }
+

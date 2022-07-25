@@ -1,0 +1,17 @@
+/*
+    Notifications Controller (Classic)
+
+    Classic-specific Controller as Setting Card Item differs
+*/
+Ext.define('ABP.view.session.notifications.NotificationsController', {
+    extend: 'ABP.view.session.notifications.NotificationsBaseController',
+
+    alias: 'controller.abp-notifications',
+
+    __setActiveCardItem: function (newActiveItem) {
+        var me = this,
+            view = me.getView();
+
+        view.getLayout().setActiveItem(newActiveItem);
+    }
+});

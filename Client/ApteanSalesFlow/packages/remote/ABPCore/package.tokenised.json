@@ -1,0 +1,67 @@
+{
+    "name": "abpcore",
+    "sencha": {
+        "name": "abpcore",
+        "namespace": "ABPCore",
+        "type": "code",
+        "creator": "Aptean",
+        "summary": "ABP Core Container",
+        "detailedDescription": "ABP Core Container",
+        "version": "#{GitVersion.AssemblySemVer}#",
+        "compatVersion": "3.0.0",
+        "format": "1",
+        "slicer": {
+            "js": [
+                {
+                    "path": "${package.dir}/sass/example/custom.js",
+                    "isWidgetManifest": true
+                }
+            ]
+        },
+        "js": [
+            {
+                "path": "resources/js/jwt_decode.js"
+            },
+            {
+                "path": "resources/js/webtoolkit.sha256.js"
+            }
+        ],
+        "local": true,
+        "builds": {
+            "classic": {
+                "toolkit": "classic",
+                "requires": [
+                    "abptheme"
+                ]
+            },
+            "modern": {
+                "toolkit": "modern",
+                "requires": [
+                    "abptheme"
+                ]
+            }
+        },
+        "output": "${package.dir}/${toolkit.name}/build",
+        "sass": {
+            "namespace": "ABP",
+            "etc": "${package.dir}/sass/etc/all.scss,${package.dir}/${toolkit.name}/sass/etc/all.scss",
+            "var": "${package.dir}/sass/var,${package.dir}/${toolkit.name}/sass/var",
+            "src": "${package.dir}/sass/src,${package.dir}/${toolkit.name}/sass/src"
+        },
+        "classpath": "${package.dir}/src,${package.dir}/${toolkit.name}/src",
+        "overrides": "${package.dir}/overrides,${package.dir}/${toolkit.name}/overrides",
+        "example": {
+            "path": [
+                "${package.dir}/examples"
+            ]
+        },
+        "requires": [
+            "package-loader",
+            "abpcontrolset"
+        ],
+        "framework": "ext"
+    }
+}
+// The tokenised version of the package config is used during the build process
+// any updates made to the original package.json need to be made here too.
+// for example: "#{GitVersion.AssemblySemVer}#"

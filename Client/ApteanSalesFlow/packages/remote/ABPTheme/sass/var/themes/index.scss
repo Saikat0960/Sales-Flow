@@ -1,0 +1,197 @@
+// ABP Theme Maps
+@import './argent-theme.scss';
+@import './coffee-shop-theme.scss';
+@import './dusk-theme.scss';
+@import './fire-theme.scss';
+@import './green-theme.scss';
+@import './royal-theme.scss';
+@import './sierra-theme.scss';
+@import './vivid-blue-theme.scss';
+@import './waves-theme.scss';
+
+// Theme map for all ABP themes
+$abp-themes: ( // Keys correspond to theme class name
+	// Ex: aptean-theme-vivid-blue renders css selector ".aptean-theme-vivid-blue"
+	aptean-theme-argent: $argent-theme,
+	aptean-theme-coffee-shop: $coffee-shop-theme,
+	aptean-theme-dusk: $dusk-theme,
+	aptean-theme-fire: $fire-theme,
+	aptean-theme-green: $green-theme,
+	aptean-theme-royal: $royal-theme,
+	aptean-theme-sierra: $sierra-theme,
+	aptean-theme-vivid-blue: $vivid-blue-theme,
+	aptean-theme-waves: $waves-theme);
+
+// Theme Selector Radio Button Themes
+$abp-theme-selector-radio-button-themes: ( // Keys corrsepond to theme option radio button class names
+	a-toolusermenu-radio-aptean-theme-vivid-blue-theme-option: $abp-vivid-blue,
+	a-toolusermenu-radio-aptean-theme-green-theme-option: $abp-green,
+	a-toolusermenu-radio-aptean-theme-sierra-theme-option: $abp-sierra,
+	a-toolusermenu-radio-aptean-theme-royal-theme-option: $abp-royal,
+	a-toolusermenu-radio-aptean-theme-fire-theme-option: $abp-fire,
+	a-toolusermenu-radio-aptean-theme-waves-theme-option: $abp-waves,
+	a-toolusermenu-radio-aptean-theme-argent-theme-option: $abp-argent,
+	a-toolusermenu-radio-aptean-theme-dusk-theme-option: $abp-dusk,
+	a-toolusermenu-radio-aptean-theme-coffee-shop-theme-option: $abp-coffee-shop);
+
+
+// These classes allow selection of individual abp approved colors.
+.abp-theme-colors {
+	.abp-theme {
+		.yellow {
+			color: $abp-yellow;
+		}
+
+		.sierra {
+			color: $abp-sierra;
+		}
+
+		.deep-purple {
+			color: $abp-deep-purple;
+		}
+
+		.navy {
+			color: $abp-navy;
+		}
+
+		.vivid-blue {
+			color: $abp-vivid-blue;
+		}
+
+		.lucid-blue {
+			color: $abp-lucid-blue;
+		}
+
+		.sky-blue {
+			color: $abp-sky-blue;
+		}
+
+		.background-grey {
+			color: $abp-background-grey;
+		}
+
+		.light-grey {
+			color: $abp-light-grey;
+		}
+
+		.dark-grey {
+			color: $abp-dark-grey;
+		}
+
+		.nevada {
+			color: $abp-nevada;
+		}
+
+		.deep-grey {
+			color: $abp-deep-grey;
+		}
+
+		.note-grey {
+			color: $black-30;
+		}
+
+		// Check this with the powers that be to see if variables are in line with definition
+		.green {
+			color: $moderate-green;
+		}
+
+		// Check this with the powers that be to see if variables are in line with definition
+		.lawn-green {
+			color: $abp-green;
+		}
+
+		.teal {
+			color: $abp-teal;
+		}
+
+		.purple {
+			color: $abp-purple;
+		}
+
+		.vivid-orange {
+			color: $abp-vivid-orange;
+		}
+
+		.selected-blue {
+			color: $abp-selected-blue;
+		}
+
+		.hover-blue {
+			color: $abp-hover-blue;
+		}
+
+		.highlight-blue {
+			color: $abp-highlight-blue;
+		}
+
+		.selected-sierra {
+			color: $abp-selected-sierra;
+		}
+
+		.hover-sierra {
+			color: $abp-hover-sierra;
+		}
+
+		.highlight-sierra {
+			color: $abp-highlight-sierra;
+		}
+
+		.alert-red {
+			color: $abp-alert-red;
+		}
+
+		.selected-green {
+			color: $abp-selected-green;
+		}
+
+		.hover-green {
+			color: $abp-hover-green;
+		}
+
+		.highlight-green {
+			color: $abp-highlight-green;
+		}
+
+		.grey {
+			color: $abp-grey;
+		}
+
+		.disabled-grey {
+			color: $abp-disabled-grey;
+		}
+
+		.midnight-grey {
+			color: $abp-midnight-grey;
+		}
+
+	}
+}
+
+//We create these classes to allow access to these color values from JS using ABP.util.CSS.Colors.getThemeColor('base');
+//With further specification, we can extend this, all themes must be updated or we can choose defaults... new classes can be like .green or .tertiary
+@mixin abp-base-theme-colors-theme() {
+
+	@each $theme,
+	$map in $abp-themes {
+		$base-color: map-get($map, 'base_color');
+		$secondary-color: map-get($map, 'secondary_color');
+
+		.abp-theme-colors {
+			.abp-theme {
+				.base {
+					.#{$theme} {
+						color: $base-color;
+					}
+				}
+
+				.secondary {
+					.#{$theme} {
+						color: $secondary-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include abp-base-theme-colors-theme();

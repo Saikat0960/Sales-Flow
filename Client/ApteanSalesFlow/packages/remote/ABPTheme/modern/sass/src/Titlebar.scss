@@ -1,0 +1,25 @@
+.x-titlebar {
+    .x-button, .x-button, .x-button.x-has-icon, .x-button.x-has-text {
+        .x-inner-el {
+            background-color: transparent;
+        }
+    }
+    .x-title {
+        color: $abp-vivid-blue;
+    }
+}
+
+@mixin abp-title-bar-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-titlebar {
+                .x-title {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+@include abp-title-bar-theme();

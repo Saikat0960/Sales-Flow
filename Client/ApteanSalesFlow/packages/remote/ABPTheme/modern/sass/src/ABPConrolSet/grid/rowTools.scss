@@ -1,0 +1,56 @@
+.grid-row-tools, .abp-forms-icon-cell {
+    .x-icon-el,
+    .x-button .x-inner-el {
+        background-color: transparent;
+    }
+    .x-icon-el {
+        font-weight: 400;
+        font-size: 2em;
+    }
+
+    .x-body-el {
+        justify-content: flex-end;
+    }
+
+    .x-body-el .x-button {
+        flex: none !important;
+        width: 20%;
+        &.x-disabled.x-has-icon {
+            .x-inner-el .x-icon-el {
+                color: $abp-nevada;
+            }
+        }
+    }
+
+    .x-body-el .x-hidden-display {
+        display: inline-flex !important;
+        opacity: 0;
+        pointer-events: none;
+        cursor: pointer;
+        flex: 0 !important;
+    }
+}
+
+$abp-forms-min-icon-height: 28px;
+
+.abp-forms-icon-el {
+    height: $abp-forms-min-icon-height;
+    min-height: $abp-forms-min-icon-height;
+}
+
+@mixin grid-row-tools-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .grid-row-tools {
+                .x-icon-el,
+                .x-button.x-has-icon .x-inner-el .x-icon-el {
+                    color: $base-color;
+
+                }
+            }
+        }
+    }
+}
+@include grid-row-tools-theme();

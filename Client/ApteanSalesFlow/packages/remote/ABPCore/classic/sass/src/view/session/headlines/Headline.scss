@@ -1,0 +1,68 @@
+
+@include extjs-toolbar-ui(
+    $ui: "headline",
+    $tool-glyph-color: $abp-white,
+    $text-color: $abp-white,
+    $text-font-weight: bold,
+    $horizontal-spacing: 16px
+);
+// Defaults.
+.x-toolbar-headline {
+    padding: 10px 0px 10px 8px;
+    .x-toolbar-text {
+        color: $abp-white;
+        text-align: center;
+
+        a {
+            font-weight: bold;
+            color: $abp-white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .x-tool-tool-el {
+        color: $abp-white
+    }
+    .headline-button {
+        .x-btn-inner {
+            color: $abp-vivid-blue;
+        }
+        background-color: $abp-white;
+        padding: 3px;
+    }
+}
+
+.x-toolbar-headline.headline-info {
+    background-color: $abp-vivid-blue;
+}
+.x-toolbar-headline.headline-warning {
+    background-color: $abp-vivid-orange;
+}
+.x-toolbar-headline.headline-alert {
+    background-color: $abp-alert-red;
+}
+
+// .scrollable-overflow {
+//     white-space: nowrap;
+//     display: inline-block;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     //padding-left: 100%;
+
+//     /* Starting transition */
+// }
+
+// .scrollable-overflow:hover {
+//     animation: marquee 7s linear infinite;
+// }
+// @keyframes marquee {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   100% {
+//     transform: translate(-100%, 0);
+//   }
+// }

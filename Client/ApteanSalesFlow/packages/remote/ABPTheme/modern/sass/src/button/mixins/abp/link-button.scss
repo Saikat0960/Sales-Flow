@@ -1,0 +1,81 @@
+// Button that looks like a hyper link, to use this style add the abp-link to the uiCls config
+.x-button.x-button-abp-link {
+    // .x-btn-wrap {
+    //     .x-btn-text {
+    //         background-color: transparent;
+    //         border: none;
+    //         padding: 3px 0;
+
+    //         .x-btn-inner-default-small{
+    //             padding: 0;
+    //         }
+    //     }
+    // }
+
+    &.x-has-text.x-disabled {
+        background-color: transparent;
+        border-color: transparent; 
+    }
+
+    &.x-pressing {
+        .x-inner-el {
+            color: $abp-hover-blue;
+        }
+    }
+
+    &.x-focused {
+        .x-inner-el {
+            color: $abp-selected-blue;
+        }
+    }
+
+    // &[class*=small] .x-btn-wrap .x-btn-text {
+    //     padding: 3px 0;
+    // }
+    // &[class*=medium] .x-btn-wrap .x-btn-text {
+    //     padding: 5px 0;
+    // }
+
+    // &[class*=large] .x-btn-wrap .x-btn-text {
+    //     padding: 7px 0;
+    // }
+}
+
+@mixin abp-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-button.x-button-abp-link.x-has-text:not(.x-disabled) {
+                .x-inner-el {
+                    background-color: transparent;
+                    color: $base-color;
+                }
+
+                &.x-pressing, &.x-focused {
+                    background-color: transparent;
+
+                    .x-inner-el {
+                        background-color: transparent;
+                        color: $hover-color;
+                    }
+                }
+            }
+
+            .x-button.x-has-text.x-disabled {
+                &.x-button-abp-link{
+                    &.x-pressing, &.x-focused {
+                        background-color: transparent;
+
+                        .x-inner-el {
+                            color: $abp-deep-grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-icon-button-theme();

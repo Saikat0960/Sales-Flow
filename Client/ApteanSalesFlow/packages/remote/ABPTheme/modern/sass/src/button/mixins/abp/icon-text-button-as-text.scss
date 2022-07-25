@@ -1,0 +1,34 @@
+// Text with Icon Button show with Default Button Styles
+.x-button.x-has-text.x-has-icon.text-btn {
+    background-color: $abp-vivid-blue;
+    border-color: $abp-vivid-blue;
+    .x-inner-el {
+        .x-text-el, .x-icon-el {
+            color: $abp-white;
+        }
+    }
+}
+
+@mixin abp-icon-text-button-as-text-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button.x-has-text.x-has-icon:not(.x-disabled).text-btn {
+                background-color: $base-color;
+                border-color: $base-color;
+                &.x-pressing {
+                    background-color: $selected-color;
+                    border-color: $selected-color;
+                    .x-inner-el {
+                        .x-text-el, .x-icon-el {
+                            color: $abp-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-icon-text-button-as-text-theme();

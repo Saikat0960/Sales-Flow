@@ -1,0 +1,38 @@
+.abp-image {
+    &.new-image, &.abp-image-upload {
+        .x-form-item {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        .x-form-item-body {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+        }
+        .x-form-text-file {
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+        .x-form-trigger-wrap {
+            height: 100%;
+            width: 100%;
+        }
+        .x-form-trigger {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100% !important;
+        }
+        .x-form-file-btn {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+        }
+        .x-btn-icon-el {
+            color: $abp-deep-grey;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.x-toolbar.abp-tab-bar {
+    background-color: transparent;
+    padding: 8px 0px 0px 0px;
+
+    .abpTabButton {
+        min-width: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 6px 6px 0px 0px;
+    }
+
+    .icon-close:before {
+        content: "\e11d";
+        position: absolute;
+        font-size: 16px;
+        top: 0;
+        right: 0;
+        margin-top: 7px;
+        margin-right: 9px;
+    }
+
+    .tab-active {
+        transition: background-color 0.25s;
+        background-color: $abp-vivid-blue;    
+    }
+}

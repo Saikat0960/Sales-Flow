@@ -1,0 +1,51 @@
+.abp-image {
+    display: block;
+    .x-form-item-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > div {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+    }
+    .img-wrapper.cropped,
+    .placeholder-img-wrapper.cropped {
+        border-radius: 100%;
+    }
+    .img-wrapper,
+    .placeholder-img-wrapper {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    .img-wrapper {
+        .x-autocontainer-outerCt {
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+        .x-autocontainer-innerCt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    // Placehodler Image - Click here to upload 
+    .placeholder-img-wrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .x-img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    // Delete Icon
+    .image-clear {
+        display: none;
+        visibility: hidden;
+    }
+}

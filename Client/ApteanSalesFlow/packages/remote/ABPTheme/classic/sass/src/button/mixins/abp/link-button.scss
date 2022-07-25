@@ -1,0 +1,92 @@
+// Button that looks like a hyper link, to use this style add the abp-link to the uiCls config
+.x-btn.x-abp-link,
+.x-btn.x-abp-link.text,
+.x-btn.x-abp-link.icon {
+    background-color: transparent;
+    border-color: $abp-vivid-blue;
+
+    .x-btn-inner {
+        color: $abp-vivid-blue !important;
+    }
+
+    &.x-btn-over {
+        background-color: transparent;
+        .x-btn-inner {
+            color: $abp-hover-blue !important;
+        }
+    }
+    &.x-btn-pressed, &.x-btn-focused {
+        background-color: transparent;
+        .x-btn-inner {
+            color: $abp-selected-blue !important;
+        }
+    }
+}
+
+// Keyboard Mode
+.x-keyboard-mode {
+    .x-btn.x-abp-link,
+    .x-btn.x-abp-link.text,
+    .x-btn.x-abp-link.icon {
+        &.x-focus {
+            background-color: transparent;
+            .x-btn-inner {
+                color: $abp-selected-blue !important;
+            }
+        }
+    }
+}
+
+@mixin abp-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-btn.x-abp-link,
+            .x-btn.x-abp-link.text,
+            .x-btn.x-abp-link.icon {
+                background-color: transparent;
+                border-color: transparent;
+
+                .x-btn-inner {
+                    color: $base-color !important;
+                }
+
+                &.x-btn-over {
+                    background-color: transparent;
+                    .x-btn-inner {
+                        color: $hover-color !important;
+                    }
+                }
+                &.x-btn-pressed, &.x-btn-focused {
+                    background-color: transparent;
+                    .x-btn-inner {
+                        color: $selected-color !important;
+                    }
+                }
+                &.x-btn-disabled {
+                    color: $abp-nevada;
+                    .x-btn-inner {
+                        color: $abp-nevada !important;
+                    }
+                }
+            }
+            // Keyboard Mode
+            &.x-keyboard-mode {
+                .x-btn.x-abp-link,
+                .x-btn.x-abp-link.text,
+                .x-btn.x-abp-link.icon {
+                    &.x-focus {
+                        background-color: transparent;
+                        .x-btn-inner {
+                            color: $selected-color !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-icon-button-theme();

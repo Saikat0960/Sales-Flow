@@ -1,0 +1,58 @@
+.x-treelist {
+    font-weight: 300;
+    .x-treelist-row {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-width: 1px 0px 0px;
+        border-style: solid;
+        border-color: $abp-background-grey;
+
+        .x-treelist-item-shorthand{
+            visibility: hidden;
+            opacity: 0;
+            padding: 2px 4px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .show-shortcuts {
+            .x-treelist-item-shorthand{
+                visibility: visible;
+                opacity: 1;
+                display: inline-block;
+            }
+        }
+    }
+    .x-treelist-item-wrap {
+        display: flex;
+        align-items: center;
+    }
+    .x-treelist-item-text {
+        margin-left: 30px;
+        margin-right: 8px;
+    }
+    &.x-treelist-expander-first {
+        .x-treelist-item-icon {
+            left: 18px;
+        }
+        .x-treelist-item-text {
+            margin-left: 40px;
+        }
+    }
+    .treelist-tool-peel-off {
+        position: absolute;
+        right: 20px;
+        color: $abp-white;
+        text-decoration: none;
+    }
+
+    // Expanded - Flip Expander Icon
+    .x-treelist-item-expanded > * > * > .x-treelist-item-expander {
+        transform: rotate(-180deg);
+        &:after {
+            content: $apteanico-mini-navigate-close;
+        }
+    }
+}

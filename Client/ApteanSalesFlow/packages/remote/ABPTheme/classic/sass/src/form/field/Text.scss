@@ -1,0 +1,19 @@
+.x-form-trigger-wrap-default {
+    transition: all 200ms ease-out;
+}
+
+@mixin abp-textfield-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
+                border-color: $base-color;
+                box-shadow: 0px 0px 12px -4px $base-color;
+
+                transition: border 100ms linear, box-shadow 200ms linear;
+            }
+        }
+    }
+}
+@include abp-textfield-theme();

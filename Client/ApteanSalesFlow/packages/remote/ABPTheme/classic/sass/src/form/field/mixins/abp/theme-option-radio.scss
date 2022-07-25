@@ -1,0 +1,56 @@
+// Basic Settings Theme Option Radio Buttons
+.language-option, .theme-option {
+    margin-left: 10px;
+}
+// Radio Options for Theme Options in Settings Theme
+// Rebuild radio button to be a square colored with the theme option base color
+.theme-option {
+    border: solid transparent 1px;
+    width: 28px;
+    height: 26px;
+    label {
+        cursor: pointer;
+    }
+    .x-form-cb-label-default.x-form-cb-label-after {
+        padding-left: 35px;
+    }
+    .x-form-cb-wrap {
+        position: relative;
+        &:last-child {
+            margin-bottom: 15px;
+        }
+    }
+    .x-form-radio-default:before {
+        opacity: 0;
+    }
+    .x-form-cb-input {
+        cursor: pointer;
+    }
+    .x-form-cb-wrap:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      left: 2px;
+    }
+    &.x-form-type-radio {
+        margin: 7px;
+    }
+}
+// Themed Settings Theme Option Radio Buttons
+@mixin abp-theme-option-radio() {
+    .theme-option {
+        @each $theme, $color in $abp-theme-selector-radio-button-themes {
+            &.#{$theme} {
+                .x-form-cb-wrap:before {
+                  border: solid $color 1px;
+                  background-color: $color;
+                }
+                &.x-form-cb-checked {
+                    border-color: $color;
+                }
+            }
+        }
+    }
+}

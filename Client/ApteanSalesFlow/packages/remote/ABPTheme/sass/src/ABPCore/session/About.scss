@@ -1,0 +1,96 @@
+﻿.about-section {
+        border-right: 2px solid $abp-grey;
+        border-bottom: 2px solid $abp-grey;
+        border-left: 2px solid $abp-grey;
+        padding-top: 10px;
+}
+.about-section-top {
+        margin: -18px 30px 0px 30px;
+}
+.about-section-bottom {
+        margin: -18px 30px 30px 30px;
+}
+.about-section-header {
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+}
+.about-section-header-side {
+        margin-right: 30px;
+        margin-left: 30px;
+        height: 30px;
+        border-bottom: 2px solid $abp-grey;
+}
+.about-section-header-container {
+        z-index: 5;
+}
+.about-section-info {
+        color: $abp-black;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 10px;
+}
+.about-item-container {
+        background: $abp-background-grey;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	margin: 15px 15px;
+	min-width: 180px;
+        box-shadow: 0 0 4px 0 $abp-shadow;
+}
+.about-item-icon {
+        height: 80px;
+        width: 80px;
+        border: 1px solid #9eaeb7;
+        border-radius: 40px;
+        background: #fff;
+        color: #000;
+        font-size: 50px;
+        text-align: center;
+        padding-top: 30px;
+}
+.about-item-title {
+        color: $abp-black;
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding-bottom: 5px;
+        padding-top: 5px;
+}
+.about-item-text {
+        color: $black;
+        font-size: 1em;
+        padding-bottom: 3px;
+}
+.about-item-detail {
+        color: $abp-vivid-blue;
+        text-decoration: underline;
+        font-style: italic;
+        font-size: 1em;
+        cursor: pointer !important;
+        cursor: hand !important;
+}
+.about-tile-container {
+        .x-autocontainer-innerCt {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		max-width: 900px;
+		padding: 0px 10px;
+		margin: auto;
+	}
+}
+@mixin abp-helppage-theme () {
+        @each $theme, $map in $abp-themes {
+            $base-color: map-get($map, 'base_color');
+            .#{$theme} {
+                .about-section-header{
+                        color: $base-color;
+                }
+            }
+        }
+    }
+    @include abp-helppage-theme();

@@ -1,0 +1,41 @@
+
+// Defaults.
+.x-toolbar-headline {
+    color: $abp-white;
+    text-align: center;
+
+    a {
+        font-weight: bold;
+        color: $abp-white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .x-toolbar-body-el {
+        padding: 2px 8px;
+    }
+    .x-icon-el {
+        color: $abp-white
+    }
+    .headline-button {
+        .x-inner-el {
+            color: $abp-vivid-blue;
+            background-color: $abp-white;
+        }
+        background-color: $abp-white;
+        padding: 3px;
+    }
+}
+
+.x-toolbar-headline.headline-info {
+    background-color: $abp-vivid-blue;
+}
+.x-toolbar-headline.headline-warning {
+    background-color: $abp-vivid-orange;
+}
+.x-toolbar-headline.headline-alert {
+    background-color: $abp-alert-red;
+}

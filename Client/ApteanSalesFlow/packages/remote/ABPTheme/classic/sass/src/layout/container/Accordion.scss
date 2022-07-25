@@ -1,0 +1,75 @@
+.x-accordion-layout-ct {
+    background-color: $abp-background-grey;
+}
+.x-accordion-item {
+    .x-accordion-hd {
+        border-width: 1px;
+
+        min-height: auto; // Override the main panel header min height
+
+        .x-title-text,
+        .x-tool-tool-el {
+            color: $abp-white;
+        }
+    }
+}
+// Flip Expand Icon on Collapse
+.x-accordion-item.x-panel-collapsed {
+    .x-tool-tool-el {
+        transform: scaleY(-1);
+    }
+}
+
+// Transitions
+.x-accordion-hd,
+.x-accordion-body {
+    transition: background-color $abp-transition-duration $abp-transition-type,
+                border-color $abp-transition-duration $abp-transition-type;
+}
+.x-accordion-item {
+    .x-tool-tool-el {
+        transition: transform $abp-transition-duration $abp-transition-type;
+    }
+}
+
+@mixin abp-dashboard-bar-theme() {
+    @each $theme, $map in $abp-themes {
+        $accordion_header_hover_collapsed_border_color: map-get($map, 'accordion_header_hover_collapsed_border_color');
+        $accordion_header_hover_collapsed_bg_color: map-get($map, 'accordion_header_hover_collapsed_bg_color');
+        $accordion_header_hover_open_border_color: map-get($map, 'accordion_header_hover_open_border_color');
+        $accordion_header_hover_open_bg_color: map-get($map, 'accordion_header_hover_open_bg_color');
+        $accordion_header_open_border_color: map-get($map, 'accordion_header_open_border_color');
+        $accordion_header_open_bg_color: map-get($map, 'accordion_header_open_bg_color');
+        $accordion_header_collapsed_border_color: map-get($map, 'accordion_header_collapsed_border_color');
+        $accordion_header_collapsed_bg_color: map-get($map, 'accordion_header_collapsed_bg_color');
+
+        .#{$theme} {
+            // base
+            .x-accordion-hd,
+            .x-accordion-body {
+                border-color: $accordion_header_open_border_color;
+            }
+            .x-accordion-hd {
+            // open header
+                background-color: $accordion_header_open_bg_color;
+                &.x-accordion-hd-over {
+                // hover open header
+                    border-color: $accordion_header_hover_open_border_color;
+                    background-color: $accordion_header_hover_open_bg_color;
+                }
+                &.x-collapsed {
+                // closed header
+                    border-color: $accordion_header_collapsed_border_color;
+                    background-color: $accordion_header_collapsed_bg_color;
+                    &.x-accordion-hd-over {
+                    // hover closed header
+                        border-color: $accordion_header_hover_collapsed_border_color;
+                        background-color: $accordion_header_hover_collapsed_bg_color;
+                    }
+                }
+            }
+
+        }
+    }
+}
+@include abp-dashboard-bar-theme();

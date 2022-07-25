@@ -1,0 +1,140 @@
+// Tree Dark - Ex: Main Menu
+// Apply hover border color
+.x-treelist-ABPTreeList,
+.x-treelist-dark {
+
+    .x-treelist-row-over,
+    .x-treelist-selected.x-treelist-row-over {
+        border-color: $abp-vivid-blue;
+    }
+
+    .x-treelist-item-shorthand {
+        color: $abp-lucid-blue;
+    }
+
+    .x-treelist-item-text,
+    .x-treelist-item-icon {
+        color: #fff;
+    }
+}
+
+.x-treelist-item-wrap {
+    text-decoration: none;
+}
+
+// Parent Menu Item Wrap Selector. Removes padding from the first level menu items.
+.x-treelist-ABPTreeList>.x-treelist-root-container>.x-treelist-item>.x-treelist-row,
+.x-treelist-dark>.x-treelist-root-container>.x-treelist-item>.x-treelist-row,
+.x-treelist-menu-dark>.x-treelist-root-container>.x-treelist-item>.x-treelist-row {
+    .x-treelist-item-wrap {
+        padding-left: 0px;
+    }
+}
+
+// Nested Menu Item Background Colors
+$nav-levels: ('0': $abp-nav-level-0,
+    '1': $abp-nav-level-1,
+    '2': $abp-nav-level-2,
+    '3': $abp-nav-level-3,
+    '4': $abp-nav-level-4);
+
+// Apply Nested Menu Item Styles
+@each $levelKey,
+$levelColor in $nav-levels {
+    .treeMenu-level-#{$levelKey} {
+        background-color: $levelColor;
+
+        &:first-child {
+            border-top: solid $abp-black 1px;
+        }
+
+        &:last-child {
+            border-bottom: solid $abp-black 1px;
+        }
+
+        .x-treelist-row {
+            .x-treelist-item-wrap {
+                margin-left: 0px !important;
+            }
+        }
+
+        &.x-treelist-item-selected,
+        &.x-treelist-item-expanded {
+            >.x-treelist-row {
+                background-color: $levelColor;
+            }
+        }
+    }
+}
+
+
+@mixin abp-tree-dark-theme() {
+
+    @each $theme,
+    $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+        $menu-color: map-get($map, 'container_menu_background');
+        $lighten: map-get($map, 'container_menu_lighten');
+
+        .#{$theme} {
+            .x-treelist-ABPTreeList,
+            .x-treelist-dark {
+                .x-treelist-item-expanded {
+                    >.x-treelist-row {
+                        border-color: $base-color;
+                    }
+                }
+
+                .x-treelist-row-over {
+                    border-color: $base-color;
+                    background-color: $selected-color;
+                }
+
+                .x-focused {
+                    >.x-treelist-row {
+                        background-color: $selected-color;
+                        border-color: $base-color;
+                    }
+                }
+            }
+
+            // Apply Nested Menu Item Styles
+            $level-background: $menu-color;
+
+            @for $levelKey from 0 through 4 {
+                .treeMenu-level-#{$levelKey} {
+                    background-color: $level-background;
+
+                    &:first-child {
+                        border-top: solid $menu-color 1px;
+                    }
+
+                    &:last-child {
+                        border-bottom: solid $menu-color 1px;
+                    }
+
+                    // &.x-treelist-item-selected,
+                    &.x-treelist-item-expanded {
+                        >.x-treelist-row {
+                            background-color: $level-background;
+                        }
+
+                        .x-treelist-row-over {
+                            border-color: $base-color;
+                            background-color: $selected-color;
+                        }
+                    }
+                }
+
+                @if $lighten>0 {
+                    $level-background: lighten($level-background, $lighten);
+                }
+
+                @else {
+                    $level-background: darken($level-background, abs($lighten));
+                }
+            }
+        }
+    }
+}

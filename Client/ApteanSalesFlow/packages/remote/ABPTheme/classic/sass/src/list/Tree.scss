@@ -1,0 +1,36 @@
+@import './mixins/index';
+
+// Treelist Base Styles
+.x-treelist {
+    font-weight: 400;
+    .x-treelist-item-wrap {
+        margin-left: 0px !important; // important to override nested item { margin-left: calc(itemMenuLevel * 12) }
+        padding-left: 9px;
+    }
+    .x-treelist-row {
+        padding: 3px 10px 3px 10px;
+        border-width: 0px 0px 0px 5px;
+        border-style: solid;
+        border-color: transparent;
+
+        .x-treelist-item-text {
+            margin-right: 8px;
+        }
+    }
+}
+
+// Default Icon Color
+.x-grid-item {
+    .x-tree-icon, .x-tree-icon-parent, .x-tree-expander, .x-tree-arrows .x-tree-expander {
+        color: $abp-deep-grey !important;
+    }
+}
+
+.x-grid-item-selected {
+    .x-tree-icon, .x-tree-icon-parent, .x-tree-expander, .x-tree-arrows .x-tree-expander {
+        color: $abp-white !important;
+    }
+}
+
+@include abp-tree-grid-light-theme();
+@include abp-tree-dark-theme();

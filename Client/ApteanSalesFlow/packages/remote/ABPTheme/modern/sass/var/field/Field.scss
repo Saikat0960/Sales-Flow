@@ -1,0 +1,6 @@
+$field-error-icon-side: $apteanico-mini-exclamation-circle $font-icon-font-family;
+$field-error-icon-under: $apteanico-mini-exclamation-circle $font-icon-font-family;
+$field-error-under-margin: 8px 0px 7px;
+$field-error-message-font-size: map-get(map-get($modern-font-sizes, 'text'), 'medium');
+$field-disabled-opacity: 1;
+$field-disabled-label-color: $abp-deep-grey;

@@ -1,0 +1,156 @@
+﻿$indent: 85px;
+$half-indent: 72px;
+
+.log-item {
+	.time-wrap{
+		width: $indent;
+		float: left;
+		font-size: 12px;
+		text-align: right;
+		position: relative;
+		background: $white;
+		margin-right: 8px;
+		margin-left: 16px;
+
+		.log-item-abrev{
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			border-radius: 12px;
+			color: #fff;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 1.2em;
+			padding-top: 4px;
+		}
+
+		.log-item-time{
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			color: $abp-black;
+		}
+
+		.log-item-abrev.abp-logger-INFO{
+			background-color: $strong-blue;
+		}
+
+		.log-item-abrev.abp-logger-ERROR{
+			background-color: $alert-red;
+		}
+
+		.log-item-abrev.abp-logger-WARNING{
+			background-color: $vivid-orange;
+		}
+
+		.log-item-abrev.abp-logger-FATAL{
+			background-color: $alert-red;
+		}
+
+		.log-item-abrev.abp-logger-TRACE{
+			background-color: $black-70;
+		}
+
+		.log-item-abrev.abp-logger-DEBUG{
+			background-color: $black-40;
+		}
+
+		.log-item-abrev.abp-logger-ARIA{
+			background-color: $abp-radicalRed;
+		}
+	}
+
+	.line-wrap {
+		position: relative;
+
+		.contents-wrap:before{
+			margin: 15px 0 0 -9px;
+		}
+
+		.contents-wrap{
+			position: relative;
+			padding: 4px 0px 6px 0px;
+			white-space: normal;
+			min-height: 2.7em;
+			color: $abp-black;
+
+			label{
+				display: none;
+			}
+			.message{
+				display: block;
+				margin-left: 93px;
+				font-size: 11pt;
+			}
+		}
+	}
+
+	.timeline-epoch{
+		width: 100%;
+		background: $white;
+		text-align: left;
+		padding: 7px 5px 7px 15px;
+		position: relative;
+		margin-bottom: 15px;
+		font-size: 14px;
+	}
+}
+
+.log-item.timeline-item-last  {
+	.line-wrap:before {
+		// remove the connector line below the last item
+		display: none;
+	}
+}
+
+.abp-logger-INFO {
+	color: $black;
+}
+
+.abp-logger-WARN {
+	color: #dc7a09;
+}
+.abp-logger-ERROR {
+	color: $alert-red;
+}
+.abp-logger-FATAL {
+	color: $alert-red;
+}
+.abp-logger-TRACE {
+	color: $deep-blue-75;
+}
+.abp-logger-DEBUG {
+	color: $deep-blue-75;
+}
+.abp-logger-ARIA{
+	color: $abp-radicalRed;
+}
+
+.logpage-combo-label {
+	color: $strong-blue;
+	font-size: 1.2em !important;
+	line-height: 1.4em;
+	margin-top: 5px;
+}
+.logpage-combo-label .x-form-item-label-inner {
+	padding-top: 10px;
+}
+
+@mixin abp-loggerpage-theme () {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        .#{$theme} {
+            .timeline-epoch{
+        		color: $base-color;
+				border-top: solid 1px $base-color;
+				border-bottom: solid 1px $base-color;
+			}
+			.no-log-items{
+				font-size: 1.2em;
+				color: $base-color;
+			}
+        }
+    }
+}
+@include abp-loggerpage-theme();

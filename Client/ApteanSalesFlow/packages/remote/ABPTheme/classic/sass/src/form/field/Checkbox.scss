@@ -1,0 +1,37 @@
+label,
+.x-form-checkbox input {
+    cursor: pointer;
+}
+
+.x-form-checkbox-default {
+    padding-top: 1px;
+    height: 19px;
+    line-height: 1.05;
+}
+
+.x-keyboard-mode {
+    .x-form-checkbox-focus.x-form-checkbox-default {
+        color: $abp-vivid-blue;
+    }
+}
+
+@mixin checkbox-theme-mixin() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            &.x-keyboard-mode {
+                .x-form-checkbox-focus {
+                    color: $selected-color;
+                }
+                .x-form-cb-checked {
+                    .x-form-checkbox-focus {
+                        color: $selected-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include checkbox-theme-mixin();

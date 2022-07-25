@@ -1,0 +1,10 @@
+// Light Blue Menu Base Styles Ex: Settings Page
+
+@include extjs-menu-ui(
+    $ui: 'lightblue',
+    $ui-background-color: $abp-light-grey,
+    $ui-border-color: $abp-vivid-blue,
+    $ui-border-style: solid,
+    $ui-border-width: 0px 0px 0px 3px,
+    $ui-item-active-background-color: $abp-light-grey
+);

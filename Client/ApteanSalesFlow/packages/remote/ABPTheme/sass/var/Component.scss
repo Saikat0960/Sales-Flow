@@ -1,0 +1,24 @@
+@import './abp-variables.scss';
+@import './required-star.scss';
+@import './themes/index.scss';
+
+$base-color: $abp-vivid-blue;
+
+// Alert Red Color to used when communicating errors or warnings to the user
+$alert-red: $abp-alert-red;
+$main-menu-footer-logo: dynamic(url("ABPCore/img/Aptean-White-cropped.png"));
+$micro-main-menu-footer-logo: dynamic(url("ABPCore/img/Aptean_bottom_micro.png"));
+$favIcon-Full: dynamic("\e310");
+$favIcon-Empty: dynamic("\e311");
+$favIcon-Updated: dynamic("\e222");
+
+.icon-favorite-full:before {
+    content: $favIcon-Full;
+}
+
+.icon-favorite-empty:before {
+    content: $favIcon-Empty;
+}
+
+$font-family: $abp-base-font-family;
+$font-icon-font-family: "apteanico-mini";

@@ -1,0 +1,11 @@
+// Light Tree List
+@include treelist-ui(
+    $ui: 'light',
+    $item-icon-color: $abp-deep-grey,
+    $item-expander-color: $abp-deep-grey,
+    $item-text-color: $abp-deep-grey,
+    $item-icon-font-size: 22px,
+    $item-expander-font-size: 16px,
+    $row-selected-background-color: transparent,
+    $background-color: $abp-white
+);

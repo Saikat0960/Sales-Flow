@@ -1,0 +1,46 @@
+// // Accorion Panel
+// // Basic Accordion Panel
+// .x-accordion-item {
+//     .x-panelheader {
+//         background-color: $abp-navy;
+//     }
+//     .x-paneltitle, .x-icon-el {
+//         color: $abp-white !important;
+//     }
+//     &.x-flexed {
+//         .x-panelheader {
+//             background-color: $abp-vivid-blue;
+//         }
+//         .x-icon-el {
+//             transform: scaleY(-1);
+//         }
+//     }
+// }
+//
+// // Transitions
+// .x-accordion-item {
+//     .x-icon-el {
+//         transition: transform $abp-transition-duration $abp-transition-type;
+//     }
+// }
+//
+// // Themed Accordion Panel
+// @each $theme, $map in $abp-themes {
+//     @if $theme != 'aptean-theme-vivid-blue' {
+//         $closed-header-color: map-get($map, 'accordion_header_collapsed_bg_color');
+//         $open-header-color: map-get($map, 'accordion_header_open_bg_color');
+//
+//         .#{$theme} {
+//             .x-accordion-item {
+//                 .x-panelheader {
+//                     background-color: $closed-header-color;
+//                 }
+//                 &.x-flexed {
+//                     .x-panelheader {
+//                         background-color: $open-header-color;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

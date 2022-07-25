@@ -1,0 +1,37 @@
+.css-grid-container {
+    overflow-x: auto;
+    width: 100%;
+    display: -ms-grid;
+    display: -moz-grid;
+    display: grid;
+    min-height: 0px;
+    min-width: 0px;
+}
+.css-grid-container.css-grid-container-responsive {
+    overflow-x: hidden;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: dense;
+    -ms-grid-columns: auto;
+    -ms-grid-rows: auto;
+}
+.css-grid-container-group {
+    width: 100%;
+    align-self: auto;
+    justify-self: auto;
+    grid-row-end: span 1;
+    -ms-grid-row-span: 1;
+}
+.css-grid-container-item {
+    margin: 0px;
+    width: 100%;
+    justify-self: self-start;
+    align-self: self-start;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+}
+.css-grid-container-item-body {
+    width: 100%;
+    min-width: initial;
+    max-width: initial;
+}

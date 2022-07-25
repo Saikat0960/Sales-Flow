@@ -1,0 +1,122 @@
+// ListView Styles
+@import "./rowTools.scss";
+@import './templates/main.scss';
+
+.abp-panel-list-view {
+    .x-grid-header-ct,
+    .x-grid-header-ct .x-box-inner,
+    .x-grid-header-ct .x-box-inner .x-box-target {
+        height: 0px !important;
+        width: 100% !important;
+    }
+    .abp-list-view {
+        overflow-x: hidden !important;
+        .x-grid-item-container {
+            width: 100% !important;
+            .x-grid-item-selected + .x-grid-item {
+                border-color: #e9e9e9;
+            }
+        }
+        .x-grid-item-container > .x-grid-item {
+            overflow: hidden;
+            width: 100% !important;
+            outline-offset: -1px;
+            min-height: 60px;
+            background: $abp-background-grey;
+            .x-grid-row-expander-spacer,
+            .x-grid-rowbody-tr,
+            .x-grid-row {
+                align-items: center;
+                padding: 4px;
+                display: flex;
+                flex-flow: wrap;
+                background-color: transparent;
+                background: transparent;
+            }
+            > tbody {
+                outline: 1px solid $abp-light-grey;
+                outline-offset: -1px;
+            }
+        }
+        .abp-show-body::before {
+            font-size: 1.5em;
+            color: $base-color;
+            content: $apteanico-mini-fa-search;
+            font-family: $font-icon-font-family;
+        }
+        .x-grid-row-collapsed .abp-show-body::before {
+            content: $apteanico-mini-fa-search;
+            font-family: $font-icon-font-family;
+        }
+        td.x-grid-cell {
+            vertical-align: middle;
+            width: auto !important;
+        }
+        .x-grid-item:first-child {
+            margin-top: 4px;
+        }
+        .x-grid-item:not(:last-child) {
+            margin-bottom: 4px;
+        }
+        .x-grid-cell-inner {
+            padding: 0px;
+            white-space: normal;
+        }
+        .x-grid-item-container > .x-grid-item.x-grid-item-over {
+            .x-grid-rowbody-tr,
+            .x-grid-row {
+                background: $abp-highlight-blue;
+            }
+        }
+        .x-grid-item-container > .x-grid-item.x-grid-item-selected {
+            background: $white;
+            .x-grid-rowbody-tr,
+            .x-grid-row {
+                background: $abp-selected-blue;
+                .abp-list-view-field-label {
+                    color: $abp-white;
+                }
+            }
+        }
+        .x-grid-rowbody {
+            margin-left: 4px;
+            margin-right: 4px;
+            border-top: 1px solid $abp-light-grey;
+        }
+    }
+    .abp-list-order-outside-range {
+        color: $alert-red;
+    }
+    .abp-list-order-inside-range {
+        color: $base-color;
+        font-weight: 400;
+    }
+    .abp-list-view-field-value {
+        border-color: transparent !important;
+    }
+}
+
+@mixin abp-list-view-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .abp-panel-list-view {
+                .x-grid-item-container > .x-grid-item.x-grid-item-over {
+                    .x-grid-rowbody-tr,
+                    .x-grid-row {
+                        background: $highlight-color;
+                    }
+                }
+                .x-grid-item-container > .x-grid-item.x-grid-item-selected {
+                    .x-grid-rowbody-tr,
+                    .x-grid-row {
+                        background: $selected-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-list-view-theme();

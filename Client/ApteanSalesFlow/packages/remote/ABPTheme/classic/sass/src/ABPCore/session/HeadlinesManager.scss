@@ -1,0 +1,8 @@
+.headlines-tbar {
+    border-bottom: solid $abp-grey 1px !important;
+}
+.headlines-manager-panel {
+    .x-grid-row-collapsed .x-grid-row-expander:before {
+        content: $apteanico-mini-pencil;
+    }
+}

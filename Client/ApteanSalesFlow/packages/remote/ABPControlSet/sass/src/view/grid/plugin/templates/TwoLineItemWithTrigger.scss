@@ -1,0 +1,78 @@
+.abp-list-grid-twoLineItemWithTrigger {
+    .abp-list-view .abp-list-view-cellColumn {
+        position: absolute;
+        flex: unset;
+        flex-grow: unset;
+        overflow: unset;
+        display: flex;
+    }
+    .x-body-el.x-gridcell-body-el {
+        // Cell Text
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+
+    .x-cells-el {
+        display: flex;
+        flex-wrap: wrap;
+        height: 50px;
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-0 { // Image
+            // Image
+            height: 50px;
+            top: 2px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-1 { // Bold Text
+            // First Text Line
+            align-items: center;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+            }
+            .abp-list-view-field.abp-list-view-field-1,
+            tbody,
+            tr,
+            td {
+                display: flex;
+                align-items: center;
+            }
+            left: $abpforms-template-image-width + 15px;
+            top: 3px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-2 { // Regular text
+            // Trigger
+            left: $abpforms-template-image-width + 15px;
+            bottom: 3px;
+            width: auto;
+            flex-grow: 4;
+            flex-basis: unset;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-gridcell-body-el {
+                    color: $abp-dark-grey;
+                }
+            }
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-3 { // Trigger
+            // Trigger
+            right: 0;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            .abp-list-view-field.abp-list-view-field-2,
+            tbody,
+            tr,
+            .abp-list-view-field-value,
+            .a-gridcell-trigger {
+                display: flex !important;
+                align-items: center;
+                width: auto !important;
+            }
+        }
+        // cell wrapper
+        .abp-forms-list-view-image-cell {
+            position: absolute;
+        }
+    }
+}

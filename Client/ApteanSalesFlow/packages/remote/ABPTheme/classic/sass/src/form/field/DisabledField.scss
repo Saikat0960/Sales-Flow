@@ -1,0 +1,40 @@
+.x-field,
+.x-form-checkboxgroup {
+    // Disabled
+    &.x-item-disabled {
+        > .x-form-item-label-default,
+        .x-form-trigger-default:before,
+        .x-form-trigger-cmp .x-tool,
+        .x-form-checkboxgroup-body,
+        .x-form-checkbox-default:before {
+            opacity: 0.7;
+        }
+        .x-form-trigger,
+        .x-form-text-wrap-default,
+        .x-form-text-default {
+            background-color: $abp-disabled-grey;
+        }
+
+        // The following is needed to get iOS Safari to show the text at the correct color.
+        // https://stackoverflow.com/questions/262158/disabled-input-text-color
+        input:disabled, textarea:disabled {
+            opacity: 1;
+            -webkit-text-fill-color: $abp-deep-grey;
+        }
+        // to hide checkbox browser checkbox.
+        .x-form-checkbox input:disabled {
+            opacity: 0;
+        }
+    }
+}
+
+// Enabled Field with Disable Trigger
+.x-field,
+.x-form-checkboxgroup {
+    .x-trigger-disabled,
+    .x-tool-disabled {
+        background-color: $abp-disabled-grey;
+        color: $abp-nevada;
+        border-left: solid 1px $abp-grey;
+    }
+}

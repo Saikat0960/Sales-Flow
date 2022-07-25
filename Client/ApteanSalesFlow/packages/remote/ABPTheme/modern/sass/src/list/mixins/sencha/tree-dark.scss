@@ -1,0 +1,9 @@
+// Dark Tree List
+@include treelist-ui(
+    $ui: 'ABPTreeList',
+    $item-icon-color: $abp-white,
+    $item-expander-color: $abp-white,
+    $item-text-color: $abp-white,
+    $item-icon-font-size: 22px,
+    $item-expander-font-size: 16px
+);

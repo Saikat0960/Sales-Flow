@@ -1,0 +1,45 @@
+{
+    "name": "abpfonts",
+    "sencha": {
+        "name": "abpfonts",
+        "namespace": "ABPFonts",
+        "format": "1",
+        "version": "#{GitVersion.AssemblySemVer}#",
+        "compatVersion": "3.0.0",
+        "creator": "Aptean",
+        "summary": "ABP Font package",
+        "detailedDescription": "ABP Font package.",
+        "type": "code",
+        "slicer": null,
+        "output": {
+            "base": "${package.dir}/${toolkit.name}/build",
+            "resources": {
+                "path": "${build.id}/resources",
+                "shared": "resources"
+            }
+        },
+        "sass": {
+            "namespace": "ABP",
+            "etc": [
+                "${package.dir}/sass/etc/all.scss"
+            ],
+            "var": [
+                "${package.dir}/sass/var/all.scss",
+                "${package.dir}/sass/var/apteanico-mini.scss",
+                "${package.dir}/sass/var/abpmaterial.scss"
+            ],
+            "src": [
+                "${package.dir}/sass/src",
+                "${package.dir}/sass/src/apteanico-mini.scss",
+                "${package.dir}/sass/src/abpmaterial.scss",
+                "${package.dir}/sass/src/aptean-fonts.scss"
+            ]
+        },
+        "classpath": "${package.dir}/src,${package.dir}/${toolkit.name}/src",
+        "overrides": "${package.dir}/overrides,${package.dir}/${toolkit.name}/overrides",
+        "framework": "ext"
+    }
+}
+// The tokenised version of the package config is used during the build process
+// any updates made to the original package.json need to be made here too.
+// for example: "#{GitVersion.AssemblySemVer}#"

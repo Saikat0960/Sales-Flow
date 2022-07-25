@@ -1,0 +1,31 @@
+// Sencha Theme overrides
+.x-dialog {
+    .x-dialogheader {
+        border-bottom-color: $abp-dark-grey !important;
+    }
+}
+
+
+@mixin abp-dialog-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        .#{$theme} {
+            .x-dialog {
+                .x-dialogheader {
+                    border-color: $base-color;
+                }
+            }
+        }
+    }
+}
+@include abp-dialog-theme();
+
+// When dialog form has min/max height, the float wrap does not always center the dialog form correctly
+.x-float-wrap[id*=abpdialogform] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .abp-dialog-form {
+        transform: none !important;
+    }
+}

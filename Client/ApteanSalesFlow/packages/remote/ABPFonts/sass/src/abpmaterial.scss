@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'abpmaterial';
+  src:url('#{$abp-font-path}/abpmaterial.eot');
+  src:url('#{$abp-font-path}/abpmaterial.eot?#iefix') format('embedded-opentype'),
+    url('#{$abp-font-path}/abpmaterial.woff') format('woff'),
+    url('#{$abp-font-path}/abpmaterial.ttf') format('truetype'),
+    url('#{$abp-font-path}/abpmaterial.svg#abpmaterial') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-mat]:before {
+  font-family: "abpmaterial" !important;
+  content: attr(data-mat);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  // line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="mat-"]:before,
+[class^="mat-"]:after,
+[class*="mat-"]:before {
+  font-family: "abpmaterial" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mat-account-circle:before{
+	content: "\e000";
+}
+.mat-add-circle:before{
+	content: "\e001";
+}
+.mat-add-circle-outline:before{
+	content: "\e002";
+}
+.mat-adjust:before{
+	content: "\e003";
+}
+.mat-arrow-drop-down:before{
+	content: "\e004";
+}
+.mat-check:before{
+	content: "\e005";
+}
+.mat-close:before{
+	content: "\e006";
+}
+.mat-content-copy:before{
+	content: "\e007";
+}
+.mat-content-cut:before{
+	content: "\e008";
+}
+.mat-content-paste:before{
+	content: "\e009";
+}
+.mat-date-range:before{
+	content: "\e00a";
+}
+.mat-delete:before{
+	content: "\e00b";
+}
+.mat-edit:before{
+	content: "\e00c";
+}
+.mat-equalizer:before{
+	content: "\e00d";
+}
+.mat-event-available:before{
+	content: "\e00e";
+}
+.mat-fullscreen:before{
+	content: "\e00f";
+}
+.mat-fullscreen-exit:before{
+	content: "\e010";
+}
+.mat-gauge:before{
+	content: "\e011";
+}
+.mat-gearwheels:before{
+	content: "\e012";
+}
+.mat-hand-truck-box:before{
+	content: "\e013";
+}
+.mat-hierachy-tree:before{
+	content: "\e014";
+}
+.mat-home:before{
+	content: "\e015";
+}
+.mat-insert-drive-file:before{
+	content: "\e016";
+}
+.mat-local-printshop:before{
+	content: "\e017";
+}
+.mat-location-on:before{
+	content: "\e018";
+}
+.mat-menu:before{
+	content: "\e019";
+}
+.mat-money-bill:before{
+	content: "\e01a";
+}
+.mat-more-vert:before{
+	content: "\e01b";
+}
+.mat-notifications:before{
+	content: "\e01c";
+}
+.mat-notifications-none:before{
+	content: "\e01d";
+}
+.mat-open-in-browser:before{
+	content: "\e01e";
+}
+.mat-open-in-new:before{
+	content: "\e01f";
+}
+.mat-pin-filled:before{
+	content: "\e020";
+}
+.mat-pin-unfilled:before{
+	content: "\e021";
+}
+.mat-remove-circle:before{
+	content: "\e022";
+}
+.mat-search:before{
+	content: "\e023";
+}
+.mat-security-badge:before{
+	content: "\e024";
+}
+.mat-settings:before{
+	content: "\e025";
+}
+.mat-settings-applications:before{
+	content: "\e026";
+}
+.mat-shopping-basket:before{
+	content: "\e027";
+}
+.mat-star:before{
+	content: "\e028";
+}
+.mat-star-border:before{
+	content: "\e029";
+}
+.mat-subject:before{
+	content: "\e02a";
+}
+.mat-tune:before{
+	content: "\e02b";
+}
+.mat-wooden-pallet-box:before{
+	content: "\e02c";
+}
+.mat-work:before{
+	content: "\e02d";
+}
+.mat-worker:before{
+	content: "\e02e";
+}

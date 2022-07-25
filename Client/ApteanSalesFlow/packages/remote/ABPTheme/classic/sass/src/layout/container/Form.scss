@@ -1,0 +1,16 @@
+.x-form-layout-wrap {
+    display: inline-block;
+    .x-form-form-item {
+        display: flex;
+        justify-content: space-between;
+    }
+    .x-form-item-label-inner {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .x-field-default .x-form-item-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

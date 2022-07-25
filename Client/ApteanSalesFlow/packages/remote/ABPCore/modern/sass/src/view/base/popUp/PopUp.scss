@@ -1,0 +1,57 @@
+﻿.popIcon {
+	font-size: 64px;
+	color: $abp-vivid-orange;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+.popIcon.actionblueIcon {
+	color: $abp-vivid-blue;
+}
+.errorPop .x-panel-inner {
+	background-color: $black-20;
+}
+.popupButton {
+	margin-left: 12px;
+}
+.abp-popup.x-panel.x-floating {
+	border-radius: 0px;
+	border: none !important;
+}
+.abp-popup {
+	z-index: 666;
+	left: 50%;
+  	top: 50%;
+	transform: translate(-50%, -50%);
+	.abp-popup-header {
+		border-style: solid;
+		border-width: 5px 0 0 0;
+		border-color: $abp-vivid-blue;
+	}
+	.framePop-body {
+		padding: 0px 5px 0px 5px;
+	}
+	.errorpop-message {
+		text-align: center;
+	}
+}
+
+@mixin abp-popup-theme {
+	@each $theme, $map in $abp-themes {
+		$base-color: map-get($map, 'base_color');
+
+		.#{$theme} {
+			.abp-popup-header {
+				border-color: $base-color;
+			}
+		}
+	}
+}
+@include abp-popup-theme();
+
+.x-component.x-mask.x-root.x-floating {
+    z-index: 665; // one less than ABPPopup
+}
+
+#ext-global-floatWrap {
+    z-index: 664 !important; // one less than ABPPopup Mask
+}

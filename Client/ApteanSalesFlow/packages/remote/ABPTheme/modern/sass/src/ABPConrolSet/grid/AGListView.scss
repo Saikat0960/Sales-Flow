@@ -1,0 +1,14 @@
+$cellColumn: abp-list-view-cellColumn;
+$field-label: abp-list-view-field-label;
+$field-value: abp-list-view-field-value;
+$field: abp-list-view-field;
+$row-body: abp-list-view-row-body;
+
+.abp-ag-list-view {
+    .ag-body-viewport {
+        .ag-body-container {
+            .ag-row-group.ag-row {
+            }
+        }
+    }
+}

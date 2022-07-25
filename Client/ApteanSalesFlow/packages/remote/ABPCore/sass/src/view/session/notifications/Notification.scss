@@ -1,0 +1,186 @@
+/* Common Styles for each individual notification */
+.abp-notification {
+    padding: 6px 4px 4px 6px;
+    background-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-color: $abp-white;
+
+    &[class*="abp-notification-"] {
+        &[class*="flagged"] {
+            border-color: $abp-vivid-blue;
+        }
+        &[class*="markasread"] {
+            border-color: $abp-green;
+        }
+        &[class*="markasunread"] {
+            border-color: $abp-alert-red;
+        }
+        &[class*="removed"] {
+            border-color: $abp-navy;
+        }
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        width: 3px;
+        transition: all $abp-transition-duration $abp-transition-type;
+        height: 25%;
+        bottom: 50%;
+        left: 0;
+    }
+
+    &:not(:first-child):before {
+        position: absolute;
+        content: '';
+        border-top: 1px solid $abp-light-grey;
+        width: 90%;
+        left: 5%;
+        top: 0;
+    }
+
+    .abp-notification-link {
+        font-size: 14px;
+        font-weight: 400;
+        color: $abp-deep-grey;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .x-btn-wrap {
+            .x-btn-icon {
+                padding-top: 0px !important;
+                padding-bottom: 3px !important;
+            }
+        }
+    }
+
+    [class*=abp-notification-][class*=button] {
+        .x-btn-icon {
+            border-width: 0px !important;
+            padding: 5px 3px;
+        }
+    }
+
+    .abp-notification-header{
+        .abp-notification-read-button {
+            .x-btn-icon {
+                padding: 2px 3px;
+
+                .x-btn-icon-el {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .abp-notification-detail {
+        color: $abp-deep-grey;
+        font-size: 12px;
+    }
+
+    .abp-time-ago {
+        color: $abp-nevada;
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    // When acknowledgement is manual (not via badge)
+    // TODO: is this class used?
+    .abp-notification-acknowledge-icon {
+        padding: 5px;
+        font-family: 'apteanico-mini';
+        font-size: 24px;
+        color: $abp-deep-grey;
+
+        &:before {
+            content: $apteanico-mini-ok;
+        }
+        &:active {
+            color: $abp-selected-blue;
+        }
+    }
+
+    .abp-notification-toolbar {
+        &.x-toolbar {
+            background-color: inherit;
+            padding: 0;
+        }
+        .x-btn-default-toolbar-small {
+            padding: 1px;
+        }
+
+        .abp-notification-toolbar-label.x-toolbar-item {
+            font-size: 0.9em;
+            font-weight: normal;
+        }
+    }
+
+    .abp-notification-action-label {
+        font-weight: bold;
+        padding-top: 25px;
+
+        &.icon-fa-check-circle-o-01:before {
+            position: absolute;
+            font-size: 30px;
+            color: $abp-green;
+            left: calc(50% - 15px);
+            bottom: 20px;
+        }
+
+        &.icon-nav-undo:before {
+            position: absolute;
+            font-size: 30px;
+            color: $abp-alert-red;
+            left: calc(50% - 15px);
+            bottom: 20px;
+        }
+
+        &.icon-directional-arrows-14:before {
+            position: absolute;
+            font-size: 30px;
+            color: $abp-navy;
+            left: calc(50% - 15px);
+            bottom: 20px;
+        }
+    }
+}
+
+@mixin abp-notification-theme () {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+
+        .#{$theme} {
+            .abp-notification {
+                &.abp-notification-flagged {
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        background-color: $base-color;
+                        width: 3px;
+                        transition: all $abp-transition-duration $abp-transition-type;
+                        height: 100%;
+                        bottom: 0;
+                        left: 0;
+                    }
+                    //border-color: $base-color;
+                }
+
+                // &.abp-notification-new {
+                //     background-color: $base-color;
+                // }
+
+                // .abp-notification-link.has-link {
+                //     color: $base-color;
+
+                //     &.x-btn-over{
+                //         color: $hover-color
+                //     }
+                // }
+            }
+        }
+    }
+}
+@include abp-notification-theme();

@@ -1,0 +1,81 @@
+@import './mixins/index';
+
+@include extjs-button-ui(
+    $ui: 'default',
+    $border-radius: 0,
+    $border-width: 0,
+    $border-color: transparent,
+    $border-color-over: transparent
+);
+
+// Button Common Styles
+.x-btn {
+    padding: 0px;
+    margin: 0px;
+    border-color: transparent;
+    border-width: thin;
+    border-style: solid;
+    background-color: $abp-vivid-blue;
+
+    &.text.icon {
+        color: $abp-white;
+    }
+
+    // Hovered
+    &.x-btn-over {
+        background-color: $abp-hover-blue;
+    }
+
+    // Pressed, Focused, Menu Active
+    &.x-btn-pressed, &.x-btn-hovered, &.x-btn-menu-active {
+        background-color: $abp-selected-blue;
+    }
+}
+
+@mixin abp-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-btn {
+                background-color: $base-color;
+                &.x-btn-over {
+                    background-color: $hover-color;
+                }
+
+                &.x-btn-pressed, &.x-btn-hovered, &.x-btn-menu-active {
+                    background-color: $selected-color;
+                }
+            }
+        }
+    }
+}
+
+@include abp-button-theme();
+
+// Transitions
+.x-btn {
+    transition: border-color $abp-transition-duration $abp-transition-type,
+                background-color $abp-transition-duration $abp-transition-type,
+                color $abp-transition-duration $abp-transition-type;
+
+    .x-btn-inner {
+        // Icon Text Color
+        transition: color $abp-transition-duration $abp-transition-type,
+                    background-color $abp-transition-duration $abp-transition-type;
+    }
+
+    // Icon Button / Text Icon Button
+    &.icon, &.icon.text {
+        .x-btn-icon {
+            .x-btn-icon-el {
+                transition: color $abp-transition-duration $abp-transition-type;
+            }
+        }
+        .x-btn-arrow:after {
+            transition: color $abp-transition-duration $abp-transition-type;
+        }
+    }
+}

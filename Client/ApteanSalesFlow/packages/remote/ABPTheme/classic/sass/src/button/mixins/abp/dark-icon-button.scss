@@ -1,0 +1,82 @@
+// Dark Button Common Styles
+.x-btn.x-btn-dark {
+    background-color: transparent;
+    border-width: 0 0 5px 0;
+    // Hovered
+    &.x-btn-over {
+        border-color: transparent;
+        background-color: $abp-black;
+        .x-btn-inner {
+            // Button Text Color
+            color: $abp-highlight-blue;
+        }
+        .x-btn-icon-el {
+            color: $abp-highlight-blue;
+        }
+        .x-btn-arrow:after {
+            // Button Menu Arrow Color
+            color: $abp-highlight-blue;
+        }
+    }
+    // Pressed / Focused
+    &.x-btn-pressed, &.x-btn-focused, &.toolbar-toggled, &.x-btn-menu-active {
+        border-color: $abp-highlight-blue;
+        background-color: $abp-black;
+        .x-btn-inner {
+            // Button Text Color
+            color: $abp-highlight-blue;
+        }
+        .x-btn-icon-el {
+            color: $abp-highlight-blue;
+        }
+        .x-btn-arrow:after {
+            // Button Menu Arrow Color
+            color: $abp-highlight-blue;
+        }
+    }
+}
+
+@mixin abp-dark-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $background-color: map-get($map, 'container_menu_background');
+
+        .#{$theme} {
+            .x-btn.x-btn-dark {
+                &.x-btn-over {
+                    background-color: darken($background-color, 10%);
+
+                    .x-btn-inner {
+                        // Button Text Color
+                        color: $highlight-color;
+                    }
+                    .x-btn-icon-el {
+                        color: $highlight-color;
+                    }
+                    .x-btn-arrow:after {
+                        // Button Menu Arrow Color
+                        color: $highlight-color;
+                    }
+                }
+                // Pressed / Focused
+                &.x-btn-pressed, &.x-btn-focused, &.toolbar-toggled, &.x-btn-menu-active {
+                    border-color: $highlight-color;
+                    background-color: darken($background-color, 10%);
+
+                    .x-btn-inner {
+                        // Button Text Color
+                        color: $highlight-color;
+                    }
+                    .x-btn-icon-el {
+                        color: $highlight-color;
+                    }
+                    .x-btn-arrow:after {
+                        // Button Menu Arrow Color
+                        color: $highlight-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-dark-icon-button-theme();

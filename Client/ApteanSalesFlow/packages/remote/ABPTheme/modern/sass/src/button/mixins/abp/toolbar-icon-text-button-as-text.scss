@@ -1,0 +1,63 @@
+// Dark Toolbar Text with Icon Button
+.x-toolbar {
+    .x-button.x-has-icon.x-has-text.text-btn,
+    .x-button.x-has-icon.x-has-text.text-btn.dark {
+        background-color: $abp-vivid-blue;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $abp-vivid-blue;
+        &.x-pressing {
+            border-color: $abp-selected-blue;
+            .x-inner-el {
+                background-color: $abp-vivid-blue;
+                .x-body-el {
+                    .x-icon-el, .x-text-el {
+                        color: $abp-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon.x-has-text.text-btn,
+.x-button.x-has-icon.x-has-text.text-btn.dark {
+    transition: border-color $abp-modern-transition-duration $abp-transition-type,
+                background-color $abp-modern-transition-duration $abp-transition-type;
+    .x-inner-el {
+        transition: border-color $abp-modern-transition-duration $abp-transition-type,
+                    background-color $abp-modern-transition-duration $abp-transition-type;
+    }
+}
+
+@mixin abp-toolbar-icon-text-button-as-text-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-toolbar {
+                .x-button.x-has-icon.x-has-text.text-btn:not(.x-disabled),
+                .x-button.x-has-icon.x-has-text.text-btn.dark:not(.x-disabled) {
+                    background-color: $base-color;
+                    border-color: $base-color;
+                    &.x-pressing {
+                        border-color: $selected-color;
+                        background-color: $selected-color;
+                        .x-inner-el {
+                            background-color: $selected-color;
+                            border-color: $selected-color;
+                            .x-body-el {
+                                .x-icon-el, .x-text-el {
+                                    color: $abp-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-text-button-as-text-theme();

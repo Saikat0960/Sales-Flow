@@ -1,0 +1,12 @@
+@mixin abp-list-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+
+        .#{$theme} {
+            .x-show-selection > .x-listitem.x-selected {
+                background-color: $highlight-color;
+            }
+        }
+    }
+}
+@include abp-list-theme();

@@ -1,0 +1,12 @@
+@import './mixins/index';
+
+.x-menu {
+    &.no-icons {
+        .x-menuitem {
+            padding-left: 8px;
+            .x-icon-wrap-el {
+                width: 0px;
+            }
+        }
+    }
+}

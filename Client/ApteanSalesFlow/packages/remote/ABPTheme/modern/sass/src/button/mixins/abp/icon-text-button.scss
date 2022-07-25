@@ -1,0 +1,41 @@
+// Text with Icon Button
+.x-button.x-has-text.x-has-icon {
+    background-color: transparent;
+    border-color: transparent;
+    .x-inner-el {
+        .x-text-el {
+            color: $abp-deep-grey;
+        }
+    }
+}
+
+
+// Transitions
+.x-button.x-has-text.x-has-icon {
+    transition: background-color $abp-modern-transition-duration $abp-transition-type,
+                border-color $abp-modern-transition-duration $abp-transition-type;
+}
+
+@mixin abp-icon-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button.x-has-text.x-has-icon:not(.x-disabled) {
+                background-color: transparent;
+                border-color: transparent;
+                &.x-pressing {
+                    background-color: transparent;
+                    border-color: transparent;
+                    .x-inner-el {
+                        .x-text-el {
+                            color: $selected-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-icon-text-button-theme();

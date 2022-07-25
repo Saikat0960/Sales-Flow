@@ -1,0 +1,64 @@
+ // Set variables here.
+ $icons-path: './ABPControlSet/balham-icons/';
+ $border-color: $abp-grey;
+ $odd-row-background-color: #F3F3F3;
+ $balham-border-color: #BDC3C7;
+ $focused-cell-border-color: #5DFF5D;
+ $header-background-color: transparent;
+ $secondary-foreground-color-opacity: 1;
+ $secondary-foreground-color: $abp-deep-grey;
+
+ .ag-theme-balham {
+    font: 300 13px/19px $abp-base-font-family;
+     .abp-ag-grid-body {
+        .ag-header {
+            font: 400 13px/19px $abp-base-font-family;
+            background: transparent;
+            .ag-header-viewport {
+                .ag-header-cell {
+                    min-height: 32px;
+                }
+            }
+            .ag-header-cell-text {
+                color: $color;
+            }
+        }
+        .ag-header-cell::after,
+        .ag-header-group-cell::after {
+            border-right: 1px solid $balham-border-color;
+            height: 100%;
+            margin-top: 0px;
+        }
+        .ag-body {
+            .ag-cell {
+                font: 300 13px/19px $abp-base-font-family;
+                line-height: 32px;
+            }
+        }
+    }
+    >.x-panel-header-default {
+        border-bottom-width: 0px !important;
+    }
+ }
+
+ @mixin abp-aggrid-theme () {
+     @each $theme, $map in $abp-themes {
+         $highlight-color: map-get($map, 'highlight_color');
+         $base-color: map-get($map, 'base_color');
+
+         .#{$theme} {
+             .ag-theme-balham {
+                 .ag-row-hover {
+                     background-color: $highlight-color;
+                     border-color: $highlight-color;
+                 }
+                 .ag-row-selected {
+                     color: $abp-white;
+                     background-color: $base-color;
+                     border-color: $base-color;
+                 }
+             }
+         }
+     }
+ }
+ @include abp-aggrid-theme();

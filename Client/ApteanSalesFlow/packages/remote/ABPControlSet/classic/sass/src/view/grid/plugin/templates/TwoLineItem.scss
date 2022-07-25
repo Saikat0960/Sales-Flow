@@ -1,0 +1,45 @@
+.abp-list-view-template-twoLineItem {
+    .abp-list-view .abp-list-view-cellColumn {
+        flex: unset;
+        flex-grow: unset !important;
+    }
+}
+
+.abp-list-view {
+    .abp-list-view-template-twoLineItem {
+        .x-cells-el {
+            display: flex;
+            flex-wrap: wrap;
+            .abp-list-view-cellColumn {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                .abp-list-view-field-value {
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+            .abp-list-view-cellColumn-0 { // First Line - bold text
+                .abp-list-view-field-1 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    .x-gridcell-body-el {
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+            .abp-list-view-cellColumn-1 { // Second Line - small text
+                .abp-list-view-field-1 {
+                    font-size: 13px;
+                    .x-gridcell-body-el {
+                        padding-top: 0px;
+                        color: $abp-dark-grey;
+                    }
+                }
+            }
+        }
+        .abp-list-view-cellColumn .abp-list-view-field-value {
+            min-height: unset !important;
+        }
+    }
+
+}

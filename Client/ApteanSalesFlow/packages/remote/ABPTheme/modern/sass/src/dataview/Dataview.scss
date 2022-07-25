@@ -1,0 +1,38 @@
+.abp-dataview {
+    .x-show-selection {
+        .x-dataview-item {
+            transition: color 300ms, background-color 300ms;
+        }
+    }
+}
+
+@mixin abp-dataview-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $pressed-color: map-get($map, 'selected_color');
+        $selected-color: map-get($map, 'base_color');
+        $text-color: $white;
+
+        .#{$theme} {
+            .abp-dataview {
+                .x-show-selection {
+                    .x-dataview-item.x-pressed {
+                        background-color: $highlight-color;
+                    }
+
+                    .x-dataview-item.x-selected {
+                        color: $text-color;
+                        background-color: $selected-color;
+                    }
+
+                    .x-dataview-item.x-selected.x-pressed {
+                        color: $text-color;
+                        background-color: $pressed-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include abp-dataview-theme();

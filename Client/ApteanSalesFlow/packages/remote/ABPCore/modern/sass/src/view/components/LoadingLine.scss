@@ -1,0 +1,44 @@
+.abp-loading-line {
+
+	> span {
+		width: 10%;
+		display: inline-block;
+		background-color: inherit;
+		opacity: 0;
+		height: 100%;
+		animation: loading-line 1000ms infinite ease-in-out;
+		position: absolute;
+    	top: 0;
+	}
+
+	.bar1 { animation-delay: 50ms; left: 0;}
+	.bar2 { animation-delay: 100ms; left: 10%;}
+	.bar3 { animation-delay: 150ms; left: 20%;}
+	.bar4 { animation-delay: 200ms; left: 30%;}
+	.bar5 { animation-delay: 250ms; left: 40%;}
+	.bar6 { animation-delay: 300ms; left: 50%;}
+	.bar7 { animation-delay: 350ms; left: 60%;}
+	.bar8 { animation-delay: 400ms; left: 70%;}
+	.bar9 { animation-delay: 450ms; left: 80%;}
+	.bar10 { animation-delay: 500ms; left: 90%;}
+}
+
+@keyframes loading-line {
+	50% {
+		opacity: 1;
+	}
+}
+
+@mixin abp-loading-line-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        .#{$theme} {
+			.abp-loading-line {
+				> span {
+					background-color: $base-color;
+				}
+			}
+        }
+    }
+}
+@include abp-loading-line-theme();

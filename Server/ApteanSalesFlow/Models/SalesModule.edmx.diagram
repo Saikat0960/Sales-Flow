@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="99ffa4da62094281a3ff8786ebf03c37" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="SalesModuleModel.AR_Invoice" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Bin" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.BOM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Company" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Country" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Currency" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Customer" Width="1.5" PointX="10.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Department" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Employee" Width="1.5" PointX="15" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.GL_Account" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.GL_Category" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Group" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Part" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Product_Class" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Quote" Width="1.5" PointX="7.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Quote_Items" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Routing" Width="1.5" PointX="15" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Sales_Order" Width="1.5" PointX="15.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Sales_Person" Width="1.5" PointX="8" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Shipment" Width="1.5" PointX="17.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.SO_Items" Width="1.5" PointX="20.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Tax" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.UOM" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.User" Width="1.5" PointX="12.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Warehouse" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Work_Calendar" Width="1.5" PointX="15" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModuleModel.Work_Center" Width="1.5" PointX="12.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="SalesModuleModel.FK_AR_Invoice_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_AR_Invoice_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_AR_Invoice_Sales_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_AR_Invoice_Shipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Bin_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_INV_Bin" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__Quote__CompanyId__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__SO__CompanyId__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Comp_CUR" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Currency_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Customer_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Customer_Country1" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Quote_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Sales_Order_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Shipment_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Tax_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Customer_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__Quote__Customer__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__Ship__Customer__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__SO__Customer__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Customer_Sales_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Customer_Tax" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Emp_Dept" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Emp_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Product_Class_GL_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_INV_GRP" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_INV_PCL" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_INV_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_INV_WH" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Quote_Items_Part" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_SO_Items_Part" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__Quote__Sales_per__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__SO__Quote_Number__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Quote_Items_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_Routing_Work_Center" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__Ship__SO_Referen__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__SO__Sales_person__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK__SO__Tax__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_SO_Items_Sales_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesModuleModel.FK_WC_Calendar_Work_Center" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

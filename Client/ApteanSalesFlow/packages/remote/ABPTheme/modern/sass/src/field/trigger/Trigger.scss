@@ -1,0 +1,23 @@
+.mixin-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before {
+        position: absolute;
+    }
+}
+
+.x-field {
+    .x-cleartrigger {
+        opacity: 0;
+        max-width: 0px;
+        pointer-events: none;
+    }
+    &.x-focused {
+        .x-cleartrigger {
+            max-width: unset;
+            pointer-events: unset;
+            opacity: 1;
+        }
+    }
+}

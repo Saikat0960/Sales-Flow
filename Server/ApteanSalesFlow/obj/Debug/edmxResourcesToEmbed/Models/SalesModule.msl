@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SalesModuleModelStoreContainer" CdmEntityContainer="SalesModuleEntities">
+    <EntitySetMapping Name="AR_Invoice">
+      <EntityTypeMapping TypeName="SalesModuleModel.AR_Invoice">
+        <MappingFragment StoreEntitySet="AR_Invoice">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Shipment_Number" ColumnName="Shipment Number" />
+          <ScalarProperty Name="SO_Number" ColumnName="SO Number" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer Id" />
+          <ScalarProperty Name="Billing_Address" ColumnName="Billing Address" />
+          <ScalarProperty Name="Total_Price" ColumnName="Total Price" />
+          <ScalarProperty Name="Due_Date" ColumnName="Due Date" />
+          <ScalarProperty Name="Billing_City" ColumnName="Billing City" />
+          <ScalarProperty Name="Billing_State" ColumnName="Billing State" />
+          <ScalarProperty Name="Billing_Country_Id" ColumnName="Billing Country Id" />
+          <ScalarProperty Name="Billing_ZipCode" ColumnName="Billing ZipCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bins">
+      <EntityTypeMapping TypeName="SalesModuleModel.Bin">
+        <MappingFragment StoreEntitySet="Bin">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Warehouse_Id" ColumnName="Warehouse Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BOMs">
+      <EntityTypeMapping TypeName="SalesModuleModel.BOM">
+        <MappingFragment StoreEntitySet="BOM">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Component" ColumnName="Component" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="SalesModuleModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Established_Date" ColumnName="Established Date" />
+          <ScalarProperty Name="Currency_Id" ColumnName="Currency Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="SalesModuleModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="SalesModuleModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Currency_Flag" ColumnName="Currency Flag" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="SalesModuleModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Billing_Address" ColumnName="Billing Address" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping Address" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Credit_Limit" ColumnName="Credit Limit" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sales_Person_Id" ColumnName="Sales Person Id" />
+          <ScalarProperty Name="Billing_Country_Id" ColumnName="Billing Country Id" />
+          <ScalarProperty Name="Shipping_Country_Id" ColumnName="Shipping Country Id" />
+          <ScalarProperty Name="Billing_City" ColumnName="Billing City" />
+          <ScalarProperty Name="Shipping_City" ColumnName="Shipping City" />
+          <ScalarProperty Name="Billing_State" ColumnName="Billing State" />
+          <ScalarProperty Name="Shipping_State" ColumnName="Shipping State" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Shipping_ZipCode" ColumnName="Shipping ZipCode" />
+          <ScalarProperty Name="Billing_ZipCode" ColumnName="Billing ZipCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="SalesModuleModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="SalesModuleModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Joining_Date" ColumnName="Joining Date" />
+          <ScalarProperty Name="Hourly_Rate" ColumnName="Hourly Rate" />
+          <ScalarProperty Name="Dept_Id" ColumnName="Dept Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_Account">
+      <EntityTypeMapping TypeName="SalesModuleModel.GL_Account">
+        <MappingFragment StoreEntitySet="GL_Account">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Account_No" ColumnName="Account No" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Account_Type" ColumnName="Account Type" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GL_Category">
+      <EntityTypeMapping TypeName="SalesModuleModel.GL_Category">
+        <MappingFragment StoreEntitySet="GL_Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="SalesModuleModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parts">
+      <EntityTypeMapping TypeName="SalesModuleModel.Part">
+        <MappingFragment StoreEntitySet="Part">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rev" ColumnName="Rev" />
+          <ScalarProperty Name="Group_Id" ColumnName="Group Id" />
+          <ScalarProperty Name="Product_Class_Id" ColumnName="Product Class Id" />
+          <ScalarProperty Name="Warehouse_Id" ColumnName="Warehouse Id" />
+          <ScalarProperty Name="Bin_Id" ColumnName="Bin Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UOM_Id" ColumnName="UOM Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Class">
+      <EntityTypeMapping TypeName="SalesModuleModel.Product_Class">
+        <MappingFragment StoreEntitySet="Product_Class">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="GL_Account" ColumnName="GL Account" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="SalesModuleModel.Quote">
+        <MappingFragment StoreEntitySet="Quote">
+          <ScalarProperty Name="Quote_Number" ColumnName="Quote Number" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Date_Required" ColumnName="Date Required" />
+          <ScalarProperty Name="Date_Requested" ColumnName="Date Requested" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping Address" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Value" ColumnName="Total Value" />
+          <ScalarProperty Name="Sales_Person" ColumnName="Sales Person" />
+          <ScalarProperty Name="Shipping_City" ColumnName="Shipping City" />
+          <ScalarProperty Name="Shipping_State" ColumnName="Shipping State" />
+          <ScalarProperty Name="Shipping_Country_Id" ColumnName="Shipping Country Id" />
+          <ScalarProperty Name="Shipping_ZipCode" ColumnName="Shipping ZipCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quote_Items">
+      <EntityTypeMapping TypeName="SalesModuleModel.Quote_Items">
+        <MappingFragment StoreEntitySet="Quote_Items">
+          <ScalarProperty Name="Part_Id" ColumnName="Part Id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quote_Id" ColumnName="Quote Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routings">
+      <EntityTypeMapping TypeName="SalesModuleModel.Routing">
+        <MappingFragment StoreEntitySet="Routing">
+          <ScalarProperty Name="Step_Number" ColumnName="Step Number" />
+          <ScalarProperty Name="Setup_Time" ColumnName="Setup Time" />
+          <ScalarProperty Name="Quene_Time" ColumnName="Quene Time" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Work_Center_Id" ColumnName="Work Center Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Order">
+      <EntityTypeMapping TypeName="SalesModuleModel.Sales_Order">
+        <MappingFragment StoreEntitySet="Sales_Order">
+          <ScalarProperty Name="SO_Number" ColumnName="SO Number" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company Id" />
+          <ScalarProperty Name="Date_Required" ColumnName="Date Required" />
+          <ScalarProperty Name="Date_Requested" ColumnName="Date Requested" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping Address" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO Number" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Total_Value" ColumnName="Total Value" />
+          <ScalarProperty Name="Sales_Person" ColumnName="Sales Person" />
+          <ScalarProperty Name="Quote_Number" ColumnName="Quote Number" />
+          <ScalarProperty Name="Shipping_City" ColumnName="Shipping City" />
+          <ScalarProperty Name="Shipping_State" ColumnName="Shipping State" />
+          <ScalarProperty Name="Shipping_Country_Id" ColumnName="Shipping Country Id" />
+          <ScalarProperty Name="Shipping_ZipCode" ColumnName="Shipping ZipCode" />
+          <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Person">
+      <EntityTypeMapping TypeName="SalesModuleModel.Sales_Person">
+        <MappingFragment StoreEntitySet="Sales_Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipments">
+      <EntityTypeMapping TypeName="SalesModuleModel.Shipment">
+        <MappingFragment StoreEntitySet="Shipment">
+          <ScalarProperty Name="Shipment_Number" ColumnName="Shipment Number" />
+          <ScalarProperty Name="SO_Number" ColumnName="SO Number" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping Address" />
+          <ScalarProperty Name="Tracking_Number" ColumnName="Tracking Number" />
+          <ScalarProperty Name="Shipping_City" ColumnName="Shipping City" />
+          <ScalarProperty Name="Shipping_State" ColumnName="Shipping State" />
+          <ScalarProperty Name="Shipping_Country_Id" ColumnName="Shipping Country Id" />
+          <ScalarProperty Name="Shipping_ZipCode" ColumnName="Shipping ZipCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Invoiced" ColumnName="Invoiced" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SO_Items">
+      <EntityTypeMapping TypeName="SalesModuleModel.SO_Items">
+        <MappingFragment StoreEntitySet="SO_Items">
+          <ScalarProperty Name="Part_Id" ColumnName="Part Id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SO_Id" ColumnName="SO Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taxes">
+      <EntityTypeMapping TypeName="SalesModuleModel.Tax">
+        <MappingFragment StoreEntitySet="Tax">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UOMs">
+      <EntityTypeMapping TypeName="SalesModuleModel.UOM">
+        <MappingFragment StoreEntitySet="UOM">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Abbreviated_Name" ColumnName="Abbreviated Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SalesModuleModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="SalesModuleModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Calendar">
+      <EntityTypeMapping TypeName="SalesModuleModel.Work_Calendar">
+        <MappingFragment StoreEntitySet="Work_Calendar">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Calendar" ColumnName="Calendar" />
+          <ScalarProperty Name="No__of_Shifts" ColumnName="No. of Shifts" />
+          <ScalarProperty Name="Work_Center_Id" ColumnName="Work Center Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Center">
+      <EntityTypeMapping TypeName="SalesModuleModel.Work_Center">
+        <MappingFragment StoreEntitySet="Work_Center">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Setup_Time" ColumnName="Setup Time" />
+          <ScalarProperty Name="Move_Time" ColumnName="Move Time" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

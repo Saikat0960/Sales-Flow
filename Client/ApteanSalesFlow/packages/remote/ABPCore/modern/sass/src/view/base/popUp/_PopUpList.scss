@@ -1,0 +1,80 @@
+.abp-popup-list {
+    background: $abp-white;
+    box-shadow: $abp-box-shadow;
+    border: 1px solid $abp-grey;
+    border-width: 0px 1px 1px;
+}
+
+@media screen and (max-width: 500px) {
+    .abp-popup-list {
+        left: 8px;
+        top: 4px;
+    }
+}
+
+.abp-popup-list {
+    .abp-loadmask.loading-bars{
+        .bars {
+            div[class^="rect"] {
+                background-color: $abp-vivid-blue;
+            }
+        }
+    }
+}
+
+.abp-popup-list-hierarchy,
+.abp-popup-list-searched {
+    transition: color $abp-transition-duration $abp-transition-type;
+}
+
+.abp-popup-list-outer {
+    border-left: 4px solid $abp-white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: border $abp-transition-duration $abp-transition-type;
+}
+
+.abp-popup-list-searched, .abp-popup-list-hierarchy {
+    font-size: 14px;
+}
+
+.abp-popup-list-hierarchy {
+    color: $abp-grey;
+}
+
+.abp-popup-list-outer.abp-popup-item-highlight, .abp-popup-list-outer.x-item-selected {
+    border-left: 4px solid $abp-vivid-blue;
+    outline: none;
+
+    .abp-popup-list-hierarchy,
+    .abp-popup-list-searched {
+        color: $abp-vivid-blue;
+    }
+}
+
+@mixin abp-popup-list-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        .#{$theme} {
+            .abp-popup-list {
+                .abp-loadmask.loading-bars{
+                    .bars {
+                        div[class^="rect"] {
+                            background-color: $base-color;
+                        }
+                    }
+                }
+            }
+
+            .abp-popup-list-outer.abp-popup-item-highlight, .abp-popup-list-outer.x-item-selected {
+                border-left-color: $base-color;
+
+                .abp-popup-list-hierarchy,
+                .abp-popup-list-searched {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+@include abp-popup-list-theme();

@@ -1,0 +1,27 @@
+.rightpane {
+	z-index: 1000;
+	position: relative;
+	transition: width 500ms ease;
+
+	.x-panel-header-title {
+		color: $abp-deep-grey;
+	}
+	// border-left: 1px solid $abp-grey;
+
+	// .x-panel-body-default {
+	// 	background-color: $abp-background-grey;
+	// }
+
+	// This is used to style the title for the base RightPanePanel
+	// .x-panel-header-title-default {
+	// 	color: $abp-dark-grey;
+	// }
+
+	// .x-tab-bar-default {
+	// 	height: 0px;
+	// }
+	// .x-tab.x-tab-active.x-tab-default {
+	// 	border-color: transparent;
+	// 	background-color: transparent;
+	// }
+}

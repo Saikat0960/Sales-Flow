@@ -1,0 +1,88 @@
+﻿.help-container {
+	background-color: $white;
+	z-index: 4;
+}
+.help_aptean_logo {
+	margin-top: 40px;
+	background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+    background-image: url(ABPCore/img/Aptean_Logo-White.png);
+}
+.help_aptean_header {
+	margin: 10px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-image: url(ABPCore/img/Help_Banner.jpg);
+}
+.help_aptean_text {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-family: arial;
+	font-size: 1rem;
+	color: $abp-white;
+	text-align: center;
+}
+
+.x-btn.x-btn-default-small.link_link {
+	.x-btn-wrap {
+		.x-btn-text {
+			border-color: transparent;
+			background-color: transparent;
+		}
+	}
+	color: $abp-deep-grey;
+	cursor: pointer;
+	cursor: hand;
+	.x-btn-inner {
+		color: $abp-deep-grey;
+		font-size: 1rem;
+	}
+}
+.abphelptile-tilebody {
+	background: $abp-background-grey;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	margin: 15px 15px;
+	min-width: 260px;
+	box-shadow: 3px 3px 6px -3px $abp-shadow;
+}
+.abphelptile-title {
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid $abp-black;
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.abp-help-tile-container {
+	.x-autocontainer-innerCt {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		max-width: 900px;
+		padding: 0px 10px;
+		margin: auto;
+	}
+}
+
+@mixin abp-helpview-theme () {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        .#{$theme} {
+            .x-btn.x-btn-default-small.link_link.x-btn-over {
+        		color: $hover-color;
+        		background: transparent;
+        		.x-btn-inner {
+        			color: $hover-color;
+        		}
+        	}
+        }
+    }
+}
+@include abp-helpview-theme();

@@ -1,0 +1,120 @@
+// Grid Layout Styles for Treelist Ex: Dashboard Widget Picker
+// Transitions
+.x-treelist-tree-grid {
+    .x-treelist-item.x-treelistitem.x-treelist-item-leaf {
+        .x-treelist-item-wrap {
+            .x-treelist-item-text, .x-treelist-item-icon, .x-treelist-item-expander {
+                transition: color $abp-transition-duration $abp-transition-type;
+            }
+        }
+    }
+}
+// Aligns a treelist menus content into a 3 column grid
+.x-treelist-tree-grid {
+    // Collapsed
+    .x-treelist-item-collapsed {
+        .x-treelist-container {
+            height: 0px !important;
+        }
+        .icon-navigate-open {
+            transform: scaleY(-1);
+        }
+    }
+    // Expanded
+    .x-treelist-item-expanded {
+        .icon-navigate-close {
+            transform: scaleY(-1);
+        }
+    }
+    // Treelist Grid Menu Item Label
+    .x-treelist-root-container > .x-treelist-item > .x-treelist-row > .x-treelist-item-wrap {
+        position: relative;
+        // Icon
+        > .x-treelist-item-icon {
+            right: 0px;
+            left: auto;
+            transition: transform $abp-transition-duration $abp-transition-type;
+        }
+        // Text
+        > .x-treelist-item-text {
+            margin-left: 5px;
+        }
+        // Expander
+        // Hide sencha's default expander because :after content cannot be transitioned
+        .x-treelist-item-expander:after {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+    }
+    // Treelist Item Container - Grid layout
+    .x-treelist-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto !important;
+        transition: height 300ms ease;
+        .x-treelist-item {
+            // Width 33% makes grid 3 coloumns wide
+            width: 33%;
+            margin: 0;
+            .x-treelist-row {
+                border-width: 0px;
+                padding-left: 0;
+                padding-right: 0;
+                cursor: pointer;
+            }
+            &:last-child {
+                .x-treelist-row .x-treelist-item-wrap {
+                    margin: 5px 0;
+                    padding: 10px;
+                }
+            }
+        }
+        .x-treelist-item .x-treelist-row .x-treelist-item-wrap {
+            display: flex;
+            flex-direction: column;
+            margin: 5px 0px 0px;
+            padding: 10px 5px 0px;
+            margin-left: 0px !important; // to override sencha applied margin
+            .x-treelist-item-icon {
+                position: static;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 5px;
+                &:before {
+                    line-height: normal;
+                    font-size: 1.85em;
+                }
+            }
+            .x-treelist-item-text {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                white-space: normal;
+                max-width: 100%;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.x-treelist-item-shorthand{
+    visibility: hidden;
+    opacity: 0;
+    padding: 2px 4px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 4px;
+    display: none;
+}
+
+.show-shortcuts {
+    .x-treelist-item-shorthand{
+        visibility: visible;
+        opacity: 1;
+        display: inline-block;
+    }
+}

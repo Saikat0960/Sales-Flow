@@ -1,0 +1,99 @@
+@import './mixins/index';
+
+// Transitions
+.x-abptreelistitem {
+	.x-treelist-item-expander {
+		transition: transform $abp-transition-duration $abp-transition-type;
+	}
+}
+
+.x-abptreelistitem {
+	.x-treelist-row {
+		cursor: pointer;
+
+		.treelist-tool-peel-off {
+			position: absolute;
+			right: 0px;
+			opacity: 0;
+			text-decoration: none;
+		}
+
+		.treelist-tool-manage {
+			position: absolute;
+			right: 18px;
+			opacity: 0;
+
+			// Delay when the mouse is moved off the row, want this to be almost instant
+			transition: all 250ms ease 0ms;
+		}
+
+		&.x-treelist-row-over {
+			.treelist-tool-manage {
+				opacity: 0.35;
+
+				// Delay when the mouse is moved over the tree item, add a slight delay before showing to avoid flashing image when mouse travelling over the row item
+				transition-delay: 500ms;
+
+				&:hover {
+					opacity: 1;
+
+					// Quick transiation to bring the cog into highlight as the user is ready to click
+					transition-delay: 100ms;
+				}
+			}
+			.treelist-tool-peel-off {
+				opacity: 0.35;
+
+				// Delay when the mouse is moved over the tree item, add a slight delay before showing to avoid flashing image when mouse travelling over the row item
+				transition-delay: 200ms;
+
+				&:hover {
+					opacity: 1;
+
+					// Quick transiation to bring the window into highlight as the user is ready to click
+					transition-delay: 100ms;
+				}
+			}
+		}		
+	}
+	&.x-focused > .x-treelist-row > .x-treelist-item-wrap > .treelist-tool-peel-off {				
+				opacity: 1;
+				// Quick transiation to bring the window into highlight as the user is ready to click
+				transition-delay: 100ms;
+	}
+
+	.x-treelist-item-wrap {
+		display: flex;
+		align-items: center;
+	}
+
+	.x-treelist-item-tool	{
+		font-size: 16px;
+		color: $abp-white;
+		text-decoration: none;
+		opacity: 0.35;
+		width: 24px;
+		top: 0px;
+
+		transition: opacity 250ms ease 0ms;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.x-treelist-item-expander {
+		&:after {
+			content: $apteanico-mini-navigate-close;
+			//font-family: "apteanico-mini";
+		}
+	}
+	// Expanded
+	&.x-treelist-item-expanded {
+		> .x-treelist-row > .x-treelist-item-wrap > .x-treelist-item-expander {
+			transform: rotate(-180deg);
+		}
+	}
+}
+
+@include abp-swap-to-menu-item-dark();

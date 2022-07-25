@@ -1,0 +1,14 @@
+/* BEGIN Regular */
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $RobotoFontName, $FontVersion: $RobotoFontVersion, $FontType: "regular");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $RobotoFontName, $FontVersion: $RobotoFontVersion, $FontType: "regular");
+	font-weight: normal;
+	font-style: normal;
+}
+/* END Regular */

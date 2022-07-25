@@ -1,0 +1,48 @@
+{
+  "name": "ABPFonts",
+  "namespace": "ABP",
+  "format": "1",
+  "version": "3.2.0.134",
+  "compatVersion": "3.0.0",
+  "creator": "Aptean",
+  "summary": "Package wrapper for the font set - Aptean Icons",
+  "detailedDescription": "Package wrapper for the font set - Aptean Icons",
+  "type": "code",
+  "signatures": [
+    {
+      "name": "Aptean",
+      "uuid": "97a80ebd-3276-491f-bc34-c1bf47480914",
+      "created": "2020-09-09T21:24:06Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "B5VNW85Ff9A\u003d",
+      "signature": "q0rdutKZ6KZkCcOtNQS58qViM+r8nkAWctpLc+7vA4CemKEWqNL/ar78RaBpOX2ygChUXLtTOFrQ/9BqVVewvGApsjGT4HTKrLgcoFR9KUzeaWikziTVFqArA/DfHXBlGuM5rBIIaMWViNrbGgGut5mVMXkf/vlBBfsYdgEIIKogSt25DdkIN4vMFc58CwW/1fYPVtv8GQyyFH4gRJXRC3UzkaEGa4ypU2wQV2CjPhrmTlrJBwYwHKGH/NmpOvlDpk2rvikulQtXLZ02l+ssqMDEUwIHH8iIPu1Olu56OL48LqjAZwvFYMpetEVpLRaTGsIOj12BZgEVMx8o5YIlWw\u003d\u003d"
+    }
+  ],
+  "toolkit": "classic",
+  "theme": "theme-neptune",
+  "output": "${package.dir}/build",
+  "sass": {
+    "namespace": "ABP",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var/all.scss",
+      "${package.dir}/sass/var/apteanico-mini.scss",
+      "${package.dir}/sass/var/abpmaterial.scss"
+    ],
+    "src": [
+      "${package.dir}/sass/src",
+      "${package.dir}/sass/src/apteanico-mini.scss",
+      "${package.dir}/sass/src/abpmaterial.scss",
+      "${package.dir}/sass/src/aptean-fonts.scss"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides"
+  ],
+  "framework": "ext"
+}

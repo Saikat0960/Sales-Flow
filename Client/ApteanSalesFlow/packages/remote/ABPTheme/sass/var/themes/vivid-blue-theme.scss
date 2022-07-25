@@ -1,0 +1,41 @@
+// ABP Vivid Blue Theme Map (Default Theme)
+$vivid-blue-theme: (
+	base_color: $abp-vivid-blue,
+	secondary_color: $abp-green,
+	highlight_color: $abp-highlight-blue,
+	selected_color: $abp-selected-blue,
+	hover_color: $abp-hover-blue,
+	menu_item_border_top: true,
+
+	error_color: $strong-red,
+	error_selected_color: $strong-red-dark,
+	
+	//Traffic Light Colors
+	traffic_color_red: $abp-alert-red,
+	traffic_color_yellow: $abp-vivid-orange,
+	traffic_color_green: $abp-green,
+	// Toolbar icons
+	toolbartop_selected_color: $abp-highlight-blue,
+	toolbartop_hover_color: $abp-highlight-hover-blue,
+
+	// Accordion
+	accordion_header_hover_collapsed_border_color: darken($abp-navy, 2),
+	accordion_header_hover_collapsed_bg_color: darken($abp-navy, 2),
+	accordion_header_hover_open_border_color: $abp-hover-blue,
+	accordion_header_hover_open_bg_color: $abp-hover-blue,
+	accordion_header_open_border_color: $abp-vivid-blue,
+	accordion_header_open_bg_color: $abp-vivid-blue,
+	accordion_header_collapsed_border_color: $abp-navy,
+	accordion_header_collapsed_bg_color: $abp-navy,
+
+	// Container (top bar and nav menu)
+	container_menu_background: $abp-black, // rgb(148, 0, 86)
+	container_menu_text: $white,
+	container_menu_lighten: 15%,
+
+	container_contents_background: $abp-deep-grey,
+
+	container_headerbar_background: $background-grey-50,
+	container_headerbar_border: $abp-grey,
+	container_body_background: $abp-white
+);

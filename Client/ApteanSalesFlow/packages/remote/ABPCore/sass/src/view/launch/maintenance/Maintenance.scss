@@ -1,0 +1,206 @@
+﻿/**
+ * @private
+ * Styles for settings panel and select user panel, accessed from login.
+ */
+
+ .launch-canvas {
+
+    .login-form {
+
+        .settings-title {
+            font-size: 2em;
+            line-height: 2em;
+        }
+
+        // Server URLs dataview.
+        .settings-moreServerUrlsList {
+            background: white;
+
+            // TODO Colour the background of the items, as the keyboard is used to go up and down the list.
+ /*           .x-dataview-item.x-focused {
+                @extend x-grid-item-selected;
+            }
+*/
+        }
+        // Each line, comprising of a URL and a rubbish can.
+        .server-url-item {
+            padding: 5px 10px 5px 10px;
+            display: flex;
+            align-items: center;
+        }
+        // The URL.
+        .server-url {
+            display: inline-block;
+            overflow: hidden;
+            width: 85%;
+            word-wrap: break-word;
+            max-width: 85%;
+            vertical-align: top;
+            cursor: pointer;
+        }
+        // Rubbish can div.
+        .delete-item {
+            display: inline-block;
+            width: 15%;
+            max-width: 15%;
+            vertical-align: top;
+        }
+        // The rubbish can.
+        .delete-item-icon {
+            font-size: 1.4em; // Bigger rubbish can.
+            /* margin-left: 10px; */ // Push the can away from the URL text to its left.
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        .settings-moreServerUrls-button.x-btn {
+            .x-btn-wrap {
+                .x-btn-text {
+                    border-color: transparent;
+                    padding: 0px;
+                    .x-btn-inner {
+                        color: $abp-deep-grey;
+                        transition: color $abp-transition-duration $abp-transition-type;
+                    }
+                }
+            }
+            &.x-btn-over {
+                .x-btn-wrap {
+                    .x-btn-text {
+                        background-color: transparent;
+                        .x-btn-inner {
+                            color: $abp-hover-blue;
+                        }
+                    }
+                }
+            }
+            &.x-btn-pressing {
+                .x-btn-wrap {
+                    .x-btn-text {
+                        background-color: transparent;
+                        .x-btn-inner {
+                            color: $abp-selected-blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Server URLs expand/collapse button. Common styles for Classic and Modern.
+        .settings-moreServerUrls-button .x-btn-inner,
+        .settings-moreServerUrls-button .x-inner-el {
+            padding: 0px;
+            margin: 0px;
+            font-style: italic;
+            font-weight: normal;
+            background: transparent;
+        }
+        // Server URLs expand/collapse button. Classic.
+        .settings-moreServerUrls-button .x-btn-inner {
+                font-size: 1em;
+                color: inherit;
+                background: transparent;
+            }
+        // Server URLs expand/collapse button. Modern.
+        .settings-moreServerUrls-button .x-inner-el {
+                color: black;
+                background: transparent;
+                border: none;
+                padding-top: 5px;
+                padding-bottom: 3px;
+            }
+        .settings-moreServerUrls-button.x-btn, // Classic
+        .settings-moreServerUrls-button.x-button { // Modern
+			background: transparent;
+            line-height: 14px;
+		}
+        .settings-moreServerUrls-button.x-btn.x-btn-over,
+        .settings-moreServerUrls-button.x-btn.x-btn-focus {
+			color: $hover-blue;
+		}
+		.settings-moreServerUrls-button.x-btn.x-btn-pressed {
+			color: $selected-blue;
+        }
+        // The icon to the right of the text. Classic and Modern.
+		.settings-moreServerUrls-button .x-btn-icon-el,
+		.settings-moreServerUrls-button .x-icon-el {
+            padding-left: 5px;
+            padding-bottom: 0px;
+		}
+        // The icon to the right of the text. Modern.
+		.settings-moreServerUrls-button .x-icon-el {
+            color: $abp-black;
+        }
+
+        // Select user dataview
+        .selectuser-userList {
+            margin: 10px 0 0 0;
+            border: 1px solid; // Border for URL list.
+            background: $abp-white;
+        }
+        .selectuser-items {
+            padding: 0;
+            margin: 0;
+
+            // Each line, comprising of an user icon, user id, environment and a rubbish can.
+            .selectuser-item {
+                padding: 4px 6px 4px 6px;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                &.x-grid-item-selected{
+                    background-color: $abp-selected-blue;
+                    color: $abp-white;
+                    
+                    &.x-grid-item-over{
+                        background-color: $abp-hover-blue;
+                    }
+                }
+
+                &.x-grid-item-over{
+                    background-color: $abp-highlight-blue;
+                }
+                .delete-item {
+                    top: 4px;
+                }
+            }
+        }
+
+        // User iamge div.
+        .selectuser-image {
+            display: inline-block;
+            width: 15%;
+            max-width: 15%;
+            vertical-align: top;
+        }
+        // User image icon.
+        .selectuser-image-icon {
+            font-size: 2em; // Bigger icon.
+            margin-right: 10px; // Add space between icon and text.
+            cursor: pointer;
+        }
+        // User Photo
+        .user-photo {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            background-size: contain;
+            border-radius: 50%;
+            border: 1px solid $abp-deep-grey;
+        }
+        // The user info.
+        .user-info {
+            display: inline-block;
+            overflow: hidden;
+            width: 70%;
+            word-wrap: break-word;
+            max-width: 70%;
+            cursor: pointer;
+        }
+        .user-info-env {
+            font-size: 0.8em; // Enviroment info shown in smaller font.
+        }
+
+    }
+}

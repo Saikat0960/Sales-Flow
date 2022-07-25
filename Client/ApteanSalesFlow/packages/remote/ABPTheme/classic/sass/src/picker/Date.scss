@@ -1,0 +1,44 @@
+.x-datepicker-month {
+    .x-btn-wrap-default-small.x-btn-split-right:after {
+        color: inherit;
+    }
+    .x-btn.x-btn-default-small {
+        background-color: transparent;
+    }
+}
+
+@mixin abp-date-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-datepicker-today {
+                background-color: lighten($base-color, 20);
+            }
+            .x-datepicker-selected div.x-datepicker-date,
+            .x-monthpicker-item a.x-monthpicker-selected {
+                background-color: $base-color;
+            }
+            .x-datepicker-month {
+                .x-btn-wrap {
+                    .x-btn-text {
+                        background-color: transparent;
+                        border-color: transparent;
+                    }
+                }
+                .x-btn-over {
+                    .x-btn-wrap {
+                        .x-btn-text {
+                            .x-btn-inner {
+                                color: $base-color;
+                            }
+                            background-color: transparent;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-date-theme();

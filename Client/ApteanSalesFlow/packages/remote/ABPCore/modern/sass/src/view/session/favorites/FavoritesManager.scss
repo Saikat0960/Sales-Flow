@@ -1,0 +1,73 @@
+.favoritesmanager {
+    .x-toolbar {
+        background-color: $abp-white;
+    }
+    .x-toolbar-body-el.x-horizontal > .x-component:last-child {
+        margin-right: 5px;
+    }
+    .x-listswiperaccordion-wrapper {
+        background-color: $abp-background-grey !important;
+        .x-font-icon {
+            font-size: 1.5em;
+        }
+    }
+    .favoriteseditbutton {
+        .x-button-square {
+            border-right: 1px solid $abp-grey;
+        }
+    }
+}
+
+.favoriteseditbutton {
+    > .x-button-square {
+        border-right: 1px solid $abp-grey;
+    }
+}
+
+.favoriteseditbutton {
+    border-right: 1px solid $abp-grey;
+}
+
+.favoriteseditbutton .x-button-square {
+    border-right: 1px solid $abp-grey;
+}
+
+.favoriteseditpanel {
+    min-width: 270px;
+    border-top-width: 5px;
+    border-top-style: solid;
+
+    .x-panel-header-default .x-tool-tool-el {
+        font-size: 1.25em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .x-panel-header-title-default {
+        font-size: 1.2em;
+    }
+}
+
+.favorite-list-item {
+    display: flex;
+}
+
+.favorite-list-icon {
+    font-size: 1.5em;
+}
+
+.favorite-list-text {
+    font-size: 1.25em;
+    padding-left: 10px;
+}
+
+@mixin abp-favorites-edit-panel {
+	@each $theme, $map in $abp-themes {
+		.#{$theme} {
+			.favoriteseditpanel {
+				border-top-color: map-get($map, 'base_color');
+			}
+		}
+	}
+}
+@include abp-favorites-edit-panel();

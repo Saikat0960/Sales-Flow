@@ -1,0 +1,115 @@
+.x-segmented-button {
+    .x-btn.text,
+    .x-btn.text.icon {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 0 0 5px 0;
+        border-color: transparent;
+        .x-btn-inner, // button text
+        .x-btn-arrow-right:after { // menu icon
+            color: $abp-deep-grey;
+        }
+
+        // Hovered
+        &.x-btn-over {
+            .x-btn-inner, // button text
+            .x-btn-arrow-right:after { // menu icon
+                color: $abp-selected-blue !important;
+                background-color: transparent;
+                border-color: $abp-selected-blue;
+            }
+        }
+
+        // Pressed, Focused
+        &.x-btn-pressed,
+        &.x-btn-focused {
+            color: $abp-selected-blue;
+            background-color: transparent;
+            border-color: $abp-selected-blue;
+        }
+
+        // Disabled
+        &.x-btn-disabled {
+            background-color: transparent;
+        }
+    }
+}
+
+// Keyboard Mode
+.x-keyboard-mode {
+    .x-segmented-button {
+        .x-btn.text,
+        .x-btn.text.icon {
+            &.x-btn-focus {
+                color: $abp-selected-blue !important;
+                background-color: transparent;
+                border-color: $abp-selected-blue !important;
+            }
+        }
+    }
+}
+
+
+@mixin segemented-text-button-theme-mixin() {
+    @each $theme, $map in $abp-themes {
+
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-segmented-button {
+                .x-btn.text,
+                .x-btn.text.icon {
+                    background-color: transparent;
+                    .x-btn-inner, // button text
+                    .x-btn-arrow-right:after { // menu icon
+                        color: $abp-deep-grey;
+                    }
+
+                    // Hovered
+                    &.x-btn-over {
+                        background-color: transparent;
+                        border-color: $selected-color;
+                        .x-btn-inner, // button text
+                        .x-btn-arrow-right:after { // menu icon
+                            color: $selected-color;
+                        }
+                    }
+
+                    // Pressed, Focused
+                    &.x-btn-pressed,
+                    &.x-btn-focus {
+                        background-color: transparent;
+                        border-color: $selected-color;
+                        color: $selected-color;;
+                        .x-btn-inner, // button text
+                        .x-btn-arrow-right:after { // menu icon
+                            color: $selected-color;
+                        }
+                    }
+
+                    // Disabled
+                    &.x-btn-disabled {
+                        background-color: transparent;
+                        border-color: transparent;
+                    }
+                }
+            }
+            // Keyboard Mode
+            &.x-keyboard-mode {
+                .x-segmented-button {
+                    .x-btn.text,
+                    .x-btn.text.icon {
+                        &.x-btn-focus {
+                            background-color: transparent;
+                            border-color: $selected-color;;
+                            color: $selected-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include segemented-text-button-theme-mixin();

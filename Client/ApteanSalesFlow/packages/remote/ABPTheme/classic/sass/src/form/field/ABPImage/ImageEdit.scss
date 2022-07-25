@@ -1,0 +1,22 @@
+.abp-image {
+    &.abp-image-upload {
+        .x-btn-icon-el.icon-pencil {
+            position: absolute;
+            right: 33px; // garbage can icon width + 2px
+            bottom: -8px;
+        }
+        // Delete Icon
+        &:not(.new-image) {
+            .image-clear {
+                display: block;
+                visibility: visible;
+                position: absolute;
+                top: calc(100% - 26px) !important; // 31px = icon height
+                left: calc(100% - 31px) !important; // 31px = icon width
+                .x-btn-icon-el {
+                    font-size: 1.8em !important;
+                }
+            }
+        }
+    }
+}

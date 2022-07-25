@@ -1,0 +1,106 @@
+﻿@media screen and (orientation: portrait) {
+	.help_aptean_logo.help_aptean_logo_phone {
+		margin-top: 25px;
+		height: 30px;
+	}
+	.help_aptean_text.help_aptean_text_phone {
+		margin: 20px;
+		font-size: 0.95rem;
+	}
+}
+@media screen and (orientation: landscape) {
+	.help_aptean_logo.help_aptean_logo_phone {
+		margin-top: 10px;
+		height: 25px;
+	}
+	.help_aptean_text.help_aptean_text_phone {
+		margin: 10px;
+		font-size: 0.8rem;
+	}
+}
+.help_aptean_logo {
+	background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(ABPCore/img/Aptean_Logo-White.png);
+}
+.help_aptean_logo.help_aptean_logo_tablet {
+	height: 40px;
+	margin-top: 40px;
+}
+.help_aptean_text {
+	font-family: arial;
+	color: $abp-white;
+	text-align: center;
+}
+.help_aptean_text.help_aptean_text_tablet {
+	margin: 20px 20px 40px 20px;
+	font-size: 1rem;
+}
+.x-button.link_link {
+	font-size: 1rem;
+	color: $abp-deep-grey;
+	border: none;
+	.x-inner-el {
+		background: transparent;
+	}
+}
+.help_aptean_header {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(ABPCore/img/Help_Banner.jpg);
+}
+.help_aptean_header.help_aptean_header_phone {
+	margin-bottom: 10px;
+}
+.help_aptean_header.help_aptean_header_tablet {
+	margin: 10px;
+}
+.abphelptile-tilebody {
+	background: $abp-background-grey;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	box-shadow: 3px 3px 6px -3px $abp-shadow;
+}
+.abphelptile-tilebody_phone {
+	min-width: 160px;
+}
+.abphelptile-tilebody_tablet {
+	min-width: 260px;
+}
+.abphelptile-title {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid $abp-black;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.abp-help-tile-container {
+	.abp-help-tile-container-inner {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 0px 10px;
+		margin: auto;
+	}
+}
+.abp-help-tile-container.abp-help-tile-container_tablet {
+	.abp-help-tile-container-inner {
+		max-width: 900px;
+	}
+	.abphelptile-tilebody {
+		margin: 15px 15px;
+	}
+}
+.abp-help-tile-container.abp-help-tile-container_phone {
+	.abp-help-tile-container-inner {
+		max-width: 600px;
+	}
+	.abphelptile-tilebody {
+		margin: 10px 8px;
+	}
+}

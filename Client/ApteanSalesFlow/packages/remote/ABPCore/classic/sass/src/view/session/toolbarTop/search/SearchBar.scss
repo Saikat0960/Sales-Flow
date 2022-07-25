@@ -1,0 +1,27 @@
+@import '../../../base/popUp/PopUpList';
+
+.searchbar {
+	margin: 0px;
+	transition: background-color 300ms;
+}
+
+.searchbar.searchbaropen {
+	background: $abp-midnight-grey;
+}
+
+.searchbar-searchfield {
+	margin: 2px;
+
+	// override x- style to remove border from nav search field
+	.x-form-trigger-wrap {
+		border: 0px;
+	}
+}
+
+.searchbar {
+	.searchbar-searchfield{
+		.x-form-trigger {
+			padding-top: 3px;
+		}
+	}
+}

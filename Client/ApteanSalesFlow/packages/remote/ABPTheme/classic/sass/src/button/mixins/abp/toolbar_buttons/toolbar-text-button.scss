@@ -1,0 +1,80 @@
+// Toolbar Text Button Common Styles
+.x-toolbar .x-btn.text,
+.toolbar-menu-button.x-btn.text,
+.x-segmented-button .x-btn.text {
+    color: $abp-white;
+    .x-btn-arrow-right:after {
+        color: $abp-white;
+    }
+    &.x-btn-over {
+        background-color: $abp-hover-blue;
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+        background-color: $abp-selected-blue;
+    }
+    &.x-btn-disabled {
+        background-color: $abp-disabled-grey;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+    }
+}
+
+// Keyboard Mode
+.x-keyboard-mode {
+    .x-toolbar .x-btn.text,
+    .toolbar-menu-button.x-btn.text,
+    .x-segmented-button .x-btn.text {
+        &.x-focus {
+            background-color: $abp-hover-blue;
+        }
+    }
+}
+
+@mixin abp-toolbar-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-toolbar .x-btn.text,
+            .toolbar-menu-button.x-btn.text,
+            .x-segmented-button .x-btn.text {
+                background-color: $base-color;
+                .x-btn-arrow-right:after {
+                    color: $abp-white;
+                }
+                &.x-btn-over {
+                    background-color: $hover-color;
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+                    background-color: $selected-color;
+                }
+                &.x-btn-disabled {
+                    background-color: $abp-disabled-grey;
+                    color: $abp-nevada !important; 
+                    .x-btn-arrow:after {
+                        color: $abp-nevada !important;
+                    }
+                    .x-btn-icon, .x-btn-icon-el, .x-btn-inner{
+                        color: $abp-nevada !important;
+                    }
+                }
+            }
+
+            // Keyboard Mode
+            &.x-keyboard-mode {
+                .x-toolbar .x-btn.text,
+                .toolbar-menu-button.x-btn.text,
+                .x-segmented-button .x-btn.text {
+                    &.x-focus {
+                        background-color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-button-theme();

@@ -1,0 +1,67 @@
+.abp-markdown {
+    font-size: 13px; // TODO: Make this global default base font-size;
+    h1 {
+        font-weight: 400;
+        font-size: 2.5em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 2em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    h3 {
+        font-weight: 400;
+        font-size: 1.7em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    h4 {
+        font-weight: 400;
+        font-size: 1.4em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    h5 {
+        font-weight: 400;
+        font-size: 1.2em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    h6 {
+        font-weight: 400;
+        font-size: 1em;
+        margin: 10px 0;
+        line-height: normal;
+    }
+    p {
+        font-size: 1em;
+        margin: 10px 0;
+        // TODO: p tags want small, med, large
+        // small - 11classic / 12mobile
+        // medium - 13classic / 14mobile
+        // large - 16classic / 16mobile
+    }
+    a {
+        color: $abp-vivid-blue;
+    }
+    ul {
+        padding-inline-start: 30px;
+    }
+    ol {
+        padding-inline-start: 30px;
+    }
+    li {
+        font-size: 1em;
+    }
+    hr {}
+    blockquote {}
+    table {}
+    thead {}
+    tbody {}
+    tr {}
+    th {}
+    td {}
+}

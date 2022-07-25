@@ -1,0 +1,40 @@
+﻿.launch-canvas {
+	background-color: $deep-grey;
+	.x-panel-body-default {
+		background: transparent;
+	}
+
+    .btn-extra {
+        margin-bottom: 10px;
+    }
+
+    .settings-text {
+        text-align: center;
+    }
+}
+.sm-loading {
+    font-size: 0.8em;
+    font-family: 'arial';
+    text-align: center;
+    width: 300px !important;
+    margin: auto;
+}
+
+.delete-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    text-align: center;
+    line-height: 28px;
+}
+
+.server-url {
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    /* display: inline-block; */
+    box-sizing: border-box;
+    padding-right: 10%;
+    vertical-align: middle;
+}

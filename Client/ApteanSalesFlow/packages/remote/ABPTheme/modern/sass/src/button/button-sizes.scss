@@ -1,0 +1,54 @@
+// Button Sizes
+// Small Buttons
+
+$small-icon-font-size: 20px;
+$medium-icon-font-size: 24px;
+$large-icon-font-size: 28px;
+
+.x-button .x-icon-el:before {
+    font-size: inherit;
+}
+.x-button.small {
+    font-size: 12px;
+    .x-inner-el {
+        padding: 6px 8px;
+    }
+    .x-icon-el {
+        width: $small-icon-font-size;
+        height: $small-icon-font-size;
+        font-size: $small-icon-font-size;
+        &:before {
+            font-size: inherit;
+        }
+    }
+}
+// Medium Buttons
+.x-button.medium {
+    font-size: 14px;
+    .x-inner-el {
+        padding: 7px 9px;
+    }
+    .x-icon-el {
+        width: $medium-icon-font-size;
+        height: $medium-icon-font-size;
+        font-size: $medium-icon-font-size;
+        &:before {
+            font-size: inherit;
+        }
+    }
+}
+// Large Buttons
+.x-button.large {
+    font-size: 16px;
+    .x-inner-el {
+        padding: 8px 10px;
+    }
+    .x-icon-el {
+        width: $large-icon-font-size;
+        height: $large-icon-font-size;
+        font-size: $large-icon-font-size;
+        &:before {
+            font-size: inherit;
+        }
+    }
+}

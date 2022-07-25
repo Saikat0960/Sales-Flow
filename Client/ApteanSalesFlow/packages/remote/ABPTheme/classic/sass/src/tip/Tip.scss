@@ -1,0 +1,29 @@
+@include extjs-tip-ui(
+    $ui: 'default',
+    $ui-border-color: $abp-vivid-blue,
+    $ui-background-color: $abp-white,
+    $ui-body-color: $abp-deep-grey
+);
+
+@mixin abp-tooptip-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $highlight-color: map-get($map, 'highlight_color');
+
+        .#{$theme} {
+            .x-tip.x-tip-default {
+                border-color: $highlight-color;
+                height: 24px;
+                padding: 0 8px;
+                box-shadow: 2px 2px 10px -3px $abp-grey;
+
+                .x-tip-anchor {
+                    &.x-tip-anchor-top {
+                        border-bottom-color: $highlight-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-tooptip-theme();

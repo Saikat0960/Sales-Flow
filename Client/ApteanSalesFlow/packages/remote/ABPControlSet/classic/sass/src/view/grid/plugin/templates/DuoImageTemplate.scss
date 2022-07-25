@@ -1,0 +1,46 @@
+// DuoImage Template - Left Image, Right Header and Subheader
+.abp-ag-list-view,
+.abp-list-view {
+    .abp-list-view-template-duoImage {
+        .abp-list-view-cellColumn-0 {
+            flex-basis: 60px;
+            overflow: visible;
+        }
+        .abp-list-view-cellColumn-1 {
+            .abp-list-view-field-1 {
+                grid-column-start: 1;
+                -ms-grid-column: 1;
+                -ms-grid-row: 1;
+                grid-row: 1;
+                align-self: self-start;
+            }
+            .abp-list-view-field-2 {
+                grid-column-start: 1;
+                -ms-grid-column: 1;
+                -ms-grid-row: 2;
+                grid-row: 2;
+                align-self: self-start;
+            }
+            .abp-list-view-field-value-0 {
+                align-self: self-end;
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .abp-list-view-field-value-1 {
+                align-self: self-start;
+                font-size: 14px !important;
+                font-weight: 300 !important;
+                color: $abp-nevada;
+            }
+        }
+    }
+}
+
+.abp-panel-list-view.x-grouped {
+    .abp-list-view-template-duoImage {
+        img, .x-body-el.x-gridcell-body-el > div {
+            position: absolute;
+            left: -25px;
+        }
+    }
+}

@@ -1,0 +1,376 @@
+/* Primary Color Palette */
+$abp-yellow: #F7AE3A;
+$abp-deep-purple: #26235D;
+$abp-navy: #0B4B73;
+$abp-vivid-blue-old: #30ACDE; // replaced, but used in nav
+$abp-vivid-blue: #4996B7;
+$abp-lucid-blue: #30ACDE;
+$abp-sky-blue: #94D5EE;
+$abp-background-grey: #F3F3F3;
+$abp-background-lightgrey: #F9F9F9;
+$abp-background-grey-50: #F7F7F7;
+$abp-light-grey: #DAE4E8;
+$abp-grey: #9EAEB7;
+$abp-nevada: #59686C;
+$abp-dark-grey: #49575B;
+$abp-deep-grey: #33363A;
+
+/* Theme Colors */
+
+// Green
+$abp-green: #0B9B29;
+$abp-highlight-green: #BBE2C2;
+$abp-hover-green: #0A8924;
+$abp-selected-green: #056018;
+
+// Sierra
+$abp-sierra: #EC641F;
+$abp-highlight-sierra: #FCAF70;
+$abp-hover-sierra: #D8571E;
+$abp-selected-sierra: #BA4619;
+
+// Royal
+$abp-royal: #543A8D;
+$abp-highlight-royal: #B8A1E8;
+$abp-hover-royal: #3F2479;
+$abp-selected-royal: #2C1262;
+
+// Fire
+$abp-fire: #EF4545;
+$abp-highlight-fire: #FFC3C6;
+$abp-hover-fire: #C90813;
+$abp-selected-fire: #98010A;
+
+// Waves
+$abp-waves: #ED6454;
+$abp-highlight-waves: #A1C5E5;
+$abp-hover-waves: #46A9E0;
+$abp-selected-waves: #3D4F63;
+
+// Argent
+$abp-argent: #5FACE0;
+$abp-highlight-argent: #bcaa85; // #E7C758;
+$abp-hover-argent: #4998D3;
+$abp-selected-argent: #837048;
+$abp-dark-argent: #010304;
+
+// Coffee Shop
+$abp-coffee-shop: #164362;
+$abp-highlight-coffee-shop: #F65D4D;
+$abp-hover-coffee-shop: #003523;
+$abp-selected-coffee-shop: #F87645;
+
+$abp-dusk: #C44789;
+$abp-highlight-dusk: #84B4C6;
+$abp-hover-dusk: #6F468A;
+$abp-selected-dusk: #0076A0;
+
+/* Secondary Color Palette */
+$abp-teal: #008080;
+$abp-purple: #B97AE5;
+$abp-vivid-orange: #FF9100;
+
+/* Interaction Color Palette */
+$abp-selected-blue: #1F6D99;
+$abp-hover-blue: #0890BA;
+$abp-highlight-hover-blue: #4496B7;
+$abp-highlight-blue: #D2EAFF;
+$abp-alert-red: #C90813;
+
+//$abp-disabled-grey: #DAE2E5;
+$abp-disabled-grey: #EDEDED; // adjustment
+$abp-disabled-label-grey: rgba(51, 54, 58, 0.7);
+$abp-required-yellow: #FDFACD;
+$abp-midnight-grey: #05131C;
+$abp-shadow: $abp-dark-grey;
+$abp-box-shadow: 0px 4px 12px -6px $abp-shadow;
+
+
+/* Standard Palette */
+$abp-white: #FFFFFF;
+$abp-black: #000000;
+
+/* Nav Menu Levels */
+$abp-nav-level-0: $abp-black;
+$abp-nav-level-1: #313236;
+$abp-nav-level-2: #404248;
+$abp-nav-level-3: #5A5C62;
+$abp-nav-level-4: #74767E;
+$abp-nav-hover-vb: $abp-selected-blue;
+$abp-nav-hover-border-vb: $abp-vivid-blue-old;
+$abp-nav-hover-gr: $abp-selected-green;
+$abp-nav-hover-border-gr: $abp-green;
+$abp-nav-hover-si: $abp-selected-sierra;
+$abp-nav-hover-border-si: $abp-sierra;
+$abp-nav-hover-ry: $abp-selected-royal;
+$abp-nav-hover-border-ry: $abp-royal;
+
+/* Probably shouldn't use*/
+$abp-glowstick-in-bottle-of-mountain-dew: #5DFF5D;
+
+/* Base Font Family */
+$abp-base-font-family: roboto,
+"open sans",
+helvetica,
+arial,
+verdana,
+sans-serif;
+//$abp-base-font-icon-font-family: "apteanico-mini" !dynamic;
+
+/* Base Border */
+$abp-border-radius: 3px;
+
+/* Action Center Chart Colors */
+$abp-victoria: #4328B7;
+$abp-meadow: #21C042;
+$abp-radicalRed: #FF366C;
+$abp-california: #FF990A;
+$abp-cerulean: #12AEED;
+$abp-mauve: #B488FA;
+$abp-neptune: #00E5D3;
+$abp-viola: #B23875;
+
+/* Legacy Colors - search and destroy at a later date */
+/**
+* Strong Blue used as the primary color
+*/
+$strong-blue: #1284C7;
+
+$strong-blue-75: #41A3D6;
+$strong-blue-50: #7FC1E4;
+$strong-blue-25: #BFE0F1;
+
+// Deep Blue used as the dark primary color
+$deep-blue: #064963;
+$deep-blue-75: #4B667C;
+$deep-blue-50: #7C8A9D;
+$deep-blue-25: #B4BBC6;
+
+// Moderate Green
+$moderate-green: #87B840;
+$moderate-green-75: #A8D46E;
+$moderate-green-50: #C5E29E;
+$moderate-green-25: #DBE7BE;
+
+// Vivid Yellow
+$vivid-yellow: #F4D00C;
+$vivid-yellow-75: #F7DC48;
+$vivid-yellow-50: #F9E785;
+$vivid-yellow-25: #FCF3C2;
+
+// Background Grey
+$background-grey: #E0E0E0;
+$background-grey-50: #F3F3F3;
+
+// Color to use as the background for any list / table headers
+$listheader-grey: #969290;
+
+// Black
+$black-90: #333333;
+$black-80: #4E4E4E;
+$black-70: #606060;
+$black-60: #6D6E70;
+$black-50: #808080;
+$black-40: #999999;
+$black-30: #B3B3B3;
+$black-20: #E6E6E6;
+
+// Strong Red
+$strong-red: #D30505;
+$strong-red-dark: #A80404;
+
+// Green
+$green: #0B9444;
+$green-75: #47AE73;
+$green-50: #84C9A1;
+$green-25: #C2E4D0;
+
+// Vivid Orange
+$vivid-orange: #F7941E;
+$vivid-orange-75: #F9AE56;
+$vivid-orange-50: #FBC98E;
+$vivid-orange-25: #FDE4C7;
+
+// Magenta
+$magenta: #92278F;
+$magenta-75: #AD5DAB;
+$magenta-50: #C893C7;
+$magenta-25: #E4C9E3;
+
+
+/* Convenience Colors */
+
+// Black
+$black: #000000;
+
+// White
+$white: #FFFFFF;
+
+/* Transitions */
+$abp-transition-duration: 300ms;
+$abp-transition-duration-short: 200ms;
+$abp-modern-transition-duration: 100ms;
+$abp-transition-type: ease-in-out;
+
+/* Font Weights */
+$abp-font-thin: 100;
+$abp-font-lighter: 200;
+$abp-font-light: 300;
+$abp-font-normal: 400;
+$abp-font-thick: 500;
+$abp-font-thicker: 600;
+$abp-font-bold: 700;
+$abp-font-bolder: 800;
+$abp-font-boldest: 900;
+$abp-font-inherit: inherit;
+
+/* Font Sizes */
+$abp-font-form: 14px;
+$abp-panel-header-font: 16px;
+
+/*ABPCards*/
+$abp-card-header-padding: 10px;
+$abp-card-header-margin: 10px;
+$abpcard-header-text-position: 0 !important;
+$abp-card-header-bg-color: transparent;
+$abpcard-header-border: none;
+$abpcard-header-border-none: none !important;
+$abp-card-border-width: 2px;
+$abp-card-border-radius: 10px;
+$abp-card-border-style: none;
+$abpcard-box-shadow: 0px 1px 5px $abp-light-grey;
+
+/*
+* THIS SECTION ALLOWS THE ALLOWED STANDARD COLORS TO BE RETRIEVED FROM JS.
+* PLEASE ADD NEW BASE COLORS :) 
+*/
+
+.abp-standard-colors {
+  .abp-white {
+    color: $abp-white;
+  }
+
+  .abp-black {
+    color: $abp-black;
+  }
+
+  .abp-yellow {
+    color: $abp-yellow;
+  }
+
+  .abp-deep-purple {
+    color: $abp-deep-purple;
+  }
+
+  .abp-vivid-blue {
+    color: $abp-vivid-blue;
+  }
+
+  .abp-lucid-blue {
+    color: $abp-lucid-blue;
+  }
+
+  .abp-sky-blue {
+    color: $abp-sky-blue;
+  }
+
+  .abp-light-grey {
+    color: $abp-light-grey;
+  }
+
+  .abp-grey {
+    color: $abp-grey;
+  }
+
+  .abp-nevada {
+    color: $abp-nevada;
+  }
+
+  .abp-dark-grey {
+    color: $abp-dark-grey;
+  }
+
+  .abp-deep-grey {
+    color: $abp-deep-grey;
+  }
+
+  .abp-green {
+    color: $abp-green;
+  }
+
+  .abp-sierra {
+    color: $abp-sierra;
+  }
+
+  .abp-royal {
+    color: $abp-royal;
+  }
+
+  .abp-fire {
+    color: $abp-fire;
+  }
+
+  .abp-waves {
+    color: $abp-waves;
+  }
+
+  .abp-argent {
+    color: $abp-argent;
+  }
+
+  .abp-dusk {
+    color: $abp-dusk;
+  }
+
+  .abp-teal {
+    color: $abp-teal;
+  }
+
+  .abp-purple {
+    color: $abp-purple;
+  }
+
+  .abp-vivid-orange {
+    color: $abp-vivid-orange;
+  }
+
+  .abp-selected-blue {
+    color: $abp-selected-blue;
+  }
+
+  .abp-alert-red {
+    color: $abp-alert-red;
+  }
+
+  .abp-victoria {
+    color: $abp-victoria;
+  }
+
+  .abp-meadow {
+    color: $abp-meadow;
+  }
+
+  .abp-radicalRed {
+    color: $abp-radicalRed;
+  }
+
+  .abp-california {
+    color: $abp-california;
+  }
+
+  .abp-cerulean {
+    color: $abp-cerulean;
+  }
+
+  .abp-mauve {
+    color: $abp-mauve;
+  }
+
+  .abp-neptune {
+    color: $abp-neptune;
+  }
+
+  .abp-viola {
+    color: $abp-viola;
+  }
+}

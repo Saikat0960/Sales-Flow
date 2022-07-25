@@ -1,0 +1,176 @@
+@import './mixins/index';
+@import './Markdown.scss';
+@import './ABPImage/main.scss';
+@import './DisabledField.scss';
+@import './Checkbox.scss';
+
+.x-field,
+.x-form-checkboxgroup {
+
+    // Default Required Field Star
+    .abp-mandatory {
+        .x-form-item-label-text:after {
+            @include requiredStar($color: $abp-vivid-blue);
+        }
+    }
+
+    .abp-mandatory.x-form-item-label-right {
+        .x-form-item-label-text:after {
+            @include absoluteStar;
+        }
+    }
+
+    &.abp-read-only-link-field {
+        .x-form-trigger-wrap {
+            display: none;
+        }
+
+        .abp-read-only-link {
+            display: inherit; // Use inherited display
+        }
+    }
+
+    // Hide link by default
+    .abp-read-only-link {
+        text-decoration: none;
+        color: $abp-vivid-blue;
+        font-size: 14px;
+        font-weight: 400;
+        padding-left: 0;
+        width: auto;
+        display: none;
+    }
+
+    // Label
+    .x-form-item-label {
+        cursor: pointer;
+        position: relative;
+        padding-right: 14px;
+    }
+
+    // Invalid Field
+    &.x-form-invalid {
+        .x-form-item-label {
+            font-weight: 400;
+            color: $abp-alert-red;
+        }
+
+        .abp-mandatory {
+            .x-form-item-label-text:after {
+                color: $abp-alert-red;
+            }
+        }
+    }
+}
+
+// Linked label styling.
+.abp-mandatory.abp-linked-label.x-form-item-label-text:after {
+    @include requiredStar($color: $abp-vivid-blue);
+}
+
+.abp-mandatory.abp-linked-label.x-form-item-label-right.x-form-item-label-text:after {
+    @include absoluteStar;
+}
+
+// Linked label styling.
+.x-form-invalid-field.abp-mandatory.abp-linked-label.x-form-item-label-text {
+    font-weight: 400;
+    color: $abp-alert-red;
+}
+
+.x-form-invalid-field.abp-mandatory.abp-linked-label.x-form-item-label-text:after {
+    color: $abp-alert-red;
+}
+
+// Linked label is not a child of the x-field selector. Needs its own selectors and styling.
+.abp-linked-label.x-form-item-label {
+    cursor: pointer;
+    padding-right: 14px;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    position: relative;
+    line-height: normal;
+}
+
+@mixin abp-field-base-theme() {
+
+    @each $theme,
+    $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+
+            // Linked label styling.
+            .abp-mandatory.abp-linked-label.x-form-item-label-text:after {
+                @include requiredStar($color: $base-color);
+            }
+
+            .abp-mandatory.abp-linked-label.x-form-item-label-right.x-form-item-label-text:after {
+                @include absoluteStar;
+            }
+
+            // Linked label styling.
+            .x-form-invalid-field.abp-mandatory.abp-linked-label.x-form-item-label-text:after {
+                color: $abp-alert-red;
+            }
+
+            .x-field-default {
+
+                // Themed Required Field Star
+                .abp-mandatory {
+                    .x-form-item-label-text:after {
+                        @include requiredStar($color: $base-color);
+                    }
+                }
+
+                .abp-mandatory.x-form-item-label-right {
+                    .x-form-item-label-text:after {
+                        @include absoluteStar;
+                    }
+                }
+
+                &.x-form-invalid {
+                    .abp-mandatory {
+                        .x-form-item-label-text:after {
+                            color: $abp-alert-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include abp-field-base-theme();
+
+.abp-textdisplay {
+    .x-innerhtml {
+        white-space: pre-wrap;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.x-form-text-default {
+    /* adjusted for em's due to zoom levels causing issues and sub-pixel calculations resulting in missing borders - original setting was 5px 10px 4px, and based on font size of 14px */
+    padding: .265em .714em;
+    /* this is to provide a normalized override per UC 4505 */
+    font-size: $abp-font-form;
+    font-weight: $abp-font-normal;
+}
+
+.x-form-item-label-default {
+    /* this is to provide a normalized override per UC 4505 */
+    font-size: $abp-font-form;
+    font-weight: $abp-font-normal;
+}
+
+.x-form-trigger-wrap-default {
+    border-width: thin;
+    padding: 1px;
+}

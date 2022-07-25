@@ -1,0 +1,58 @@
+// ABPImage in Read Only Mode
+
+$default-placeholder-image: dynamic(url("ABPControlSet/img/temp_abpimage-empty-placeholder.png"));
+
+.abp-image {
+    &.x-containerfield.x-field {
+        padding: 0px;
+    }
+    
+    .x-label-el {
+        position: absolute;
+        z-index: 999;
+        text-shadow: 0px -1px white;     
+    }
+    .x-img.x-img-background {
+        background-size: cover;
+    }
+    // Placholder Image - "Click here to upload".
+    .placeholder-img-wrapper {
+        position: absolute;
+        height: 0;
+        width: 0;
+        .x-img-background {
+            background-image: $default-placeholder-image !important;
+        }
+        .x-img {
+            opacity: 0;
+        }
+    }
+    // if an image is "circle" or "oval"
+    .cropped {
+        border-radius: 100%;
+        &.oval.x-img.x-img-background {
+            background-size: cover;
+        }
+    }
+    .x-img {
+        opacity: 0;
+        &.loaded {
+            opacity: 1;
+            animation: fade-in 300ms 1; // fade-in keyframes found in ABPTheme/sass/src/mixins.scss
+        }
+    }
+    .abp-image-placeholder {
+        .x-innerhtml {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    // Clear Button
+    .image-clear {
+        display: none;
+        visibility: hidden;
+    }
+}

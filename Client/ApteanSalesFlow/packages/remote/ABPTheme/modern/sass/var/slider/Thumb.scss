@@ -1,0 +1,17 @@
+$thumb-height: 22px;
+$thumb-width: 22px;
+$thumb-box-shadow: 2px 1px 6px 0px $abp-grey;
+$thumb-background-color: $abp-lucid-blue;
+$thumb-pressed-background-color: $abp-lucid-blue;
+$thumb-hovered-background-color: $abp-lucid-blue;
+$thumb-disabled-background-color: $abp-grey;
+$thumb-icon: dynamic(null);
+$thumb-border-width: 1px;
+$thumb-border-radius: 12px;
+$thumb-border-style: solid;
+$thumb-border-color: $abp-vivid-blue;
+
+$thumb-toggle-off-ui: dynamic((
+    background-color: $abp-light-grey !important,
+    border-color: $abp-grey !important
+));

@@ -1,0 +1,65 @@
+// ListView Styles
+@import './templates/main.scss';
+
+// Styling applied for both the ag-grid and ext grid list views.
+.abp-ag-list-view,
+.abp-list-view {
+    .abp-list-view-cellColumn {
+        flex-grow: 1;
+        flex: 1;
+        padding: 4px;
+        overflow: hidden;
+        align-items: center;
+        display: -ms-grid;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: min-content;
+        .abp-list-view-field {
+            > tbody > tr {
+                width: 100%;
+                height: 100%;
+            }
+            width: 100%;
+            height: 100%;
+            grid-row-end: span 1;
+            grid-column-end: span 1;
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+            justify-content: center;
+        }
+        .abp-list-view-field-label {
+            white-space: pre !important;
+        }
+        .abp-list-view-field-label,
+        .abp-list-view-field-value {
+            display: block; // Stack cells.
+            white-space: normal;
+            text-overflow: ellipsis;
+        }
+        .abp-list-view-field-value {
+            min-height: 26px;
+        }
+    }
+    .abp-list-view-cellColumn:nth-last-child(2) {
+        flex-grow: 4;
+    }
+    .abp-list-view-cellColumn:last-child {
+        flex-grow: 2;
+        flex-basis: 100%;
+    }
+}
+// TODO: Make jumping stop and show the scrollbar.
+.abp-panel-list-view .x-grid-view {
+    overflow: overlay !important;
+}
+
+// List View Settings
+.abp-panel-list-view .abp-list-view-settings {
+    border-left-width: 0px !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 1px !important;
+    border-right-width: 1px !important;
+    border-color: $abp-grey !important;
+    border-style: solid;
+}

@@ -1,0 +1,55 @@
+.abp-notifications-category-panel {
+    border: none;
+    background-color: $abp-background-grey;
+
+    .x-panelheader {
+        background-color: $abp-white;
+        padding-left: 6px;
+
+        .x-text-el {
+            color: $abp-deep-grey;
+            font-weight: 300;
+            display: flex;
+        }
+
+        .x-tool .x-icon-el {
+    		font-size: 20px;
+    		width: 20px;
+    		height: 20px;
+        }
+
+        .x-tool-type-up:before {
+			font-family: 'apteanico-mini';
+            content: $apteanico-mini-navigate-open;
+        }
+
+        .x-tool-type-down:before {
+			font-family: 'apteanico-mini';
+            content: $apteanico-mini-navigate-close;
+        }
+    }
+    .x-panel-body-wrap-el {
+      margin-bottom: 5px;
+    }
+    .x-panel-body-el {
+        background-color: $abp-white !important;
+        &:not(.x-hidden-display) {
+
+        }
+    }
+}
+
+.notification-display {
+    .x-panel .x-panelheader-body-el {
+        border: none;
+    }
+}
+
+.abp-notifications-source-panel > .x-body-wrap-el > .x-body-el {
+    background-color: $abp-background-grey;
+
+    .abp-notifications-category-panel {
+        border: solid red 1px;
+        margin-bottom: 10px;
+    }
+}

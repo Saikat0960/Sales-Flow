@@ -1,0 +1,84 @@
+// Light Blue Menu Theme Styles Ex: Settings Page
+
+// Transitions
+.x-menu-lightblue {
+    transition: border-color $abp-transition-duration $abp-transition-type;
+}
+
+@mixin abp-lightblue-menu-item() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-menu-lightblue {
+                border-color: $base-color;
+            }
+        }
+    }
+}
+
+
+
+// $ui-padding
+// $ui-text-color
+// $ui-item-font-family
+// $ui-item-font-size
+// $ui-item-font-weight
+// $ui-item-height
+// $ui-item-border-width
+// $ui-item-cursor
+// $ui-item-disabled-cursor
+// $ui-item-active-text-color
+// $ui-item-active-border-color
+// $ui-item-background-gradient
+// $ui-item-active-border-radius
+// $ui-item-icon-size
+// $ui-glyph-color
+// $ui-glyph-font-size
+// $ui-glyph-opacity
+// $ui-item-active-glyph-color
+// $ui-item-checkbox-size
+// $ui-item-checkbox-glyph
+// $ui-item-checkbox-checked-glyph
+// $ui-item-checkbox-glyph-color
+// $ui-item-checkbox-group-glyph
+// $ui-item-checkbox-group-checked-glyph
+// $ui-item-checkbox-group-glyph-color
+// $ui-item-active-checkbox-group-glyph-color
+// $ui-item-active-checkbox-glyph-color
+// $ui-item-icon-background-position
+// $ui-item-icon-vertical-offset
+// $ui-item-text-vertical-offset
+// $ui-item-text-horizontal-spacing
+// $ui-item-icon-horizontal-spacing
+// $ui-item-arrow-horizontal-spacing
+// $ui-item-separator-margin
+// $ui-item-arrow-height
+// $ui-item-arrow-width
+// $ui-item-arrow-margin
+// $ui-item-arrow-glyph-color
+// $ui-item-active-arrow-glyph-color
+// $ui-item-arrow-glyph
+// $ui-item-arrow-glyph-rtl
+// $ui-item-disabled-opacity
+// $ui-component-margin
+// $ui-separator-border-color
+// $ui-separator-background-color
+// $ui-separator-size
+// $ui-scroller-width
+// $ui-scroller-height
+// $ui-scroller-border-color
+// $ui-scroller-border-width
+// $ui-scroller-top-margin
+// $ui-scroller-bottom-margin
+// $ui-scroller-cursor
+// $ui-scroller-cursor-disabled
+// $ui-scroller-opacity
+// $ui-scroller-opacity-over
+// $ui-scroller-opacity-pressed
+// $ui-scroller-opacity-disabled
+// $ui-scroller-glyph-color
+// $ui-scroller-top-glyph
+// $ui-scroller-bottom-glyph
+// $ui-classic-scrollers
+// $ui-item-arrow-top-offset

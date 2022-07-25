@@ -1,0 +1,34 @@
+// Toolbar Icon Button
+.x-toolbar {
+    .x-button.x-has-icon {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 0 0 3px 0;
+        border-color: transparent;
+        &.x-pressing {
+            border-color: $abp-selected-blue;
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon {
+    transition: border-color $abp-modern-transition-duration $abp-transition-type;
+}
+
+@mixin abp-toolbar-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-toolbar {
+                .x-button.x-has-icon {
+                    &.x-pressing {
+                        border-color: $selected-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-button-theme();

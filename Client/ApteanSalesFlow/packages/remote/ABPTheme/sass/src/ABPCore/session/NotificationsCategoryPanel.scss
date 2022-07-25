@@ -1,0 +1,31 @@
+.abp-notifications-category-panel {
+    .x-tool-after-title {
+        transition: transform $abp-transition-duration $abp-transition-type;
+    }
+    &.x-panel-expanded {
+        .x-tool-after-title {
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(-180deg);
+        }
+    }
+    &.x-panel-collapsed {
+        .x-tool-after-title {
+            transform: rotate(0deg);
+        }
+    }
+    .abp-notifications-unread-container {
+        margin: 0px;
+    }
+
+    .abp-notifications-history-container {
+        background-color: $abp-light-grey;
+        margin: 0px 5px 0px 0px;
+    }
+
+    .notifications-hideshow-history {
+        font-size: 10px;
+        padding: 0px 0px 0px 10px;
+        color: $abp-nevada;
+    }
+}

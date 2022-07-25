@@ -1,0 +1,12 @@
+// ABP Night Mode Theme Map
+$nightmode-theme: (
+	nightmode_class: 'aptean-theme-nightmode',
+	// Container
+	container_body_background: $abp-deep-grey,
+	container_body_text: $abp-light-grey,
+	container_rightpane_background: $abp-black,
+	container_rightpane_text: $abp-light-grey,
+	container_headerbar_background: $abp-midnight-grey,
+	container_headerbar_text: $abp-light-grey,
+	container_panel_border: $abp-dark-grey
+);

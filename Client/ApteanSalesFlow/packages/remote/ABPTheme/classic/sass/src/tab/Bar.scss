@@ -1,0 +1,61 @@
+@mixin abp-tabbar-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-tab-bar.x-tab-bar-horizontal.x-tab-bar-default-horizontal,
+            .x-tab-bar.x-tab-bar-plain.x-tab-bar-horizontal.x-tab-bar-default-horizontal {
+                border-bottom: 3px solid $base-color !important;
+            }
+            .x-tab.x-tab-default {
+                background: $selected-color;
+            }
+            .x-tab.x-tab-active.x-tab-default {
+                background: $base-color;
+            }
+
+            .x-tab-bar-plain .x-box-scroller-tab-bar-default {
+                color: $base-color;
+            }
+        }
+    }
+}
+@include abp-tabbar-theme();
+
+.x-tab-bar-plain .x-tab.x-tab-active.x-tab-default .x-tab-inner-default,
+.x-tab-bar-plain .x-tab.x-tab-default .x-tab-inner-default,
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default,
+.x-tab.x-tab-default .x-tab-inner-default {
+    color: $abp-white;
+}
+.x-tab.x-tab-active.x-tab-default .x-tab-icon-el,
+.x-tab.x-tab-default .x-tab-icon-el,
+.x-tab-bar-plain .x-tab.x-tab-active.x-tab-default .x-tab-icon-el,
+.x-tab-bar-plain .x-tab.x-tab-default .x-tab-icon-el {
+    color: $abp-white;
+    opacity: 1;
+}
+
+.x-tab-bar-body.x-tab-bar-body-default.x-box-layout-ct {
+    padding-top: 0px;
+}
+.x-tab-bar-horizontal > .x-tab-bar-body-default {
+    min-height: 36px;
+    padding: 0 4px;
+}
+.x-tab.x-tab-default {
+    border-top-left-radius: $abp-border-radius;
+    border-top-right-radius: $abp-border-radius;
+}
+.x-tab-bar-default {
+    background-color: transparent;
+}
+.x-tab-bar-plain .x-tab.x-tab-disabled.x-tab-default,
+.x-tab.x-tab-disabled.x-tab-default {
+    background: $abp-disabled-grey;
+    .x-tab-icon-el {
+        color: $abp-grey;
+        opacity: 1;
+    }
+}

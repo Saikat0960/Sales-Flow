@@ -1,0 +1,47 @@
+// Toolbar Icon Button
+.x-toolbar {
+    .x-button.x-has-icon.x-has-text.dark {
+        .x-inner-el {
+            .x-body-el {
+                .x-icon-el, .x-text-el {
+                    color: $abp-white;
+                }
+            }
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon.x-has-text.dark {
+    transition: border-color $abp-modern-transition-duration $abp-transition-type;
+    .x-inner-el {
+        .x-body-el {
+            .x-text-el {
+                transition: color $abp-modern-transition-duration $abp-transition-type;
+            }
+        }
+    }
+}
+
+@mixin abp-toolbar-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+
+        .#{$theme} {
+            .x-toolbar {
+                .x-button.x-has-icon.x-has-text.dark {
+                    &.x-pressing {
+                        .x-inner-el {
+                            .x-body-el {
+                                .x-icon-el, .x-text-el {
+                                    color: $highlight-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-button-theme();

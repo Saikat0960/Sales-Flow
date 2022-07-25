@@ -1,0 +1,20 @@
+.x-menuitem {
+    border-color: transparent;
+    border-width: 0 0 0 3px;
+    border-style: solid;
+    &.x-focused, &.x-active {
+        border-color: $abp-vivid-blue;
+        .x-body-el, .x-icon-el {
+            color: $abp-vivid-blue;
+            background-color: transparent;
+        }
+    }
+}
+
+// Transitions
+.x-menuitem {
+    transition: border-color $abp-modern-transition-duration $abp-transition-type;
+    .x-body-el, .x-icon-el {
+        transition: color $abp-modern-transition-duration $abp-transition-type;
+    }
+}

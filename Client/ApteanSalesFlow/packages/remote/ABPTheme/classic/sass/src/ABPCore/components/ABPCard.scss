@@ -1,0 +1,29 @@
+@include extjs-panel-ui($ui: 'abpcard',
+    $ui-header-background-color: $abp-card-header-bg-color,
+    $ui-header-border-style: $abp-card-border-style,
+    $ui-header-color: $abp-black,
+    $ui-header-font-weight: $abp-font-thick,
+    $ui-header-font-size: $abp-panel-header-font,
+    $ui-header-padding: $abp-card-header-padding,
+    $ui-border-width: $abp-card-border-width,
+    $ui-border-radius: $abp-card-border-radius,
+);
+
+/*This is a workaround to this class; Need to take a look at removing 
+This style from the ABPTheme. */
+
+.abpcard {
+    .x-panel-header-abpcard-horizontal {
+        padding: $abp-card-header-padding;
+        margin: $abp-card-header-margin;
+        top: $abpcard-header-text-position;
+        left: $abpcard-header-text-position;
+        right: $abpcard-header-text-position;
+        border: $abpcard-header-border-none;
+    }
+
+    .x-panel-abpcard .x-tool .a-tool-custom-unsafe .x-box-item .x-tool-default .x-tool-after-title {
+        box-shadow: $abpcard-box-shadow;
+    }
+}
+

@@ -1,0 +1,133 @@
+.x-button-menuitem.x-button.x-has-text, .x-button-menuitem.x-button.x-has-icon {
+    text-align: left;
+    border-width: 0 0 0 5px !important; // !important to override sencha's .no-border-tblr
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+    .x-body-el {
+        margin: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .x-inner-el {
+        background-color: transparent;
+        border-color: transparent;
+        border-width: 0;
+        color: $abp-deep-grey;
+    }
+    &.x-pressing {
+        background-color: transparent;
+        border-color: transparent;
+        .x-inner-el {
+            // background-color: transparent;
+            // border-color: transparent;
+        }
+    }
+    &.x-disabled {
+        .x-inner-el {
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+
+    &.x-btn-menu-active {
+        background-color: $abp-light-grey;
+        border-color: $abp-vivid-blue;
+        .x-icon-el {
+            transform: scaleY(-1);
+        }
+    }
+}
+//
+// Transitions
+.x-button-menuitem.x-button.x-has-text, .x-button-menuitem.x-button.x-has-icon {
+    transition: none;
+    // text-align: left;
+    // border-width: 0 0 0 5px !important; // !important to override sencha's .no-border-tblr
+    // border-style: solid;
+    // border-color: transparent;
+    // background-color: transparent;
+    .x-body-el {
+        // margin: 0;
+        // width: 100%;
+        // justify-content: space-between;
+    }
+    .x-inner-el {
+        // background-color: transparent;
+        // border-color: transparent;
+        // border-width: 0;
+        // color: $abp-deep-grey;
+    }
+    &.x-pressing {
+        .x-inner-el {
+            // background-color: transparent;
+            // border-color: transparent;
+        }
+    }
+    &.x-disabled {
+        .x-inner-el {
+            // background-color: transparent;
+            // border-color: transparent;
+        }
+    }
+
+    &.x-btn-menu-active {
+        // background-color: $abp-light-grey;
+        // border-color: $abp-vivid-blue;
+        .x-icon-el {
+            // transform: scaleY(-1);
+        }
+    }
+}
+//
+// Themed Menu Item Button
+@mixin abp-menuitem-button() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button-menuitem.x-button.x-has-text, .x-button-menuitem.x-button.x-has-icon {
+                // text-align: left;
+                // border-width: 0 0 0 5px !important; // !important to override sencha's .no-border-tblr
+                // border-style: solid;
+                // border-color: transparent;
+                // background-color: transparent;
+                .x-body-el {
+                    // margin: 0;
+                    // width: 100%;
+                    // justify-content: space-between;
+                }
+                .x-inner-el {
+                    // background-color: transparent;
+                    // border-color: transparent;
+                    // border-width: 0;
+                    // color: $abp-deep-grey;
+                }
+                &.x-pressing {
+                    background-color: transparent;
+                    border-color: transparent;
+                    .x-inner-el {
+                        // background-color: transparent;
+                        // border-color: transparent;
+                    }
+                }
+                &.x-disabled {
+                    .x-inner-el {
+                        // background-color: transparent;
+                        // border-color: transparent;
+                    }
+                }
+
+                &.x-btn-menu-active {
+                    background-color: $abp-light-grey;
+                    border-color: $base-color;
+                    .x-icon-el {
+                        // transform: scaleY(-1);
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-menuitem-button();

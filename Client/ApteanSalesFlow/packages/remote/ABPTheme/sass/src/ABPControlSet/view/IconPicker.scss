@@ -1,0 +1,49 @@
+.abp-icon-picker {
+    width: 192px;
+    height: 120px;
+    background-color: #fff;
+    border: none;
+    padding: 4px;
+}
+
+.abp-icon-picker-modern {
+    .x-listitem:not(.x-pinned) {
+        min-width: unset;
+        .x-listitem-inner-el {
+            padding: 4px 8px;
+        }
+    }
+}
+
+.abp-icon-picker-item {
+    width: 34px;
+    height: 34px;
+    border-width: 1px;
+    border-color: #fff;
+    border-style: solid;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 4px;
+
+    color: $abp-vivid-blue;
+
+    float: left;
+    text-decoration: none;
+}
+
+.abp-icon-picker-item:hover {
+    color: $abp-hover-blue;
+}
+
+.abp-icon-picker-selected {
+    color: $abp-selected-blue;
+    background-color: $abp-highlight-blue;
+    border: 1px solid $abp-selected-blue;
+}
+
+.abp-icon-picker-item-inner {
+    font-size: 24px;
+    line-height: 24px;
+
+    display: block;
+}

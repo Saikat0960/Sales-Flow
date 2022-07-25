@@ -1,0 +1,15 @@
+@import './mixins/index';
+
+@include abp-theme-option-radio();
+
+// Ensure background color of the radio only fills within the radio button.
+.x-form-radio,
+.x-form-radio-default {
+    border-radius: calc(100%);
+}
+
+.x-form-radio-default {
+    padding-top: 1px;
+    height: 19px;
+    line-height: 1.05;
+}

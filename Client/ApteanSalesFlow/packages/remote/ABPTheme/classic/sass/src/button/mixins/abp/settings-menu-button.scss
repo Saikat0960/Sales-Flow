@@ -1,0 +1,178 @@
+// Settings Menu Item Button
+.x-btn {
+    &[class*=x-btn-menuitem] {
+        border-width: 0 0 0 3px;
+        .x-btn-button {
+            display: flex;
+            justify-content: space-between;
+            line-height: normal;
+            font-weight: 400;
+        }
+        &.x-btn-menu-active, &.x-btn-pressed {
+            border-color: $abp-vivid-blue;
+            .x-btn-icon-el {
+                transform: scaleY(-1);
+            }
+        }
+
+        .x-btn-wrap {
+            .x-btn-text {
+                border-color: $abp-background-grey;
+                border-width: 0 0 0 5px;
+                background-color: transparent;
+                color: $abp-background-grey;
+                .x-btn-inner {
+                    color: $abp-deep-grey;
+                }
+            }
+        }
+
+        &.x-btn-over {
+            border-color: $abp-vivid-blue;
+            background-color: desaturate(lighten($abp-vivid-blue, 45%), 30%);
+        }
+
+        &.x-btn-focus {
+            border-color: $abp-vivid-blue;
+            background-color: desaturate(lighten($abp-vivid-blue, 45%), 30%);
+        }
+
+        &.x-btn-pressed, &.x-btn-menu-active {
+            border-color: $abp-vivid-blue;
+            background-color: $abp-light-grey;
+        }
+        &.x-btn-over, &.x-btn-menu-active, &.x-btn-pressed {
+            .x-btn-wrap {
+                .x-btn-text:not(.x-btn-icon) {
+                    border-color: $abp-vivid-blue;
+                }
+                .x-btn-icon-el {
+                    color: $abp-deep-grey;
+                }
+            }
+        }
+    }
+}
+
+.x-keyboard-mode {
+    .x-btn {
+        &[class*=x-btn-menuitem] {
+            &.x-btn-focus {
+                border-color: desaturate(lighten($abp-vivid-blue, 45%), 30%);;
+                background-color: desaturate(lighten($abp-vivid-blue, 45%), 30%);;
+                .x-btn-wrap {
+                    .x-btn-text:not(.x-btn-icon) {
+                        border-color: $abp-vivid-blue;
+                    }
+                    .x-btn-icon-el {
+                        color: $abp-deep-grey;
+                    }
+                    .x-btn-text {
+                        background-color: transparent;
+                    }
+                }
+            }
+            /* &.x-btn-pressed, &.x-btn-menu-active {
+                border-color: $abp-vivid-blue;
+                background-color: $abp-light-grey;
+            } */
+        }
+    }
+}
+
+.x-btn-wrap-default-toolbar-small.x-btn-split-right:after, .x-btn-wrap-default-toolbar-medium.x-btn-split-right:after {
+    color: $abp-deep-grey;
+    font-size: 0.9em;
+}
+
+.x-btn-wrap-default-toolbar-small.x-btn-arrow-right:after, .x-btn-wrap-default-toolbar-medium.x-btn-arrow-right:after {
+    color: $abp-deep-grey;
+    font-size: 0.9em;
+}
+
+// Transitions
+.x-btn {
+    &[class*=x-btn-menuitem] {
+        .x-btn-wrap {
+            .x-btn-text {
+                transition: background-color $abp-transition-duration $abp-transition-type,
+                            border-color $abp-transition-duration $abp-transition-type;
+            }
+        }
+    }
+}
+
+@mixin abp-menu-item-button() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: desaturate(lighten(map-get($map, 'hover_color'), 45%), 30%);
+        $selected-color: desaturate(lighten(map-get($map, 'selected_color'), 45%), 30%);
+
+        .#{$theme} {
+            .x-btn {
+                &[class*=x-btn-menuitem] {
+                    background-color: transparent;
+                    &.x-btn-pressed, &.x-btn-menu-active {
+                        border-color: $base-color;
+                        background-color: $abp-light-grey;
+                        .x-btn-wrap {
+                            .x-btn-text {
+                                background-color: transparent;
+                                border-color: $base-color;
+                            }
+                        }
+                    }
+                    &.x-btn-over {
+                        border-color: $base-color;
+                        background-color: $hover-color;
+                        .x-btn-wrap {
+                            .x-btn-text {
+                                background-color: transparent;
+                                border-color: $hover-color;
+                            }
+                        }
+                    }
+
+                    &.x-btn-focus {
+                        border-color: $base-color;
+                        background-color: $hover-color;
+                        .x-btn-wrap {
+                            .x-btn-text:not(.x-btn-icon) {
+                                border-color: $hover-color;
+                            }
+                            .x-btn-icon-el {
+                                color: $abp-deep-grey;
+                            }
+                            .x-btn-text {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.x-keyboard-mode {
+                .x-btn {
+                    &[class*=x-btn-menuitem] {
+                        &.x-btn-focus {
+                            border-color: $base-color;
+                            background-color: $hover-color;
+                            .x-btn-wrap {
+                                .x-btn-text:not(.x-btn-icon) {
+                                    border-color: $hover-color;
+                                }
+                                .x-btn-icon-el {
+                                    color: $abp-deep-grey;
+                                }
+                                .x-btn-text {
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-menu-item-button();

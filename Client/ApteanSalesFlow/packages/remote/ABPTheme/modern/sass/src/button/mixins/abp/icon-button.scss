@@ -1,0 +1,37 @@
+// Icon Button
+.x-button.x-has-icon {
+    background-color: transparent;
+    .x-inner-el {
+        .x-icon-el {
+            color: $abp-deep-grey;
+            height: unset;
+            width: unset;
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon {
+    .x-inner-el {
+        .x-icon-el {
+            transition: color $abp-modern-transition-duration $abp-transition-type;
+        }
+    }
+}
+
+@mixin abp-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button.x-has-icon.x-pressing {
+                .x-inner-el {
+                    .x-icon-el {
+                        color: $selected-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-icon-button-theme();

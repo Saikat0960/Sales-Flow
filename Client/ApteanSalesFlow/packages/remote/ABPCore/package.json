@@ -1,0 +1,72 @@
+{
+  "name": "ABPCore",
+  "namespace": "ABPCore",
+  "format": "1",
+  "version": "3.1.0.1375",
+  "compatVersion": "3.0.0",
+  "creator": "Aptean",
+  "summary": "ABP Core Container",
+  "detailedDescription": "ABP Core Container",
+  "type": "code",
+  "requires": [
+    "ABPControlSet@3.1.0.1375",
+    "package-loader"
+  ],
+  "signatures": [
+    {
+      "name": "Aptean",
+      "uuid": "97a80ebd-3276-491f-bc34-c1bf47480914",
+      "created": "2020-08-13T09:39:09Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "60+imkflGjg\u003d",
+      "signature": "JBQNH1X0s7VlgvyUljuX78a2WHIsXrJZmKvTYOJ05kiaUqiiK6i82djTxvGEESDFXhDblmrMxybSZRyrpIce6dhbJKR/9CtsipCC4jpJy7IRc7rkzTMRTHTeQJvp6iNGpxAke/COJmRUo+8vnFF8ucuCkl6gkTPsPZxUCpoSxDHn8TslpVIPoiLQE8MyK+nXuwyI+/vVi0iG3P0LYPzAvnNrzmeZ7LqAATIsT+TBnwE3wSSKup17aBSHXaYYsyTxwk1ooY5Ud3ljjy+OpJ0LFFP68J6OEt7jjURyRrPOTFydO98Mz6EoVx3f2YUkJMMBGVZ5pSIxaKugcwiihL78BQ\u003d\u003d"
+    }
+  ],
+  "js": [
+    {
+      "path": "resources/js/jwt_decode.js"
+    },
+    {
+      "path": "resources/js/webtoolkit.sha256.js"
+    },
+    {
+      "path": "resources/js/msal.min.js"
+    }
+  ],
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "builds": {
+    "classic": {
+      "toolkit": "classic",
+      "requires": [
+        "ABPTheme@3.1.0.1375"
+      ]
+    },
+    "modern": {
+      "toolkit": "modern",
+      "requires": [
+        "ABPTheme@3.1.0.1375"
+      ]
+    }
+  },
+  "output": "${package.dir}/${toolkit.name}/build",
+  "sass": {
+    "namespace": "ABP",
+    "etc": "${package.dir}/sass/etc/all.scss,${package.dir}/${toolkit.name}/sass/etc/all.scss",
+    "var": "${package.dir}/sass/var,${package.dir}/${toolkit.name}/sass/var",
+    "src": "${package.dir}/sass/src,${package.dir}/${toolkit.name}/sass/src"
+  },
+  "classpath": "${package.dir}/src,${package.dir}/${toolkit.name}/src",
+  "overrides": "${package.dir}/overrides,${package.dir}/${toolkit.name}/overrides",
+  "example": {
+    "path": [
+      "${package.dir}/examples"
+    ]
+  }
+}

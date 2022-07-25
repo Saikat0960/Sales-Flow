@@ -1,0 +1,91 @@
+// DuoImage Template Styles
+.abp-panel-list-view {
+    .abp-list-view > .x-list-outer-ct {
+        .abp-list-view-template-duoImage {
+            .x-cells-el{
+                align-items: center;
+                display: flex;
+            }
+
+            // Image Cell
+            .abp-list-view-cellColumn-0 {
+                flex-grow: unset;
+                .abp-list-view-field {
+                    width: 50px;
+                    height: 50px;
+                    max-width: 50px;
+                    max-height: 50px;
+                    border-radius: 50px;
+                    padding: 0px;
+                    overflow: hidden;
+                    .abp-list-view-field-value {
+                        .x-gridcell {
+                            width: 50px;
+                            height: 50px;
+                            max-width: 50px;
+                            max-height: 50px;
+                        }
+                        .x-gridcell-body-el {
+                            padding: 0px;
+                            font-weight: bold;
+                            text-align: center;
+                            font-size: 1.5em;
+                            color: $abp-white;
+                        }
+                        border-radius: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50px;
+                        height: 50px;
+                        max-width: 50px;
+                        max-height: 50px;
+                        position: absolute;
+                        background-color: $base-color;
+                        &.loaded {
+                            background-color: transparent;
+                            border-radius: 100%;
+                        }
+                        [id*=abpimagecell] > .x-body-el {
+                            height: 100%;
+                            width: 100%;
+                        }
+                        [id*=abpimagecell] > .x-body-el > div {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 100%;
+                            overflow: hidden;
+                            img {
+                                max-width: 100%;
+                                max-height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            // Image Cell
+            .abp-list-view-cellColumn.abp-list-view-cellColumn-0 {
+                .x-gridcell-body-el {
+                    overflow: visible;
+                }
+            }
+            .abp-list-view-field-value {
+                min-height: unset;
+            }
+            .abp-list-view-cellColumn-1 {
+                .abp-list-view-field-1 {
+                    color: $abp-deep-grey;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                .abp-list-view-field-2 {
+                    color: $abp-nevada;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

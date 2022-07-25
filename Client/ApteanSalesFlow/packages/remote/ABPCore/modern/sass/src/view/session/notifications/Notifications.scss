@@ -1,0 +1,148 @@
+// Modern stylings for Notifications Panels
+.notification-display {
+    padding: 0px 10px 10px 10px;
+
+    // Remove border on the drawer when expanding/collapsing
+    .x-root.x-floating {
+        .x-panelheader {
+            border: none;
+        }
+    }
+}
+
+.abp-notifications-source-panel {
+    > div {
+        .x-panelheader {
+            & > .x-body-el {
+                padding-right: 8px;
+            }
+        }
+    }
+
+    .x-panelheader {
+        background-color: $abp-background-grey;
+        & > .x-body-el {
+            padding: 0px;
+            .x-paneltitle > .x-body-el {
+                width: 100%;
+            }
+        }
+
+        .x-text-el {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            color: $abp-midnight-grey;
+            font-weight: 300;
+
+            .abp-notification-panel-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                display: inline-block;
+            }
+
+            .abp-notification-panel-count {
+                display: flex;
+                justify-content: center;
+                > span {
+                    padding: 0 1px;
+                    font-weight: 700;
+                }
+            }
+
+            .abp-notification-panel-badge {
+                width: auto;
+                min-width: 16px;
+                height: 17px;
+                line-height: 18px;
+                border-radius: 8px;
+                padding: 0px 3px 0 2px;
+                font-size: 10px;
+                font-weight: 300;
+                white-space: nowrap;
+                text-align: center;
+                margin-left: 4px;
+            }
+
+            .abp-notification-panel-flag {
+                margin: 0 0 0 auto;
+                font-size: 10px;
+                font-weight: 800 !important;
+
+                &:before {
+                    font-family: "apteanico-mini";
+                    font-size: 18px;
+                    content: $apteanico-mini-signal-flag;
+                }
+
+                &.abp-notification-flagged-only:before{
+                    content: $apteanico-mini-flag-filled;
+                }
+            }
+        }
+
+        .x-button .x-icon-el {
+  			font-size: 20px;
+  			width: 20px;
+  			height: 20px;
+        }
+
+        .x-tool-type-up:before {
+			font-family: 'apteanico-mini';
+            content: $apteanico-mini-navigate-open;
+        }
+
+        .x-tool-type-down:before {
+			font-family: 'apteanico-mini';
+            content: $apteanico-mini-navigate-close;
+        }
+    }
+}
+
+@mixin abp-notifications-theme-mixin() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+        .#{$theme} {
+            .abp-notifications-source-panel {
+                .x-panelheader {
+                    .x-text-el {
+                        .abp-notification-panel-flag {
+                            color: $base-color;
+ 
+                            &.abp-notification-flagged-only{
+                                color: $selected-color;
+                            }
+                        }
+
+                        .abp-notification-panel-badge {
+                            background-color: $base-color;
+                            color: $abp-white;
+                        }
+                    }
+                }
+
+                .x-button.x-has-icon {
+                    .x-inner-el {
+                        .x-icon-el {
+                            color: $base-color;
+                        }
+                        
+                    }
+                }  
+
+                .x-panel-body-el{
+                    .icon-flag-filled{
+                        color: $base-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-notifications-theme-mixin();

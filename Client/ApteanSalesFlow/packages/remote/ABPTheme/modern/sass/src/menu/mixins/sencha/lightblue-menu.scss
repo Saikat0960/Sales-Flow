@@ -1,0 +1,9 @@
+// Light Blue Menu Base Styles Ex: Settings Page
+
+@include menu-ui(
+    $ui: 'lightblue',
+    $background-color: $abp-light-grey,
+    $border-color: $abp-vivid-blue,
+    $border-style: solid,
+    $border-width: 0px 0px 0px 5px
+);

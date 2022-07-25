@@ -1,0 +1,14 @@
+/* BEGIN Regular */
+@font-face {
+	font-family: 'Open Sans';
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $OpenSansFontName, $FontVersion: $OpenSansVersion, $FontType: "regular");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans';
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $OpenSansFontName, $FontVersion: $OpenSansVersion, $FontType: "regular");
+	font-weight: normal;
+	font-style: normal;
+}
+/* END Regular */

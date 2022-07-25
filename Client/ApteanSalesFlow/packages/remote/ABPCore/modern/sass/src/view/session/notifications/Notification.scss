@@ -1,0 +1,17 @@
+/* Classic Styles for each individual notification */
+.abp-notification {
+    .abp-notification-label {
+        line-height: 22px;
+
+        .x-innerhtml {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .abp-notification-link {
+        .x-inner-el {
+            padding: 0px;
+        }
+    }
+}

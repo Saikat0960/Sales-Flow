@@ -1,0 +1,131 @@
+// Ext.tab.Bar Theme Overrides
+.x-tabbar .x-tab .x-inner-el {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+// UI For Transparent tabs (used for right pane top toolbar)
+@include tabbar-ui (
+    $ui: 'transparent',
+    $background-color: $abp-background-grey,
+    $border-width: 0px 0px 1px 0px !important,
+    $border-style: solid,
+    $border-color: $abp-grey,
+    $padding: 0px,
+    $horizontal-spacing: 0px
+);
+
+.x-tabbar-transparent-body-el {
+    > .x-tab.x-button {
+        border-style: solid;
+        border-width: 0 0 3px 0;
+        border-color: transparent;
+        transition: border-color $abp-modern-transition-duration $abp-transition-type;
+        min-width: 60px;
+        color: $abp-dark-grey;
+        .x-inner-el {
+            background-color: transparent;
+            .x-body-el {
+                .x-icon-el {
+                    width: 20px;
+                    height: 20px;
+                    color: $abp-deep-grey;
+                    transition: color $abp-modern-transition-duration $abp-transition-type;
+                    &:before {
+                        font-size: 20px;
+                    }
+                }
+                .x-text-el {
+                    font-size: 15px;
+                    transition: color $abp-modern-transition-duration $abp-transition-type;
+                }
+            }
+        }
+        // Circle Around Initials
+        &.x-has-text {
+            .x-body-el {
+                border-color: $abp-dark-grey;
+                transition: border-color $abp-modern-transition-duration $abp-transition-type;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                .x-text-el {
+                    color: $abp-deep-grey;
+                }
+            }
+            &.x-active {
+                .x-body-el {
+                    border-color: $abp-vivid-blue;
+                }
+            }
+            .x-inner-el {
+                padding: 3px;
+            }
+        }
+        &.x-active {
+            border-color: $abp-vivid-blue;
+
+            // Override buttons as the seem to be setting color on focus but not active
+            .x-inner-el {
+                background-color: transparent;
+                .x-body-el {
+                    .x-icon-el {
+                        color: $abp-vivid-blue;
+                    }
+                    .x-text-el {
+                        color: $abp-vivid-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Themed Transparent Tabs Tab Panel
+@mixin abp-transparent-tabs-panel-tab-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-tabbar-transparent-body-el > .x-tab.x-button.x-active {
+                color: $base-color;
+                border-color: $base-color;
+
+                .x-inner-el {
+                    .x-body-el {
+                        .x-icon-el {
+                            color: $base-color;
+                        }
+                        .x-text-el {
+                            color: $base-color;
+                        }
+                    }
+                }
+                &.x-has-text {
+                    .x-inner-el {
+                        .x-body-el {
+                            border-color: $base-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-transparent-tabs-panel-tab-theme();
+
+// Themed Tab Bar
+@mixin abp-tabbar-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-tabbar:not(.x-tabbar-transparent) {
+                border-color: $base-color;
+            }
+        }
+    }
+}
+@include abp-tabbar-theme();

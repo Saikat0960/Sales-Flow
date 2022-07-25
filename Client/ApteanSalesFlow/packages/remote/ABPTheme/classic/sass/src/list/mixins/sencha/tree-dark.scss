@@ -1,0 +1,49 @@
+// Tree Dark - Ex: Main Menu
+$transition: background-color $abp-transition-duration $abp-transition-type, border-color $abp-transition-duration $abp-transition-type;
+@include treelist-ui(
+    $ui: 'ABPTreeList',
+    $background-color: $abp-black,
+    $tool-selected-background-color: $abp-black,
+    $item-expanded-background-color: $abp-black,
+    $item-icon-color: $abp-white,
+    $item-icon-font-size: 18px,
+    $item-expander-color: $abp-white,
+    $item-expander-font-size: 16px,
+    $item-text-color: $abp-white,
+    $row-selected-background-color: $abp-black,
+    $row-selected-over-background-color: $abp-selected-blue,
+    $row-over-background-color: $abp-selected-blue,
+    $row-over-transition: $transition
+);
+// $padding
+// $toolstrip-background-color
+// $tool-float-indicator-color
+// $tool-float-indicator-width
+// $tool-selected-color
+// $tool-indicator-selected-color
+// $tool-indicator-selected-width
+// $item-expanded-child-background-color
+// $item-line-height
+// $item-line-height-big
+// $item-selected-background-color
+// $item-icon-font-size-big
+// $item-icon-width
+// $item-icon-width-big
+// $item-expander-over-color
+// $item-icon-over-color
+// $item-expander-font-size-big
+// $item-expander-width
+// $item-expander-width-big
+// $item-expander-glyph
+// $item-expander-expanded-glyph
+// $item-text-icon-gap
+// $item-text-over-color
+// $item-text-font-size
+// $item-text-overflow
+// $item-icon-over-transition
+// $item-text-over-transition
+// $item-expander-over-transition
+// $row-indicator-selected-color
+// $row-indicator-selected-over-color
+// $row-indicator-over-color
+// $row-indicator-width

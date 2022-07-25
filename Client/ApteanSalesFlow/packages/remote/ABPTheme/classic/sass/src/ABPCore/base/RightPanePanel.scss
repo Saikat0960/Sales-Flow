@@ -1,0 +1,9 @@
+.abp-right-panel{
+    .x-panel-header{
+        transition: box-shadow 300ms;
+
+        &.abp-scrolled {
+            box-shadow: 0 0 12px -2px $abp-shadow;
+        }
+    }
+}

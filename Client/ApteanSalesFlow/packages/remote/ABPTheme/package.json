@@ -1,0 +1,69 @@
+{
+  "name": "ABPTheme",
+  "namespace": "Ext",
+  "format": "1",
+  "version": "3.2.0.134",
+  "compatVersion": "3.0.0",
+  "creator": "Aptean",
+  "summary": "Short summary",
+  "detailedDescription": "Long description of package",
+  "type": "theme",
+  "extend": "theme-triton",
+  "requires": [
+    "ABPFonts@3.2.0.134"
+  ],
+  "signatures": [
+    {
+      "name": "Aptean",
+      "uuid": "97a80ebd-3276-491f-bc34-c1bf47480914",
+      "created": "2020-09-09T21:27:53Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "XL5wdfVET/I\u003d",
+      "signature": "NX9Ok0VHApxr0YDjbazROTloX5JmJODBty0qzOHldC8zpotFiloIX7IxCuAOO+7wnsgQ8lOOx51VvVeJ5IA94zIaJPSmshkINVeHxXpJP9KKHeu8e5D0rxngwS2wOZWi/tnG/UHztTD+ZmWZ9HJN6ScyZZKwfgU0wgIdlzcFzbjT/DIJACXxL+K2CsEYNb1sP0eqkpJjyI3xp3CVR6E4IWkj+o46n1XSe9T/mSfafbARwP758mBbn9eMJ0aZp1DTlLcN30zxb5rQn1lYOlQ6KZzeZgs/ad/Qjn4G0pV+SIvD6DV9Xj3hV7P+8vdL/AHin9g7BloaacaggBzmLeCUjw\u003d\u003d"
+    }
+  ],
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "builds": {
+    "classic": {
+      "extend": "theme-triton",
+      "toolkit": "classic"
+    },
+    "modern": {
+      "extend": "theme-triton",
+      "toolkit": "modern"
+    }
+  },
+  "toolkit": "classic",
+  "output": "${package.dir}/${toolkit.name}/build",
+  "sass": {
+    "namespace": "Ext",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss,${package.dir}/${toolkit.name}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var,${package.dir}/${toolkit.name}/sass/var"
+    ],
+    "src": [
+      "${package.dir}/sass/src,${package.dir}/${toolkit.name}/sass/src"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src,${package.dir}/${toolkit.name}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides,${package.dir}/${toolkit.name}/overrides"
+  ],
+  "example": {
+    "path": [
+      "${package.dir}/examples"
+    ]
+  },
+  "framework": "ext"
+}

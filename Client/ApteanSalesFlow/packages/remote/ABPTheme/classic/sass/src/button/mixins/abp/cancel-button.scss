@@ -1,0 +1,90 @@
+// The 'Cancel' Buttons should be rendered with the inverse colours compared to the standard buttons with Text.
+// class should be implemented by suppliing:
+// uiCls: 'abp-cancel',
+
+.x-btn.abp-cancel.text,
+.x-btn.abp-cancel.icon {
+    background-color: transparent;
+    border-width: 1px;
+    border-color: $abp-vivid-blue;
+    color: $abp-vivid-blue;
+    .x-btn-inner {
+        color: $abp-vivid-blue !important;
+    }
+    // Hovered
+    &.x-btn-over {
+        border-color: $abp-hover-blue;
+        background-color: $abp-white;
+        color: $abp-selected-blue;
+        .x-btn-inner {
+            color: $abp-selected-blue !important;
+        }
+    }
+    // Pressed
+    &.x-btn-pressed, &.x-btn-focus {
+        border-color: $abp-selected-blue;
+        background-color: transparent;
+        color: $abp-selected-blue;
+        .x-btn-inner {
+            color: $abp-selected-blue !important;
+        }
+    }
+    &.x-btn-disabled {
+        border-color: $abp-nevada;
+        background-color: $abp-disabled-grey;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+    }
+}
+
+@mixin abp-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+
+        .#{$theme} {
+            .x-btn.abp-cancel.text,
+            .x-btn.abp-cancel.icon {
+                border-color: $base-color;
+                color: $base-color;
+                .x-btn-inner {
+                    color: $base-color !important;
+                }
+                // Hovered
+                &.x-btn-over {
+                    border-color: $hover-color;
+                    color: $selected-color;
+                    .x-btn-inner {
+                        color: $selected-color !important;
+                    }
+                }
+                // Pressed
+                &.x-btn-pressed, &.x-btn-focus {
+                    border-color: $selected-color;
+                    color: $selected-color;
+                    background-color: transparent;
+                    .x-btn-inner {
+                        color: $selected-color !important;
+                    }
+                }
+                &.x-btn-disabled {
+                    border-color: $abp-nevada;
+                    background-color: $abp-disabled-grey;
+                    color: $abp-nevada;
+                    .x-btn-inner {
+                        color: $abp-nevada !important;
+                    }
+                    .x-btn-arrow:after {
+                        color: $abp-nevada;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include abp-text-button-theme();

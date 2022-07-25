@@ -1,0 +1,39 @@
+// ABP Argent Theme Map
+$argent-theme: (
+	base_color: $abp-argent,
+	secondary_color: $abp-green,
+	highlight_color: $abp-highlight-argent,
+	selected_color: $abp-selected-argent,
+	hover_color: $abp-hover-argent,
+	menu_item_border_top: true,
+
+	error_color: $strong-red,
+	error_selected_color: $strong-red-dark,
+
+	//Traffic Light Colors
+	traffic_color_red: $abp-alert-red,
+	traffic_color_yellow: $abp-vivid-orange,
+	traffic_color_green: $abp-green,	
+	// Toolbar Icons
+	toolbartop_selected_color: $abp-highlight-argent,
+	toolbartop_hover_color: $abp-selected-argent,
+
+	// Accordion
+	accordion_header_hover_collapsed_border_color: darken($abp-dark-grey, 2),
+	accordion_header_hover_collapsed_bg_color: darken($abp-dark-grey, 2),
+	accordion_header_hover_open_border_color: darken($abp-grey, 2),
+	accordion_header_hover_open_bg_color: darken($abp-grey, 2),
+	accordion_header_open_border_color: $abp-grey,
+	accordion_header_open_bg_color: $abp-grey,
+	accordion_header_collapsed_border_color: $abp-dark-grey,
+	accordion_header_collapsed_bg_color: $abp-dark-grey,
+
+	// Container
+	container_menu_background: $abp-dark-argent, //$abp-black,
+	container_menu_text: $white,
+	container_menu_lighten: 12%,
+	container_contents_background: $abp-deep-grey,
+	container_headerbar_background: $background-grey-50,
+	container_headerbar_border: $abp-grey,
+	container_body_background: $abp-white
+);

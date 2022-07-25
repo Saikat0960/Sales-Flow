@@ -1,0 +1,58 @@
+// Basic Styles for Treelist Grid with {ui: tree-grid, uiCls: light} Ex: Dashboard Widget Picker
+.x-treelist-tree-grid[class*='light'] {
+    .x-treelist-root-container {
+        > .x-treelist-item > .x-treelist-row {
+            border: solid $abp-grey 1px;
+            background-color: $abp-white;
+            border-width: 0 0 1px 0;
+        }
+        > .x-treelist-item:first-of-type > .x-treelist-row {
+            border-width: 1px 0 1px 0;
+        }
+    }
+    .x-treelist-item-expanded {
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        border-color: $abp-grey;
+    }
+    .x-treelist-container {
+        background-color: $abp-background-grey;
+        box-shadow: inset 0px 4px 5px -3px rgba(73,87,91, 0.3), inset 0px -2px 5px -3px rgba(73,87,91, 0.3);
+        .x-treelist-item {
+            .x-treelist-row {
+                border-width: 0px;
+            }
+        }
+    }
+    .x-treelist-item-icon, .x-treelist-item-expander {
+        color: $abp-dark-grey;
+    }
+
+    .x-treelist-item-shorthand {
+        color: $abp-dark-grey;
+        background-color: $abp-white;
+    }
+
+    .x-treelist-item-over {
+        .x-treelist-row-over {
+            background-color: transparent;
+        }
+    }
+}
+// Theme Styles for Treelist Grid with $ui: tree-grid abptreelist-light
+@mixin abp-tree-grid-light-theme() {
+    @each $theme, $map in $abp-themes {
+        $hover-color: map-get($map, 'hover_color');
+        .#{$theme} {
+            .x-treelist-tree-grid[class*='light'] {
+                .x-treelist-item.x-treelistitem.x-treelist-item-leaf.x-treelist-item-over, .x-treelist-row.x-treelist-row-over {
+                    .x-treelist-item-wrap {
+                        .x-treelist-item-text, .x-treelist-item-icon, .x-treelist-item-shorthand, .x-treelist-item-expander {
+                            color: $hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

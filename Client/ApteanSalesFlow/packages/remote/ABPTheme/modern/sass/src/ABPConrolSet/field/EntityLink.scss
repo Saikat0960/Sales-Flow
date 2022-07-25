@@ -1,0 +1,15 @@
+.abp-link-field {
+    .x-body-wrap-el {
+        height: auto;
+        .x-input-wrap-el {
+            border: none !important;
+            textarea {
+                padding-bottom: 0px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
+// body .x-textfield .x-input-el {
+//     font: 400 13px/17px roboto, "open sans", helvetica, arial, verdana, sans-serif;
+// }

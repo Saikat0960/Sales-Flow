@@ -1,0 +1,31 @@
+﻿.searchbar {
+	background: $black-60;
+
+}
+
+.searchbar-searchfield {
+	margin: 3px;
+	border-radius: 3px;
+}
+.searchbar-searchfield input {
+	height: 38px;
+	border-radius: 3px;
+}
+.searchbar-button.x-button {
+	background: $black-60;
+	color: $white;
+	border: none;
+	margin: 3px;
+}
+.searchbar-button .x-button-icon{
+	color: $white;
+}
+
+.searchbar-button.searchbar-button-press {
+	background: $black-20;
+	color: $deep-blue-75;
+}
+
+.searchbar-button.searchbar-button-press .x-button-icon{
+	color: $deep-blue-75;
+}

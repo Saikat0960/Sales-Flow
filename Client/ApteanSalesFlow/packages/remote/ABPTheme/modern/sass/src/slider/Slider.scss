@@ -1,0 +1,16 @@
+.x-slider-multiple .x-thumb {
+    box-shadow: none;
+}
+
+@mixin abp-slider-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+
+        .#{$theme} {
+            .x-slider .x-fill-el {
+                background-color: $highlight-color;
+            }
+        }
+    }
+}
+@include abp-slider-theme();

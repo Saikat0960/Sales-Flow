@@ -1,0 +1,110 @@
+@import './Fields/main.scss';
+
+.x-field.x-error-target-under > * > .x-error-el {
+    margin: 0;
+}
+
+.x-field.x-required {
+    .x-label-el:after {
+        @include requiredStar($color: $abp-vivid-blue);
+    }
+
+    .x-form-item-label-right.x-label-el:after {
+        @include absoluteStar;
+    }
+
+    &.x-invalid {
+        .x-label-el, .x-label-el:after {
+            color: $abp-alert-red !important;
+            font-weight: bold;
+        }
+    }
+
+    .x-label-el {
+        white-space: normal;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        position: relative;
+        line-height: normal;
+    }
+}
+
+.x-field.x-disabled {
+    .x-input-wrap-el {
+        background-color: $abp-disabled-grey;
+    }
+    > .x-label-el,
+    .x-trigger {
+        opacity: 0.7;
+    }
+}
+
+input[disabled],
+textarea[disabled] {
+    opacity: 1;
+    -webkit-text-fill-color: $abp-deep-grey;
+}
+
+.x-checkboxfield {
+    .x-icon-el {
+        color: $abp-deep-grey;
+    }
+    &.x-disabled {
+        .x-icon-el {
+            opacity: 0.7;
+        }
+    }
+}
+
+// Invalid Field - Has Error
+.x-field.x-invalid.x-error-target-under > * > .x-error-el {
+    margin: 8px 0 0 0;
+}
+
+@mixin abp-field-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-field.x-required {
+                .x-label-el:after {
+                    color: $base-color
+                }
+            }
+        }
+    }
+}
+@include abp-field-theme();
+
+.aptean-theme-contrast {
+    .x-field.x-required {
+        .x-label-el:after {
+            @include requiredStar($color: $abp-white);
+        }
+
+        .x-form-item-label-right.x-label-el:after {
+            @include absoluteStar;
+        }
+    }
+}
+
+.x-field {
+    &.abp-read-only-link-field {
+        .x-input-wrap-el {
+            display: none;
+        }
+        .abp-read-only-link {
+            display: inherit; // Use inherited display
+        }
+    }
+    // Hide link by default
+    .abp-read-only-link {
+        text-decoration: none;
+        color: $abp-vivid-blue;
+        font-size: 14px;
+        font-weight: 400;
+        padding-left: 0;
+        width: auto;
+        display: none;
+    }
+}

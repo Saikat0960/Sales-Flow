@@ -1,0 +1,80 @@
+// Dark Button Common Styles
+.x-toolbar .x-btn.x-btn-dark.icon,
+.x-docked-top .x-btn.x-btn-dark.icon,
+.toolbar-menu-button.x-btn.x-btn-dark.icon,
+.x-segmented-button .x-btn.x-btn-dark.icon {
+    // background-color: transparent;
+    color: $abp-white;
+    .x-btn-icon-el,
+    .x-btn-arrow:after {
+        color: $abp-white;
+    }
+    &.x-btn-over {
+        background-color: $abp-black;
+        border-color: transparent;
+        color: $abp-highlight-blue;
+        .x-btn-icon-el,
+        .x-btn-arrow:after {
+            color: $abp-highlight-blue;
+        }
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.toolbar-toggled, &.x-btn-menu-active { // .toolbar-toggled for main-menu active state
+        background-color: $abp-black;
+        border-color: $abp-highlight-blue;
+        .x-btn-wrap {
+            .x-btn-button, .x-btn-text.x-btn-icon {
+                border-color: $abp-highlight-blue;
+                .x-btn-icon-el {
+                    color: $abp-highlight-blue;
+                }
+            }
+        }
+        .x-btn-icon-el,
+        .x-btn-arrow:after {
+            color: $abp-highlight-blue;
+        }
+    }
+}
+
+// Theme Mixin
+@mixin abp-dark-toolbar-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $highlight-color: map-get($map, 'highlight_color');
+        $background-color: map-get($map, 'container_menu_background');
+
+        .#{$theme} {
+            .x-toolbar .x-btn.x-btn-dark.icon,
+            .x-docked-top .x-btn.x-btn-dark.icon,
+            .toolbar-menu-button.x-btn.x-btn-dark.icon,
+            .x-segmented-button .x-btn.x-btn-dark.icon {
+                &.x-btn-over {
+                    background-color: darken($background-color, 10%);
+                    color: $highlight-color;
+                    border-color: $highlight-color;
+                    .x-btn-icon-el,
+                    .x-btn-arrow:after {
+                        color: $highlight-color;
+                    }
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.toolbar-toggled, &.x-btn-menu-active { // .toolbar-toggled for main-menu active state
+                    background-color: darken($background-color, 10%);
+                    border-color: $highlight-color;
+                    .x-btn-wrap {
+                        .x-btn-button, .x-btn-text.x-btn-icon {
+                            border-color: $highlight-color;
+                            .x-btn-icon-el {
+                                color: $highlight-color;
+                            }
+                        }
+                    }
+                    .x-btn-icon-el,
+                    .x-btn-arrow:after {
+                        color: $highlight-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-dark-toolbar-button-theme();

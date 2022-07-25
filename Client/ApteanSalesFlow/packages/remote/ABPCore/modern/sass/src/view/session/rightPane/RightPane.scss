@@ -1,0 +1,57 @@
+// Modern RightPane Styling
+.rightpane {
+    > .x-dock-vertical > .x-body-el {
+        height: 100%;
+        > .x-container > .x-body-el {
+            height: 100%;
+        }
+    }
+    background-color: $abp-background-grey;
+    position: absolute;
+    max-width: 100%;
+    z-index: 1000;
+    right: 0;
+    top: 0;
+    box-shadow: 0px 4px 15px #4e4e4e;
+    -webkit-font-smoothing: antialiased;
+    transition: width 500ms ease;
+
+    // Attempt to get All Right Pane Headers the same
+    .x-panelheader:first-of-type {
+        .x-paneltitle {
+            font-weight: bold;
+            color: $abp-midnight-grey;
+        }
+    }
+    .x-layout-card-item {
+        height: 100%;
+    }
+
+    // Settings Button Special Case
+    .x-button.x-has-text:not(.x-disabled) {
+        background-color: transparent;
+        border-color: transparent;
+        .x-inner-el {
+            .x-text-el {
+                color: $abp-deep-grey
+            }
+        }
+    }
+
+    // user Profile Photo styling
+    .x-tab.x-button {
+        .x-inner-el {
+            .x-body-el{
+                .x-icon-el.profile-picture {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                    border: 1px solid $abp-background-grey;
+                    background-size: contain;
+                    position: absolute;
+                }
+            }
+        }
+
+    }
+}

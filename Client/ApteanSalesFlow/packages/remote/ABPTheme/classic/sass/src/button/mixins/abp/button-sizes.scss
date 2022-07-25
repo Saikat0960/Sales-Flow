@@ -1,0 +1,38 @@
+// Small Button Styles
+.x-btn[class*=small] {
+    padding: 7px;
+    // icon button
+    .x-btn-icon {
+        min-width: 16px;
+        min-height: 16px;
+        .x-btn-icon-el {
+            font-size: 16px;
+        }
+    }
+}
+//
+// // Medium Button Styles
+.x-btn[class*=medium] {
+    padding: 8px;
+    // icon button
+    .x-btn-icon {
+        min-width: 20px;
+        min-height: 20px;
+        .x-btn-icon-el {
+            font-size: 20px;
+        }
+    }
+}
+
+// Large Button Styles
+.x-btn[class*=large] {
+    padding: 9px;
+    // icon button
+    .x-btn-icon {
+        min-width: 24px;
+        min-height: 24px;
+        .x-btn-icon-el {
+            font-size: 24px;
+        }
+    }
+}

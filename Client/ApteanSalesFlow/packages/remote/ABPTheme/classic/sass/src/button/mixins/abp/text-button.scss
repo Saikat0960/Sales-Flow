@@ -1,0 +1,67 @@
+// Text Button
+.x-btn.text {
+    color: $abp-white;
+    &.x-btn-over {
+        background-color: $abp-hover-blue;
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+        background-color: $abp-selected-blue;
+    }
+    &.x-btn-disabled {
+        background-color: $abp-disabled-grey;
+        border-color: $abp-grey;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+        .x-btn-icon-el{
+            opacity: .5;
+        }
+    }
+}
+
+.x-keyboard-mode {
+    .x-btn.x-focused,
+    .x-btn.x-focus {
+        background-color: $abp-selected-blue;
+    }
+}
+
+@mixin abp-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-btn.text {
+                background-color: $base-color;
+                &.x-btn-over {
+                    background-color: $hover-color;
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+                    background-color: $selected-color;
+                }
+                &.x-btn-disabled {
+                    background-color: $abp-disabled-grey;
+                    border-color: $abp-grey;
+                    color: $abp-nevada;
+                    .x-btn-arrow:after {
+                        color: $abp-nevada;
+                    }
+                    .x-btn-icon-el{
+                        opacity: .5;
+                    }
+                }
+            }
+            &.x-keyboard-mode {
+                .x-btn.x-focused,
+                .x-btn.x-focus {
+                    background-color: $selected-color;
+                }
+            }
+        }
+    }
+}
+
+@include abp-text-button-theme();

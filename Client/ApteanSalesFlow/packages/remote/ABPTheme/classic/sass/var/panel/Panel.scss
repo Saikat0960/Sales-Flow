@@ -1,0 +1,95 @@
+$panel-base-color: $abp-vivid-blue;
+$panel-body-background-color: $abp-white;
+$panel-body-border-color: $abp-grey;
+$panel-body-border-style: solid;
+$panel-body-border-width: 0px;
+$panel-body-color: $abp-deep-grey;
+$panel-border-color: $abp-grey;
+$panel-border-width: 1px;
+$panel-frame-border-color: $abp-grey;
+$panel-frame-border-style: solid;
+$panel-frame-border-width: 1px;
+$panel-frame-header-border-width: 5px 0px 0px;
+$panel-header-background-color: $abp-background-grey;
+$panel-header-color: $abp-vivid-blue;
+// $panel-header-padding: 10px;
+// $border-width-threshold
+// $include-panel-default-framed-ui:
+// $include-panel-default-ui
+// $include-panel-light-framed-ui
+// $include-panel-light-ui
+// $panel-background-stretch-bottom
+// $panel-background-stretch-left
+// $panel-background-stretch-right
+// $panel-background-stretch-top
+// $panel-body-font-family
+// $panel-body-font-size
+// $panel-body-font-weight
+// $panel-frame-background-color
+// $panel-frame-base-color
+/*
+    NOTE: Sencha forcibly overrides framed panel body borders with the attatched .x-noborder-trbl class.
+            Sepcifically, .x-noborder-trbl { border-width: 0px !important; }
+
+            NOTE: Is this possibly due to the way we have coded our components?  Do panels need {border: true} set?
+
+            As such, the following var is useless in achieving a framed panel body top border.
+            Check Panel.scss and associtated theme mixins for panel header border styles.
+
+    $panel-frame-body-border-width: 1px 0px 0px 0px;
+*/
+// $panel-frame-border-radius
+// $panel-frame-header-inner-border-color
+// $panel-frame-header-inner-border-width: 0px;
+// $panel-frame-header-padding
+// $panel-frame-padding:
+// $panel-ghost-opacity
+// $panel-header-background-gradient
+/*
+    NOTE: Sencha forcibly overrides panel header borders with the attatched .x-docked-top class.
+            Sepcifically, .x-docked-top { border-bottom-width: 0px !important; }
+
+            NOTE: Is this possibly due to the way we have coded our components?  Do panels need {border: true} set?
+
+            As such, the following vars are useless in achieving a bottom border.
+            Check Panel.scss and associtated theme mixins for panel header border styles.
+
+    $panel-header-border-color:;
+    $panel-header-border-style:;
+    $panel-header-border-width:;
+*/
+// $panel-header-focus-background-color
+// $panel-header-focus-color
+// $panel-header-focus-outline-color
+// $panel-header-focus-outline-offset
+// $panel-header-focus-outline-style
+// $panel-header-focus-outline-width
+// $panel-header-font-family
+// $panel-header-font-size
+// $panel-header-font-weight
+// $panel-header-glyph-color
+// $panel-header-glyph-opacity
+// $panel-header-icon-background-position
+// $panel-header-icon-height
+// $panel-header-icon-spacing
+// $panel-header-icon-width
+// $panel-header-inner-border-color
+// $panel-header-inner-border-width
+// $panel-header-line-height
+// $panel-header-noborder-adjust
+// $panel-header-text-margin
+// $panel-header-text-padding
+// $panel-header-text-transform
+// $panel-ignore-frame-padding
+// $panel-include-border-management-rules
+// $panel-tool-background-image
+// $panel-tool-focus-background-color
+// $panel-tool-focus-background-image
+// $panel-tool-focus-color
+// $panel-tool-focus-outline-color
+// $panel-tool-focus-outline-offset
+// $panel-tool-focus-outline-style
+// $panel-tool-focus-outline-width
+// $panel-tool-spacing
+// $panel-wrap-border-color
+// $panel-wrap-border-width: 0px;

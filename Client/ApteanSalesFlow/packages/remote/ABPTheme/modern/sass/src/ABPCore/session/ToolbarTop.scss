@@ -1,0 +1,123 @@
+﻿@mixin wrap-style {
+	border: none !important;
+	background-color: transparent !important;
+}
+
+@mixin inner-style {
+	border: none;
+	background-image: none;
+}
+
+.tool-top {
+	background: $black-90;
+	border: none;
+	.x-input-wrap-el{
+		@include wrap-style;
+	}
+	.x-inner-el {
+		background: $black-90;
+		@include inner-style;
+	}
+	.x-titlebar-body-el {
+    	padding: 20px 0px !important;
+    	min-height: 0px !important;
+	}
+	&.micro-tool-top {
+		& .x-toolbar {
+			padding: 0px;
+		}
+		.x-title .x-innerhtml {
+			font-size: 1em;
+		}
+	}
+	.micro-tool-top {
+		.x-title {
+			.x-innerhtml {
+				color: $white;
+				font-size: 1em;
+				font-weight: normal;
+				text-align: center;
+				font-family: $abp-base-font-family;
+			}
+		}
+	}
+	.x-title {
+		.x-innerhtml {
+			color: $white;
+			font-size: 1.5em;
+			font-weight: normal;
+			text-align: center;
+			font-family: $abp-base-font-family;
+		}
+	}
+}
+
+.tool-button-left {
+	border: none;
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+}
+
+.micro-tool-top .tool-button-left {
+	border: none;
+	width: 40px !important;
+	height: 40px;
+	margin-right: 10px;
+	padding: 0;
+}
+
+.tool-button-right {
+	border: none;
+	width: 45px;
+	height: 45px;
+	margin-left: 10px;
+}
+
+.micro-tool-top .tool-button-right {
+	border: none;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	padding: 0;
+}
+
+.toolbar-button {
+	background: transparent;
+}
+
+.micro-tool-top .x-button .x-button-icon.toolbar-icon {
+	font-size: 1.35em !important;
+}
+
+.toolbar-icon {
+	color: $white;
+	font-size: 1.85em;
+}
+
+.fa.x-font-icon{
+   	font-family: FontAwesome !important;
+}
+
+.fa.x-icon-el:before{
+   	font-size: 20px !important;
+}
+
+// Basic Segmented RightPane Buttons
+.toolbar-rpsegment-button {
+	.x-badge-el {
+		font-size: 10px;
+		line-height: 16px;
+		color: $abp-white;
+		border-radius: 100px;
+		width: auto;
+		min-width: 16px;
+		height: 16px;
+		background-color: transparent;
+		top: 2px;
+		right: 2px;
+		padding: 1px 5px;
+
+		background-image: none;
+	}
+}

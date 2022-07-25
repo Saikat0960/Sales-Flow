@@ -1,0 +1,49 @@
+// Dark Icon Button
+.x-button.x-has-icon.dark {
+    background-color: transparent;
+    .x-inner-el {
+        .x-icon-el {
+            color: $abp-white;
+        }
+    }
+    &.x-pressing, &.toolbar-toggled { // .toolbar-toggled for main-menu collapse button active state
+        .x-inner-el {
+            background-color: $abp-black;
+            .x-icon-el {
+                color: $abp-highlight-blue;
+            }
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon.dark {
+    .x-inner-el {
+        transition: background-color $abp-modern-transition-duration $abp-transition-type;
+        .x-icon-el {
+            transition: color $abp-modern-transition-duration $abp-transition-type;
+        }
+    }
+}
+
+@mixin abp-dark-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $background-color: map-get($map, 'container_menu_background');
+
+        .#{$theme} {
+            .x-button.x-has-icon.dark {
+                &.x-pressing, &.toolbar-toggled {
+                    .x-inner-el {
+                        background-color: darken($background-color, 10%);
+
+                        .x-icon-el {
+                            color: $highlight-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-dark-icon-button-theme();

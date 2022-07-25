@@ -1,0 +1,24 @@
+$menu-glyph-color: $abp-deep-grey;
+//$menu-glyph-font-size
+$menu-glyph-opacity: 1;
+$menu-item-active-arrow-glyph-color: $abp-deep-grey;
+$menu-item-active-checkbox-glyph-color: $abp-deep-grey;
+$menu-item-active-checkbox-group-glyph-color: $abp-deep-grey;
+$menu-item-active-glyph-color: $abp-deep-grey;
+$menu-item-arrow-glyph: $apteanico-mini-navigate-right $menu-item-arrow-glyph-font-size $font-icon-font-family;
+$menu-item-arrow-glyph-color: $abp-deep-grey;
+// $menu-item-arrow-glyph-font-size
+$menu-item-arrow-glyph-rtl: $apteanico-mini-navigate-left $menu-item-arrow-glyph-font-size $font-icon-font-family;
+$menu-item-checkbox-checked-glyph: $apteanico-mini-checked-square $menu-item-checkbox-glyph-font-size $font-icon-font-family;
+$menu-item-checkbox-glyph: $apteanico-mini-unchecked-square $menu-item-checkbox-glyph-font-size $font-icon-font-family;
+$menu-item-checkbox-glyph-color: $abp-deep-grey;
+//$menu-item-checkbox-glyph-font-size
+$menu-item-checkbox-group-checked-glyph: $apteanico-mini-check $menu-item-checkbox-glyph-font-size $font-icon-font-family;
+$menu-item-checkbox-group-glyph: $abp-deep-grey;   // Defaults to null
+$menu-item-checkbox-group-glyph-color: $abp-deep-grey;
+$menu-scroller-bottom-glyph: $apteanico-mini-navigate-down $menu-scroller-glyph-font-size $font-icon-font-family;
+$menu-scroller-glyph-color: $abp-deep-grey;
+//$menu-scroller-glyph-font-size
+$menu-scroller-top-glyph: $apteanico-mini-navigate-up $menu-scroller-glyph-font-size $font-icon-font-family;
+$menubar-item-arrow-glyph: $apteanico-mini-navigate-close $menu-item-arrow-glyph-font-size $font-icon-font-family;
+$menubar-item-arrow-glyph-rtl: $apteanico-mini-navigate-close $menu-item-arrow-glyph-font-size $font-icon-font-family;

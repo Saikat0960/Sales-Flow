@@ -1,0 +1,48 @@
+@mixin abp-bound-list-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-boundlist-item.x-boundlist-item-over {
+                background: $highlight-color;
+                border-color: $highlight-color;
+            }
+            .x-boundlist-selected {
+                background: $selected-color;
+                border-color: $selected-color;
+            }
+        }
+    }
+}
+@include abp-bound-list-theme();
+
+
+@mixin abp-dataview-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        $selected-color: map-get($map, 'base_color');
+        $selected-over-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .abp-dataview {
+                .x-item-over, .x-view-item-focused{
+                    background: $highlight-color;
+                    border-color: $highlight-color;
+                }
+                .x-item-selected {
+                    color: $white;
+                    background: $selected-color;
+                    border-color: $selected-color;
+                }
+                .x-item-selected.x-item-over {
+                    color: $white;
+                    background: $selected-over-color;
+                    border-color: $selected-over-color;
+                }
+            }
+        }
+    }
+}
+
+@include abp-dataview-theme();

@@ -1,0 +1,116 @@
+$cellColumn: abp-list-view-cellColumn;
+$field-label: abp-list-view-field-label;
+$field-value: abp-list-view-field-value;
+$field: abp-list-view-field;
+$row-body: abp-list-view-row-body;
+
+.abp-ag-list-view {
+    @for $i from 1 through 3 {
+        .#{$cellColumn}-#{$i} {
+            @if $i == 1 or $i == 0 {
+                .#{$field-value}-#{1}.ag-cell .ag-cell-wrapper {
+                    font-size: 1.6em;
+                    font-weight: bold;
+                }
+                .#{$field-value}-#{2}.ag-cell .ag-cell-wrapper {
+                    font-size: 1.2em;
+                }
+            }
+            @if $i == 2 {
+                .#{$field-value}.ag-cell .ag-cell-wrapper {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    color: $abp-navy;
+                }
+            }
+            @if $i == 3 {
+                .#{$field-value}.ag-cell .ag-cell-wrapper {
+                    font-weight: 400;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+    .ag-body-viewport {
+        overflow-x: hidden !important;
+        .ag-body-container {
+            width: 100% !important;
+            .ag-row.ag-row-selected {
+                color: inherit !important;
+            }
+            .ag-row {
+                border: none;
+                background-color: transparent !important;
+                overflow: hidden;
+                flex: auto;
+                >tr.abp-full-width-list-row {
+                    background-color: $abp-background-grey;
+                    border: 1px solid $abp-light-grey;
+                    align-items: center;
+                    flex-flow: wrap;
+                    display: flex;
+                    height: calc(100% - 4px);
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    vertical-align: middle;
+                    >td.#{$cellColumn} {
+                        overflow: hidden;
+                        align-items: center;
+                        display: -ms-grid;
+                        display: grid;
+                        grid-auto-rows: min-content;
+                        grid-auto-flow: dense;
+                        max-height: 100%;
+                        vertical-align: middle;
+                        >table.#{$field} {
+                            >tbody {
+                                >tr {
+                                    >td.ag-cell.ag-cell-inline-editing {
+                                        // height: 100% !important;
+                                        // width: 100% !important;
+                                        // position: sticky;
+                                        // .ag-cell-edit-input {
+                                        //     height: 100% !important;
+                                        //     width: 100% !important;
+                                        // }
+                                    }
+                                    >td.ag-cell-with-height {
+                                        height: unset;
+                                    }
+                                    >td.#{$field-value} {
+                                        line-height: 1.5em;
+                                        padding-left: 0px;
+                                        padding-right: 0px;
+                                        width: auto !important;
+                                        left: unset !important;;
+                                        position: relative;
+                                        .ag-cell-value {
+                                            max-width: 150px;
+                                            vertical-align: sub;
+                                        }
+                                        .ag-cell-edit-input {
+                                            min-height: 26px;
+                                        }
+                                        .ag-cell-value,
+                                        .ag-cell-value>span,
+                                        .ag-cell-wrapper {
+                                            height: 100%;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// list view tool panel icon.
+.ag-icon-list-view:after {
+    content: $apteanico-mini-list-style-bullets;
+    font-family: $font-icon-font-family;
+    height: 16px;
+    width: 16px;
+}

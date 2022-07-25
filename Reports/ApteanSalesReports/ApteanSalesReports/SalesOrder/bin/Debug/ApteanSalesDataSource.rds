@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ApteanSalesDataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=APT04-9N0VX33;Initial Catalog=SalesModule</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Specify a user name and password for data source DataSource1</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>139cb5da-e0a4-4545-8a80-8c29fb761b3c</DataSourceID>
+</RptDataSource>

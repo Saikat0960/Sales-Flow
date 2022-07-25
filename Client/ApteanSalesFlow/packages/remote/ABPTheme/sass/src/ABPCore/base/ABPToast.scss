@@ -1,0 +1,98 @@
+.abp-toast.x-toast {
+    .x-toast-body-el {
+        background: $abp-white;
+        padding: 0px;
+        color: $abp-deep-grey;
+    }
+}
+.abp-toast.x-toast.x-sheet.x-panel.x-container {
+    margin: 0px;
+}
+.abp-toast {
+    .x-autocontainer-innerCt {
+        padding: 0px !important;
+    }
+    .abp-toast-icon-block {
+        min-height: 50px;
+        width: 50px;
+        color: $abp-white;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .abp-toast-icon-block:before {
+        font-size: 30px;
+        line-height: 50px;
+        display: block;
+        position: relative;
+        // 15px - half the height of the font-icon
+        top: calc(50% - 15px);
+    }
+    .abp-toast-message {
+        font-size: 1.25em;
+        padding: 15px;
+    }
+    .abp-toast-inner-BLU {
+        .abp-toast-icon-block {
+            background: $abp-vivid-blue;
+        }
+        .abp-toast-message {
+            color: $abp-vivid-blue;
+        }
+    }
+    .abp-toast-inner-GRN {
+        .abp-toast-icon-block {
+            background: $abp-green;
+        }
+        .abp-toast-message {
+            color: $abp-green;
+        }
+    }
+    .abp-toast-inner-ORG {
+        .abp-toast-icon-block {
+            background: $abp-vivid-orange;
+        }
+        .abp-toast-message {
+            color: $abp-vivid-orange;
+        }
+    }
+    .abp-toast-inner-RED {
+        .abp-toast-icon-block {
+            background: $abp-alert-red;
+        }
+        .abp-toast-message {
+            color: $abp-alert-red;
+        }
+    }
+}
+
+.apb-toast {
+    .x-window-body-default{
+        .icon {
+            display: inline-block;
+            height: 36px;
+            width: 36px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 1.6em;
+            font-size: 2.2em;
+        }
+
+        .message{
+            font-size: 1.2em;
+            padding: 4px;
+        }
+    }
+}
+
+.abp-toast.abp-toast-BLU {
+    border: 2px solid $abp-vivid-blue;
+}
+.abp-toast.abp-toast-GRN {
+    border: 2px solid $abp-green;
+}
+.abp-toast.abp-toast-ORG {
+    border: 2px solid $abp-vivid-orange;
+}
+.abp-toast.abp-toast-RED {
+    border: 2px solid $abp-alert-red;
+}

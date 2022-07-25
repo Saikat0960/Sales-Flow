@@ -1,0 +1,9 @@
+@include toolbar-ui(
+    $ui: 'default',
+    $background-color: $abp-background-grey
+);
+
+@include toolbar-ui(
+    $ui: 'white',
+    $background-color: $abp-white
+);

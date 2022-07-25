@@ -1,0 +1,120 @@
+@import './mixins/index';
+
+@include abp-panel-theme();
+
+/* Panel Base Styles */
+.x-panel-collapsed {
+    .x-tool-after-title {
+        .x-tool-tool-el {
+            //transform: scaleY(-1);
+            -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.x-panel-expanded {
+    .x-tool-after-title {
+        .x-tool-tool-el {
+            -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+}
+
+/* Panel Transitions */
+.x-panel {
+    .x-panel-header {
+        transition: border-color $abp-transition-duration $abp-transition-type, background-color $abp-transition-duration $abp-transition-type;
+    }
+    .x-panel-header-title {
+        transition: color $abp-transition-duration $abp-transition-type;
+    }
+    .x-tool-after-title {
+        .x-tool-tool-el {
+            transition: transform $abp-transition-duration $abp-transition-type;
+
+            &.icon-heart-full{
+                color: $strong-red;
+            }
+        }
+    }
+}
+
+.x-panel {
+    > .x-panel-header {
+        transition: box-shadow 200ms $abp-transition-type,
+                    background-color $abp-transition-duration $abp-transition-type,
+                    border-color $abp-transition-duration $abp-transition-type;
+    }
+    .x-tool-after-title {
+        .x-tool-tool-el {
+            background-color: transparent;
+        }
+    }
+    > .x-panel-bodyWrap {
+        > .x-panel-body {
+            transition: box-shadow 200ms;
+        }
+    }
+    &.abp-scrolled { // our ABPHeaderPanel applies this class on scroll
+        > .x-panel-header {
+            box-shadow: 0px -2px 12px 0px $abp-shadow;
+        }
+    }
+}
+
+/* Forced Overrides for Sencha Applied Styles */
+
+/* Remove inner .x-panel-body border from panels with { border: true }.
+   We already have a border on .x-panel so do not want this extra border. */
+.x-panel-default-outer-border-trbl {
+    border-width: 0px !important;
+}
+
+/*  Panel Header Bottom Border
+    NOTE: Sencha forcibly overrides framed panel body borders with the attatched .x-noborder-trbl class.
+            Specifically, .x-noborder-trbl { border-width: 0px !important; }
+
+            NOTE: Is this possibly due to the way we have coded our components?  Do panels need {border: true} set?
+
+            As such, the following var is useless in achieving a framed panel body top border.
+            Check Panel.scss and associtated theme mixins for panel header border styles.
+
+    $panel-frame-body-border-width: 1px 0px 0px 0px;
+*/
+.x-panel-header.x-docked-top:not(.x-collapsed) {
+    border-bottom-width: 1px !important;
+    border-style: solid;
+    border-color: $abp-grey;
+    // padding: 5px 10px;
+}
+/* Max height - for if input added to header. */
+.x-panel-header {
+    display: flex;
+    align-items: center;
+}
+
+/* Framed Base Theme Styles
+    NOTE: Sencha applies "-framed" to the end of the ui name when a panel is framed.
+            Using the panel ui and setting the ui to "default-framed" overrides the
+            vars in /vars/Panel.scss.  Rather than re-coding the UI and vars, we will
+            use sass, for less code.
+*/
+
+.x-panel-body-default-framed.x-noborder-trbl {
+    border-width: 1px 0px 0px !important;
+}
+
+.x-panel-default-framed {
+    .x-panel-header-default-framed-top {
+        border-color: $abp-vivid-blue;
+    }
+    .x-panel-header-title-default-framed {
+        color: $base-color;
+    }
+}

@@ -1,0 +1,34 @@
+.x-field.abp-readonly {
+    .x-input-wrap-el {
+        border: none;
+    }
+    input, textarea {
+        color: $abp-deep-grey;
+        padding-left: 0px;
+        font-size: 14px;
+        font-weight: 400;
+    }    
+    label {
+        padding-left: 0px !important;
+    }
+    .x-label-text-el {
+        color: $abp-nevada;
+        font-size: 13px;
+    }
+    &.x-textfield .x-input-el {
+        padding-right: 5px;
+    }
+}
+.x-field.abp-readonly.abp-readonly-sinlabel {
+    .x-input-wrap-el {
+        border: none;
+    }
+    input {
+        font-size: 15px;
+    }
+}
+.x-field.abp-textdisplay {
+    .x-body-el {
+        border: none; // textdisplay has a border defined a the .x-body-el element by the Ext neptune theme: border: 1px solid transparent; Remove this border when readOnly otherwise text and textdisplay values do not have same left position.
+    }
+}

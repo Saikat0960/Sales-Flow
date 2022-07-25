@@ -1,0 +1,13 @@
+@import './mixins/index';
+
+// Transitions
+.x-treelist-item-expander {
+    transition: transform $abp-transition-duration $abp-transition-type,
+                color $abp-transition-duration $abp-transition-type;
+}
+.x-treelist-row {
+    transition: background-color $abp-transition-duration $abp-transition-type;
+}
+
+//@include abp-tree-grid-light-theme();
+@include abp-tree-dark-theme();

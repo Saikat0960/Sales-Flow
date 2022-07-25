@@ -1,0 +1,347 @@
+.launch-canvas {
+	height: 100vh;
+	width: 100vw;
+	.login-form {
+		> .x-body-el {
+			display: flex;
+			flex-direction: column;
+		}
+		.x-component.x-layout-card-item {
+			> .x-body-el {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				overflow: visible !important;
+			}
+			height: auto;
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+			overflow: visible !important;
+		}
+		> .x-container-body-el {
+			// border: solid red 2px !important;
+			overflow: scroll !important;
+			.x-container-body-el, .x-container, .x-dock {
+				overflow: visible;
+				&.selectuser-userList {
+					overflow: hidden;
+				}
+			}
+		}
+	}
+
+	.main-content-wrapper {
+		display: flex;
+		flex: 1;
+		padding: 0;
+		min-height: 100%;
+		.x-container-body-el, .x-panel-body-wrap-el > .x-container-body-el {
+			&:not(.x-dataview-body-el) {
+				@media screen and (orientation:portrait) {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+	.main-content {
+		> .x-body-el {
+			display: flex;
+			flex-direction: column;
+		}
+		.selectuser-userList {
+			max-height: 280px;
+		}
+	}
+	.main-content-footer {
+		margin-top: 10px; // Otherwise sign in button too close to language in iOS.
+		.x-container-body-el {
+			display: flex;
+			flex-direction: column;
+		}
+		> div > *:not(.btn-login) {
+			height: 35px;
+		}
+		&.buttons, .buttons {
+			margin-top: 10px;
+			width: 100%;
+			.x-container-body-el {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			// .btn-login.x-button {
+			// 	background-color: $action-button-background;
+			// 	.x-inner-el {
+			// 		color: $white;
+			// 		background-color: transparent;
+			// 		.x-text-el {
+			// 			font-weight: normal;
+			// 			line-height: 2em;
+			// 		}
+			// 	}
+			// }
+		}
+	}
+
+	.x-formpanel.x-panel {
+		background-color: transparent;
+
+		.x-formpanel-body-el {
+			background-color: transparent;
+		}
+	}
+
+	.x-panel-body-default {
+		background-color: transparent;
+	}
+
+	.x-container.login-form {
+		height: 92vh;
+		width: 90vw;
+		max-height: 560px;
+		max-width: 350px;
+		padding: 16px;
+		background-color: rgba(243, 243, 243, .9);
+
+		.x-textfield {
+			border: 0;
+		}
+
+		.x-field > .x-label-el {
+			line-height: 8px;
+		}
+	}
+
+	// Border around textfields
+	.x-textfield {
+		.x-input-wrap-el {
+			border: 1px solid $dark-grey;
+			// Border around focused textfields */
+
+		}
+		&.x-focused .x-input-wrap-el {
+			border: 1px solid $vivid-blue;
+		}
+		&.login-error .x-input-wrap-el {
+			border: 1px solid $abp-alert-red;
+		}
+		&.x-focused.login-error .x-input-wrap-el {
+			border: 1px solid $abp-alert-red;
+		}
+	}
+
+	/* Login Form Dropdown styling */
+	.launch-combo-box .x-trigger .x-icon-el {
+		color: $login-combo-trigger;
+	}
+
+	/* Login Form "Sign In" button */
+	.btn-login.x-button, .btn-login.x-button.x-pressing {
+		background-color: $action-button-background;
+		.x-inner-el {
+			color: $abp-white;
+			font-size: 14px;
+			.x-text-el {
+				color: $abp-white;
+			}
+			// background-color: $action-button-background;
+	// 		.x-text-el {
+	// 			font-weight: normal;
+	// 			line-height: 2em;
+	// 		}
+		}
+	}
+
+	/* Login Form "Keep me signed in" button */
+	.login-keepme.x-button {
+		background-color: transparent;
+		.x-inner-el {
+			background-color: transparent;
+			background-image: none;
+			border: none;
+			line-height: 16px;
+			color: $abp-deep-grey;
+			font: 300 14px roboto, "open sans", helvetica, arial, verdana, sans-serif;
+			.x-icon-el:before {
+				color: $abp-deep-grey;
+				font-size: 1.3em;
+			}
+			.x-body-el {
+				// This is needed for iOS, otherwise Safari will clip the checkbox. Might be a problem with the font icon definition.
+				height: 1.4em;
+			}
+		}
+		.x-inner-el {
+			.icon-checked-square {
+				&:before {
+					color: $abp-vivid-blue;
+				}
+				+ .x-text-el {
+					color: $abp-vivid-blue;
+				}
+			}
+		}
+	}
+
+	 /* Login Form "Forgot your password" button */
+	 .login-forgotpassword.x-button {
+		background-image: none;
+		border: none;
+
+		.x-inner-el {
+			background-color: transparent !important;
+			font: 300 14px roboto, "open sans", helvetica, arial, verdana, sans-serif;
+			font-style: italic;
+		}
+	}
+
+	/* Login Form Settings button */
+	.btn-settings.x-button .x-icon-el {
+		color: $action-button-background;
+	}
+
+	.btn-settings.x-button .x-icon-el:before {
+		font-size: 26px;
+	}
+
+	// Overall vertical spacing between fields.
+	.x-field:not(.x-field-solo).x-layout-auto-item,
+	.x-field:not(.x-field-solo).x-layout-vbox-item {
+    	padding-bottom: 0px; // Override Ext theme - need the space between input fields to be smaller so other areas can be bigger (font icons at bottom).
+	}
+}
+
+// Login Form Button Styling
+.login-form.x-button {
+	background-color: transparent;
+	background-image: none;
+	border: none;
+
+	.x-inner-el {
+		background-color: transparent;
+		background-image: none;
+		border: none;
+		.x-text-el {
+			color: $abp-deep-grey;
+		}
+	}
+
+	&.x-pressing {
+		background-color: transparent;
+		.x-inner-el {
+			.x-text-el {
+				color: $abp-deep-grey;
+			}
+		}
+	}
+}
+
+.login-form.x-textfield {
+	background-color: transparent;
+}
+
+.login-form .x-clear-icon {
+    display: none;
+}
+
+
+.login-classic {
+	background-color: blue;
+}
+
+.help-text {
+	color: $black-80;
+	font-size: 3em;
+}
+.help-text-hidden {
+	color: $white;
+	font-size: 3em;
+}
+.help-icon-support {
+	font-size: 140px;
+	line-height: 220px;
+	color: $white;
+}
+.help-icon-demo {
+	font-size: 120px;
+	line-height: 210px;
+	color: $white;
+}
+.help-icon-box {
+	background-color: $strong-blue;
+	border-radius: 50%;
+	text-align: center;
+	width: 220px;
+	height: 220px;
+	cursor: pointer;
+	cursor: hand;
+}
+.help-label {
+	font-size: 30px;
+	color: $black-80;
+	margin-top: 16px;
+	cursor: pointer;
+	cursor: hand;
+}
+.error-label {
+	height: 25px;
+	width: 350px;
+	color: $white;
+	font-size: 1.15em;
+	font-style: italic;
+	text-align: center;
+	border: solid lightblue 2px !important;
+}
+.error-label-hide {
+	display: none;
+}
+.login-hdr-wrapper {
+	width: 100%;
+	height: 105px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	.x-innerhtml {
+		width: 100%;
+	}
+}
+.login-hdr {
+    max-width: 284px;
+	height: 105px;
+	margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+    background-image: $launch-logo !important;
+}
+
+.launch-combo-box input[type="text"] {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-bottom: 0px !important;
+}
+.launch-combo-box .x-form-trigger {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: $strong-blue;
+    color: $white;
+}
+.button-container {
+	h2 {
+		margin: 0;
+	}
+}
+
+@mixin wrap-style {
+	border: none !important;
+	background-color: transparent !important;
+}
+
+@mixin inner-style {
+	border: none;
+	background-image: none;
+}

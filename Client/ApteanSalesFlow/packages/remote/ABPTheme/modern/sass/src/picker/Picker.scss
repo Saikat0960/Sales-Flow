@@ -1,0 +1,20 @@
+.x-picker {
+    .x-button-alt {
+        color: $abp-deep-grey;
+    }
+}
+
+@mixin abp-picker-theme() {
+    @each $theme, $map in $abp-themes {
+        $highlight-color: map-get($map, 'highlight_color');
+        .#{$theme} {
+            .x-picker {
+                .x-dataview-item.x-selected {
+                    background-color: $highlight-color;
+                }
+            }
+
+        }
+    }
+}
+@include abp-picker-theme();

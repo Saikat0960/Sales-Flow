@@ -1,0 +1,225 @@
+@mixin contentColor($baseColor) {
+    .abp-errors-outer {
+        border-color: $baseColor;
+        color: $baseColor;
+        background-color: $abp-white;
+
+        .abp-errors-icon {
+            color: $abp-white;
+            background-color: $baseColor;
+        }
+
+        .errors-message-content {
+            .abp-errors-header-container {
+                .abp-errors-badge {
+                    background-color: $baseColor;
+                    color: $abp-white;
+                }
+            }
+            .abp-errors-list{
+                li {
+                    span[role="link"]{
+                        color: $baseColor;
+
+                        &:hover {
+                            color: darken($baseColor, 10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.abp-errors {
+    @include contentColor($abp-alert-red);
+
+    display: flex;
+    padding: 6px;
+    z-index: 9999;
+    
+    .abp-errors-outer {
+        border-width: 1.5px;   // Added 0.5 to prevent gaps on scaled displays
+        border-style: solid;
+        font-size: 14px;
+        font-weight: 300;
+        flex: 1;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+
+        .abp-errors-icon{
+            font-size: 28px;
+            width: 44px;
+            max-width: 44px;
+            min-width: 44px;
+
+            margin: 0;
+            line-height: 38px;
+
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+
+            span {
+                height: 38px;
+                padding: 0 0 0 6px;
+            }
+        }
+
+        .errors-message-content{
+            flex-grow: 1;
+            margin: 4px 0 4px 8px;
+            display: flex;
+            flex-direction: column;
+            align-content: start;
+            justify-content: start;
+
+            .abp-errors-header-container {
+                display: flex;
+                flex-direction: row;
+
+                .abp-errors-title {
+                    flex-grow: 1;
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin: 6px 0 3px 0;
+                    display: inline-block;
+                }
+
+                .abp-errors-badge {
+                    font-size: 12px;
+                    line-height: 12px;
+
+                    border-radius: 50%;
+                    display: inline-block;
+                    min-height: 20px;
+                    min-width: 20px;
+                    text-align: center;
+                    padding: 4px;
+
+                    transition: all 300ms;
+
+                    // Default is hidden
+                    opacity: 0;
+                }
+
+                .abp-errors-tools {
+                    align-content: center;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 400;
+
+                    .x-tool-tool-el{
+                        margin: 0 6px;
+                        font-size: 18px;
+                        color: inherit;
+                        cursor: pointer;
+
+                        transition: transform 200ms;
+                    }
+                }
+            }
+        
+            .abp-errors-list{
+                margin: 0;
+                padding: 0 16px;
+                overflow: auto;
+                opacity: 1;
+                transition: opactity 250ms;
+
+                li {
+                    margin: 3px 0px;
+                    animation: abpErrorFadeIn 200ms linear;
+                    animation-fill-mode: both;
+                    position: relative;
+
+                    a {
+                        text-decoration: none;
+                        transition: color 250ms;
+                        cursor: pointer;
+
+                        &:hover {
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.abp-errors-error {
+        @include contentColor($abp-alert-red);
+    }
+
+    &.abp-errors-warning {
+        @include contentColor($abp-vivid-orange);
+    }
+
+    &.abp-errors-information {
+        @include contentColor($abp-vivid-blue);
+    }
+
+    &[aria-expanded="false"]{
+        .errors-message-content {
+            .abp-errors-header-container {  
+                .abp-errors-badge {
+                    opacity: 1;
+                }
+
+                .abp-errors-tools {
+                    .icon-navigate-up{
+                        transform: rotateZ(180deg);
+                    }
+                }
+            }
+
+            .abp-errors-list{
+                opacity: 0;
+                display: none;
+            }
+        }
+    }
+}
+
+@mixin dashboard-title-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .abp-errors {
+                &.abp-errors-information {
+                    @include contentColor($selected-color);
+                }
+            }
+        }
+    }
+}
+@include dashboard-title-theme();
+
+// Add some animation when showing the message items
+$total-items: 10;
+@for $i from 2 through $total-items {
+    .abp-errors-list li:nth-child(#{$i}) {
+        animation-delay: 25ms * $i !important;
+    }
+}
+
+// Keyframe animation
+@keyframes abpErrorFadeIn {
+    0% {
+        opacity: 0;
+        left: 15px;
+    }
+    75% {
+        opacity: 0.5;
+        left: 0px;
+    }
+    100% {
+        opacity: 1;
+    }
+}

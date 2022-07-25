@@ -1,0 +1,155 @@
+// Icon Button / Text Icon Button
+.x-btn.icon,
+.x-btn.icon.text {
+    background-color: transparent;
+    .x-btn-inner {
+        // Button Text Color
+        color: $abp-deep-grey;
+    }
+    .x-btn-icon {
+        .x-btn-icon-el {
+            // Button Icon Color
+            display: flex;
+            color: $abp-deep-grey;
+        }
+    }
+    .x-btn-arrow:after {
+        // Button Menu Arrow Color
+        color: $abp-deep-grey;
+    }
+    &.x-btn-over {
+        background-color: transparent;
+        color: $abp-hover-blue;
+        border-color: transparent;
+        .x-btn-inner {
+            // Button Text Color
+            color: $abp-hover-blue;
+        }
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+        border-color: transparent;
+        background-color: transparent;
+        .x-btn-inner {
+            // Button Text Color
+            color: $abp-selected-blue;
+        }
+    }
+
+    &.x-btn-disabled {
+        background-color: transparent;
+        border-color: transparent;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+        &:not(.x-btn-dark){
+            .x-btn-icon, .x-btn-icon-el, .x-btn-inner{
+                color: $abp-nevada !important;
+            }
+        }
+    }
+}
+
+
+.x-keyboard-mode {
+    .x-btn.icon,
+    .x-btn.icon.text {
+        &.x-focus {
+            background-color: transparent;
+            border-color: transparent;
+            .x-btn-inner {
+                // Button Text Color
+                color: $abp-selected-blue;
+            }
+        }
+    }
+}
+
+@mixin abp-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-btn.icon {
+                background-color: transparent;
+                &.x-btn-over {
+                    background-color: transparent;
+                    border-color: transparent;
+                    .x-btn-inner {
+                        // Button Text Color
+                        color: $hover-color;
+                    }
+                    .x-btn-icon {
+                        .x-btn-icon-el {
+                            // Button Icon Color
+                            color: $hover-color;
+                        }
+                    }
+                    .x-btn-arrow:after {
+                        // Button Menu Arrow Color
+                        color: $hover-color;
+                    }
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+                    background-color: transparent;
+                    border-color: transparent;
+                    .x-btn-inner {
+                        // Button Text Color
+                        color: $selected-color;
+                    }
+                    .x-btn-icon {
+                        .x-btn-icon-el {
+                            // Button Icon Color
+                            color: $selected-color;
+                        }
+                    }
+                    .x-btn-arrow:after {
+                        // Button Menu Arrow Color
+                        color: $selected-color;
+                    }
+                }
+                &.x-btn-disabled {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: $abp-nevada;
+                    .x-btn-arrow:after {
+                        color: $abp-nevada;
+                    }
+                    &:not(.x-btn-dark){
+                        .x-btn-icon, .x-btn-icon-el, .x-btn-inner{
+                            color: $abp-nevada !important;
+                        }
+                    }
+                }
+            }
+
+            &.x-keyboard-mode {
+                .x-btn.icon,
+                .x-btn.icon.text {
+                    &.x-focus {
+                        background-color: transparent;
+                        border-color: transparent;
+                        .x-btn-inner {
+                            // Button Text Color
+                            color: $selected-color;
+                        }
+                        .x-btn-icon {
+                            .x-btn-icon-el {
+                                // Button Icon Color
+                                color: $selected-color;
+                            }
+                        }
+                        .x-btn-arrow:after {
+                            // Button Menu Arrow Color
+                            color: $selected-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include abp-icon-button-theme();

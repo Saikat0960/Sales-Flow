@@ -1,0 +1,140 @@
+// Basic ABPGridPanel
+.x-panel-abpgridpanel.x-grid,
+.x-panel.x-grid {
+    .x-column-header {
+        color: $abp-deep-grey;
+        background: $abp-white;
+        font-weight: bold;
+
+        .x-column-header-trigger {
+            background-color: $abp-white;
+            border-color: $abp-white;
+        }
+
+        .x-column-header-inner {
+            background-color: $abp-white;
+        }
+
+        // Open Header Text Color
+        .x-column-header-inner.x-column-header-open {
+            .x-column-header-text-inner {
+                color: $abp-vivid-blue;
+            }
+        }
+
+        // Over Header Text Color
+        .x-column-header-inner.x-column-header-over {
+            .x-column-header-text-inner {
+                color: $abp-vivid-blue;
+            }
+        }
+    }
+
+    // Open
+    .x-column-header-open {
+        .x-column-header-trigger {
+            transform: scaleY(-1);
+        }
+    }
+
+    .x-grid-rowbody,
+    .x-panel-body-default,
+    .x-toolbar-default {
+        background-color: $abp-white;
+    }
+
+    .x-grid-td {
+        border-right: 1px solid #d0d0d0;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    .x-grid-body {
+        border-top: 1px solid $abp-grey;
+
+        .x-grid-item {
+            color: $abp-deep-grey;
+            background: $abp-white;
+
+            .x-tree-icon-leaf,
+            .x-action-col-icon,
+            .x-grid-cell-inner-treecolumn,
+            .x-grid-row-expander {
+                color: $abp-dark-grey;
+            }
+        }
+    }
+}
+
+// ABPGridPanel Theme Mixin
+@mixin abp-gridpanel-theme() {
+
+    @each $theme,
+    $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $highlight-color: map-get($map, 'highlight_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+
+            .x-panel-abpgridpanel.x-grid,
+            .x-panel.x-grid {
+                .x-grid-body {
+                    .x-grid-item {
+                        &.x-grid-item-over {
+                            background: $highlight-color;
+
+                            .x-grid-cell-special {
+                                border-color: $abp-light-grey;
+                            }
+
+                            .x-tree-icon-leaf,
+                            .x-action-col-icon,
+                            .x-grid-cell-inner-treecolumn,
+                            .x-grid-cell-inner,
+                            .x-grid-row-expander {
+                                color: $abp-deep-grey;
+                            }
+                        }
+
+                        &.x-grid-item-selected {
+                            border-color: $abp-light-grey;
+                            background-color: $selected-color;
+
+                            .x-grid-cell-special {
+                                border-color: $abp-light-grey;
+                            }
+
+                            .x-tree-icon-leaf,
+                            .x-action-col-icon,
+                            .x-grid-cell-inner-treecolumn,
+                            .x-grid-cell-inner,
+                            .x-grid-row-expander {
+                                color: $abp-white;
+                            }
+                        }
+
+                        &.x-grid-item-over,
+                        &.x-grid-item-selected {
+
+                            .x-grid-rowbody,
+                            .x-panel-body-default,
+                            .x-toolbar-default {
+                                background-color: $abp-background-grey;
+                            }
+                        }
+                    }
+                }
+
+                .x-column-header {
+                    .x-column-header-inner.x-column-header-over {
+                        .x-column-header-text-inner {
+                            color: $base-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include abp-gridpanel-theme();

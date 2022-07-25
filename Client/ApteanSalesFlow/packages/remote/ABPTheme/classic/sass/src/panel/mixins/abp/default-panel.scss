@@ -1,0 +1,43 @@
+.abp-header-panel {
+    .x-panel-header{
+        padding: 8px 16px 8px 16px; // Don't need much verical padding as the align center should position the contents
+        min-height: 45px;
+    }
+}
+
+@mixin abp-panel-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+        $background: map-get($map, 'container_headerbar_background');
+        $border: map-get($map, 'container_headerbar_border');
+
+        .#{$theme} {
+            .abp-header-panel {
+                .x-panel-header {
+                    background-color: $background;
+                    border-color: $border;
+                }
+            }
+
+            .x-panel-header-title {
+                color: $base-color;
+            }
+            /* Framed Panels
+                NOTE: Sencha applies "-framed" to the end of the ui name when a panel is framed.
+                        Using the panel ui and setting the ui to "default-framed" overrides the
+                        vars in /vars/Panel.scss.  Rather than re-coding the UI and vars, we will
+                        use sass, for less code.
+            */
+            .x-panel-default-framed {
+                .x-panel-header-default-framed-top {
+                    border-color: $base-color;
+                }
+                .x-panel-header-title-default-framed {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}

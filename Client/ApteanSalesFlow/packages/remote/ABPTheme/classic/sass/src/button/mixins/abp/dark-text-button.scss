@@ -1,0 +1,38 @@
+// Dark Button
+.x-btn.x-btn-dark {
+    background-color: transparent;
+
+    // Hovered
+    &.x-btn-over {
+        background-color: transparent;
+    }
+
+    // Pressed, Focused, Menu Active
+    &.x-btn-pressed, &.x-btn-hovered, &.x-btn-menu-active {
+        background-color: transparent;
+    }
+}
+
+@mixin abp-dark-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $background-color: map-get($map, 'container_menu_background');
+        $highlight-color: map-get($map, 'highlight_color');
+
+        .#{$theme} {
+            .x-btn.x-btn-dark {
+                background-color: transparent;
+                // Hovered
+                &.x-btn-over {
+                    background-color: darken($background-color, 10%);
+                }
+
+                // Pressed, Focused, Menu Active
+                &.x-btn-pressed, &.x-btn-hovered, &.x-btn-menu-active {
+                    background-color: darken($background-color, 10%);
+                }
+            }
+        }
+    }
+}
+
+@include abp-dark-text-button-theme();

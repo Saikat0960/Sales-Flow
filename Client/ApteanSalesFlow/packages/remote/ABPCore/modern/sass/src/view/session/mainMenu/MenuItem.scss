@@ -1,0 +1,67 @@
+﻿.menu-item {
+	color: $white;
+	font-weight: normal;
+	font-family: Arial;
+	letter-spacing: 1px;
+	line-height: 44px;
+	padding: 0px;
+	border-bottom: 1px solid $black;
+	cursor: pointer;
+	cursor: hand;
+
+	&:hover {
+		color: $strong-blue;
+	}
+	&:focus {
+		color: $strong-blue;
+	}
+}
+
+/*.mi-body-selected {
+	color: $white;
+	background-color: $black-80;
+	z-index: 5;
+}*/
+
+.mi-icon {
+	font-size: 2em;
+	padding-top: 5px;
+}
+.mi-icon-micro {
+	font-size: 2em;
+	padding-top: 4px;
+	margin-left: 10px;
+	padding-right: 8px;
+}
+.mi-title {
+	font-size: 1.15em;
+	line-height: 1.15em;
+}
+.mi-title-micro {
+	font-size: 1em;
+	margin-left: 10px;
+	line-height: 1em;
+}
+.mi-title.mi-double {
+	font-size: 1.15em;
+	top: 35px !important;
+	line-height: 1.15em;
+	text-align: center;
+}
+.mi-Body {
+	padding-top: 9px;
+}
+.mi-Body.mi-double {
+	padding-top: 0px;
+}
+.mi-Body-double-line {
+	padding: none;
+}
+.tooltip-mm {
+	background-color: $black-60;
+	border-color: $strong-blue;
+	border-width: 2px;
+}
+.tooltip-mm .x-tip-body{
+	color: $white;
+}

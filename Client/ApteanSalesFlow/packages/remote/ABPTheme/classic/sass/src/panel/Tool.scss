@@ -1,0 +1,38 @@
+// The styling below deals with making the touch area big enough around header tools.
+.x-panel-header {
+    display: flex;
+    align-items: center;
+    > .x-box-inner {
+        display: flex;
+        align-items: center;
+        > .x-box-target {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: space-between;
+            .x-title {
+                display: flex;
+                align-items: center;
+                .x-title-text {
+                }
+            }
+        }
+    }
+}
+.x-panel .x-panel-header .x-tool {
+    margin: 0px 7px;
+    padding: 0px;
+    &:last-child {
+        margin-right: 0px;
+        padding-right: 7px;
+    }
+}
+
+.x-panel .x-tool-after-title .x-tool-tool-el {
+    width: auto;
+    height: auto;
+}
+
+.x-panel .x-tool-after-title .x-tool-tool-el:before {
+    font-size: 20px;
+}

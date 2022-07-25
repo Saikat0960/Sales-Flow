@@ -1,0 +1,21 @@
+
+  .x-treelist-item-checkbox {
+    left: 0;
+    position: absolute;
+    top: 0;
+    right: auto;
+    font-size: 16px;
+    width: 18px;
+    line-height: 30px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+  }
+  .x-treelist-item-checkbox:after {
+    content: $apteanico-mini-checkbox-unchecked;
+    font: 16px/30px apteanico-mini;
+  }
+  .x-treelist-item-checked .x-treelist-item-checkbox:after {
+    content: $apteanico-mini-checkbox;
+    font: 16px/30px apteanico-mini;
+  }

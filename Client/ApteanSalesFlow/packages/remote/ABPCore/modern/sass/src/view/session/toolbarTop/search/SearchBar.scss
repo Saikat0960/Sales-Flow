@@ -1,0 +1,65 @@
+﻿@import '../../../base/popUp/PopUpList';
+
+.searchbar {
+	margin: 0px;
+	padding: 4px;
+	transition: background 300ms;
+}
+/*
+.searchbar-button {
+	border: none;
+	font-size: 1.5em;
+	background: transparent;
+}
+.searchbar-button .x-btn-icon-el-default-small {
+	color: $abp-grey;
+}
+*/
+.searchbar.searchbaropen {
+	background: $abp-midnight-grey;
+
+	.x-trigger {
+		// Need to forcefully override the default icon trigger in the textbox
+		.x-icon-el.icon-magnifying-glass:before {
+			content: "\e205";
+		}
+	}
+}
+
+.toolbar-button-pressed{
+	.x-inner-el {
+		background: $abp-midnight-grey;
+	}
+
+	.toolbar-icon {
+		color: $white;
+	}
+}
+/*
+.searchbar-button.searchbar-button-over .x-btn-icon-el {
+	color: $strong-blue;
+}
+.searchbar-button.x-btn.x-btn-menu-active {
+	background: $abp-dark-grey;
+	background-color: $abp-dark-grey;
+	border: none;
+}
+.searchbar-button.x-btn.x-btn-menu-active .x-btn-icon-el,
+.searchbar-button.x-btn.x-btn-menu-pressed .x-btn-icon-el {
+	color: $strong-blue;
+}
+.searchbar-button.x-btn.x-btn-pressed {
+	background: $abp-dark-grey;
+	background-color: $abp-dark-grey;
+	border: none;
+}
+*/
+.searchbar-searchfield {
+	margin: 2px;
+}
+// .searchbar.searchbaropen .searchbar-button.x-btn {
+// 	padding-top: 0px;
+// }
+
+// TEXTBOX highlight...?
+//    box-shadow: inset 0px 0px 2px #1383c7;

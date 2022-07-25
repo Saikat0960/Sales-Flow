@@ -1,0 +1,94 @@
+// TriData and TriImage Template Styles
+.abp-ag-list-view,
+.abp-list-view {
+    .abp-list-view-template-triData,
+    .abp-list-view-template-triImage {
+        // cellColumns 0, 1
+        .abp-list-view-cellColumn-0,
+        .abp-list-view-cellColumn-1 {
+            flex-basis: 200px;
+            @for $i from 1 through 2 {
+                .abp-list-view-field-#{i} {
+                    grid-column-start: #{i};
+                    -ms-grid-column: #{i};
+                    -ms-grid-row: 1;
+                    grid-row: 1;
+                    align-self: self-start;
+                }
+            }
+            .abp-list-view-field-value-1 {
+                align-self: self-end;
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+            .abp-list-view-field-value-2 {
+                align-self: self-start;
+                font-size: 1.2em;
+            }
+        }
+        // cellColumns 2, 3
+        .abp-list-view-cellColumn-2,
+        .abp-list-view-cellColumn-3 {
+            max-width: 100%;
+            flex-basis: 375px;
+        }
+
+        // cellColumn 2
+        .abp-list-view-cellColumn-2 {
+            -ms-grid-rows: auto;
+            grid-template-rows: auto;
+            @for $i from 1 through 4 {
+                .abp-list-view-field-#{$i} {
+                    padding: 0px 4px;
+                    grid-column-start: #{$i};
+                    -ms-grid-column: #{$i};
+                    -ms-grid-row: 1;
+                    grid-row: 1;
+                    align-self: self-start;
+                }
+            }
+            .abp-list-view-field-label {
+                color: $abp-dark-grey;
+                align-self: self-end;
+            }
+            .abp-list-view-field-value {
+                align-self: self-start;
+                font-size: 1.3em;
+                font-weight: bold;
+                color: $abp-navy;
+            }
+        }
+
+        // cellColumn 3
+        .abp-list-view-cellColumn-3 {
+            @for $i from 1 through 8 {
+                @if $i < 5 {
+                    .abp-list-view-field-#{$i} {
+                        grid-column-start: $i;
+                        -ms-grid-column: $i;
+                        -ms-grid-row: 1;
+                        grid-row: 1;
+                    }
+                } @else {
+                    .abp-list-view-field-#{$i} {
+                        border-top: 1px solid $abp-light-grey;
+                        grid-column-start: $i - 4;
+                        -ms-grid-column: $i - 4;
+                        -ms-grid-row: 2;
+                        grid-row: 2;
+                    }
+                }
+                .abp-list-view-field-label {
+                    color: $abp-dark-grey;
+                    font-size: 1em;
+                    align-self: self-end;
+                }
+                .abp-list-view-field-value {
+                    align-self: self-start;
+                    font-weight: 400;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}

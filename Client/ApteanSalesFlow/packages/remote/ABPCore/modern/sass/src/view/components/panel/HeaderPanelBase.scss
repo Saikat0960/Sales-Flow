@@ -1,0 +1,29 @@
+.abp-header-panel {
+    transition: box-shadow 200ms;
+
+    .x-container {
+        transition: box-shadow $abp-transition-duration $abp-transition-type, background-color $abp-transition-duration $abp-transition-type;
+    }
+    > .x-panelheader {
+        border-bottom-width: 1px !important;
+        .x-textfield {
+            height: 24px;
+            margin: 0 5px 0 0;
+        }
+        input {
+            padding: 0 5px;
+        }
+        .x-tool.x-end {
+            margin: 0 0 0 15px;
+        }
+        .back-btn {
+            margin: 0 10px 0 0 !important;
+        }
+        .back-btn > .x-icon-el:before {
+            font-size: 26px;
+        }
+    }
+    &.abp-scrolled, .abp-scrolled {
+        box-shadow: inset 0px 4px 5px -3px $abp-shadow;
+    }
+}

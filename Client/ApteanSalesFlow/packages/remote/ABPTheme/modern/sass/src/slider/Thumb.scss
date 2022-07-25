@@ -1,0 +1,32 @@
+.x-thumb {
+    transition-property: background-color, border-color;
+    transition-duration: 300ms;
+}
+
+.x-thumb.x-disabled {
+    border-color: $abp-nevada !important;
+    background-color: $abp-grey !important;
+    box-shadow: none;
+}
+.x-toggleslider .x-fill-el {
+    background-color: $abp-light-grey !important;
+}
+
+@mixin abp-thumb-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-thumb {
+                background-color: $base-color;
+                border-color: $selected-color;
+            }
+            .monotone .x-thumb {
+                background-color: $abp-background-grey !important;
+                border-color: $abp-grey;
+            }
+        }
+    }
+}
+@include abp-thumb-theme();

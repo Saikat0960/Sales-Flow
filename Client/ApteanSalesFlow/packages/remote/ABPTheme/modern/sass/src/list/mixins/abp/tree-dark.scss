@@ -1,0 +1,68 @@
+.x-treelist-ABPTreeList,
+.x-treelist-dark {
+    .x-treelist-row {
+        border-style: solid;
+        border-width: 0 0 0 5px;
+        border-color: transparent;
+    }
+
+    .x-treelist-item-shorthand {
+        color: $abp-lucid-blue;
+    }
+
+    .x-treelist-item-text,
+    .x-treelist-item-icon {
+        color: #fff;
+    }
+}
+
+.x-treelist-item-wrap {
+    text-decoration: none;
+}
+
+// Nested Menu Item Background Colors
+$nav-levels: ('0': $abp-nav-level-0,
+    '1': $abp-nav-level-1,
+    '2': $abp-nav-level-2,
+    '3': $abp-nav-level-3,
+    '4': $abp-nav-level-4);
+
+// Apply Nested Menu Item Styles
+@each $levelKey,
+$levelColor in $nav-levels {
+    .x-treelist-ABPTreeList,
+    .x-treelist-dark {
+        .treeMenu-level-#{$levelKey} {
+            background-color: $levelColor;
+
+            &:first-child {
+                border-top: solid $abp-black 1px;
+            }
+
+            &:last-child {
+                border-bottom: solid $abp-black 1px;
+            }
+        }
+    }
+}
+
+@mixin abp-tree-dark-theme() {
+
+    @each $theme,
+    $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-treelist-ABPTreeList,
+            .x-treelist-dark {
+                .x-focused {
+                    >.x-treelist-row {
+                        background-color: $selected-color;
+                        border-color: $base-color;
+                    }
+                }
+            }
+        }
+    }
+}

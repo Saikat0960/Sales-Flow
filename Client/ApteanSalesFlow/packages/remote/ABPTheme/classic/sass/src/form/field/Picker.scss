@@ -1,0 +1,8 @@
+.x-form-item-body {
+    &.x-pickerfield-open {
+        // Flip dropdown trigger on open
+        .x-form-trigger.x-form-arrow-trigger {
+            transform: scaleY(-1);
+        }
+    }
+}

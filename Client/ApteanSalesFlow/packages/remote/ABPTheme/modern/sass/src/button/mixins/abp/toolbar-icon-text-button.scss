@@ -1,0 +1,58 @@
+// Toolbar Text with Icon Button
+.x-toolbar {
+    .x-button.x-has-icon.x-has-text {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 0 0 3px 0;
+        border-color: transparent;
+        .x-inner-el {
+            .x-body-el {
+                .x-icon-el, .x-text-el {
+                    color: $abp-deep-grey;
+                }
+            }
+        }
+        &.x-pressing {
+            border-color: $abp-selected-blue;
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-icon.x-has-text {
+    transition: border-color $abp-modern-transition-duration $abp-transition-type;
+    .x-inner-el {
+        .x-body-el {
+            .x-icon-el, .x-text-el {
+                transition: color $abp-modern-transition-duration $abp-transition-type;
+            }
+        }
+    }
+}
+
+@mixin abp-toolbar-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-toolbar {
+                .x-button.x-has-icon.x-has-text {
+                    background-color: transparent;
+                    border-color: transparent;
+                    &.x-pressing {
+                        background-color: transparent;
+                        border-color: $selected-color;
+                        .x-inner-el {
+                            .x-body-el {
+                                .x-icon-el, .x-text-el {
+                                    color: $selected-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-button-theme();

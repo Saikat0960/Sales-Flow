@@ -1,0 +1,88 @@
+.settings-container {
+	.settings-container-profile-container {
+		border-left: 5px solid transparent;
+		border-width: 0 0 0 5px !important;
+		padding: 5px 0px 5px 5px;
+
+		&.editable {
+			.icon-user {
+				font-size: 42px;
+				line-height: 54px;
+			}
+		}
+
+		.abp-profile-picture{
+			height: 58px;
+			width: 58px;
+			font-size: 28px;
+			line-height: 30px;
+			margin-left: 8px;
+
+			&.x-img {
+				box-shadow: 0 0 8px -3px $abp-deep-grey;
+				border-radius: 50%;
+			}
+		}
+
+		.icon-user {
+			font-size: 30px;
+			line-height: 32px;
+			text-align: center;
+		}
+
+		.x-body-el > .x-label {
+			// username
+			font-size: 16px;
+			font-weight: 300;
+		}
+
+		.x-body-el > .x-label.user-name {
+			// username
+			font-size: 12px;
+			font-weight: 300;
+		}
+
+		label.user-name{
+			font-size: 12px;
+		}
+
+	}
+
+	.settings-container-button-menu {
+		border-width: 0 0 0 5px !important;
+		border-style: solid;
+		padding: 0 10px 15px;
+	}
+	.x-toolbar-body-el {
+		flex-direction: column;
+	}
+
+	.x-button.x-has-text:not(.x-disabled) {
+		background-color: transparent;
+		border-color: transparent;
+		.x-text-el {
+			color: $abp-deep-grey
+		}
+	}
+}
+
+@mixin abp-settings-container-buttons {
+	@each $theme, $map in $abp-themes {
+		$base-color: map-get($map, 'base_color');
+		$selected-color: map-get($map, 'selected_color');
+
+		.#{$theme} {
+			.settings-container {
+				.settings-container-button-menu {
+					border-color: $base-color;
+				}
+				.x-button.x-has-text:not(.x-disabled) {
+					&.x-pressing .x-text-el {
+						color: $selected-color;
+					}
+				}
+			}
+		}
+	}
+}
+@include abp-settings-container-buttons();

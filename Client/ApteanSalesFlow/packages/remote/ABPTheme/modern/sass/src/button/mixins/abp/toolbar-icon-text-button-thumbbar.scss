@@ -1,0 +1,39 @@
+.x-toolbar.abp-thumbbar {
+    .x-button.x-has-icon.x-has-text{
+        background-color: transparent;
+        margin-right: 0px;
+        .x-icon-el.x-font-icon {
+            width: 100%;
+        }
+    }
+}
+@mixin abp-toolbar-thumbbar-icon-text-button-as-text-theme() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .x-toolbar.abp-thumbbar {
+                .x-button.x-has-icon.x-has-text:not(.x-disabled) {
+                    .x-icon-el.x-font-icon {
+                        color: $base-color;
+                    }
+                    &.x-pressing {
+                        border-color: $selected-color;
+                        background-color: $selected-color;
+                        .x-inner-el {
+                            background-color: $selected-color;
+                            border-color: $selected-color;
+                            .x-body-el {
+                                .x-icon-el, .x-text-el {
+                                    color: $abp-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-thumbbar-icon-text-button-as-text-theme();

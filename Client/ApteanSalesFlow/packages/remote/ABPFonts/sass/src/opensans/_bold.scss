@@ -1,0 +1,9 @@
+/* BEGIN Regular */
+@font-face {
+	font-family: 'Open Sans';
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $OpenSansFontName, $FontVersion: $OpenSansVersion, $FontType: "bold");
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* END Regular */

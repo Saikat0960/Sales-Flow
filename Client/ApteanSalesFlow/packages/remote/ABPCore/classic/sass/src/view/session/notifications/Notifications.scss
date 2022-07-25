@@ -1,0 +1,123 @@
+// Classic stylings for Notifications Panels
+.abp-notifications {
+    > .x-container {
+        padding: 0px 8px 8px 8px;
+    }
+}
+
+.abp-notifications-source-panel {
+    background-color: $abp-background-grey;
+
+   // .abp-notifications-source-panel-header{
+        .x-title-item {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+        }
+ //   }
+
+    .x-panel-header-default {
+        background-color: transparent;
+        border: none !important;
+
+        .x-tool-tool-el {
+            color: $abp-midnight-grey;
+			font-size: 20px;
+			width: 20px;
+			height: 20px;
+		}
+    }
+
+    .x-panel-header-default-horizontal.x-header-noborder {
+        padding: 5px 5px 0px 0px;
+    }
+
+    .x-panel-header-title-default {
+        color: $abp-midnight-grey;
+        font-size: 16px;
+        font-weight: 300;
+
+        .abp-notification-panel-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            display: inline-block;
+        }
+
+        .abp-notification-panel-badge {
+            width: auto;
+            min-width: 16px;
+            height: 17px;
+            line-height: 18px;
+            border-radius: 8px;
+            padding: 0px 3px 0 2px;
+            font-size: 10px;
+            font-weight: 300;
+            white-space: nowrap;
+            margin: 0 0 0 4px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .abp-notification-panel-flag {
+            color: $abp-vivid-blue;
+            line-height: 14px;
+            font-size: 10px;
+            font-weight: 800 !important;
+            display: flex;
+            align-items: center;
+            margin: 0 0 0 auto;
+            transition: all 300ms;
+            cursor: pointer;
+            
+            &:before {
+                font-size: 18px;
+                font-family: "apteanico-mini";
+                content: $apteanico-mini-signal-flag;
+            }
+
+            &.abp-notification-flagged-only:before{
+                content: $apteanico-mini-flag-filled;
+            }
+        }
+    }
+    .x-panel-body {
+        background-color: $abp-background-grey;
+    }
+}
+
+@mixin abp-notifications-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $highlight-color: map-get($map, 'highlight_color');
+        $selected-color: map-get($map, 'selected_color');
+        $hover-color: map-get($map, 'hover_color');
+
+        .#{$theme} {
+            .abp-notifications-source-panel {
+                .x-panel-header-title-default {
+                    .abp-notification-panel-flag {
+                        color: $base-color;
+
+                        &:hover {
+                            color: $hover-color;
+                        }
+
+                        &.abp-notification-flagged-only{
+                            color: $selected-color;
+                        }
+                    }
+
+                    .abp-notification-panel-badge {
+                        background-color: $base-color;
+                        color: $abp-white;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-notifications-theme();

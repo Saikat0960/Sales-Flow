@@ -1,0 +1,67 @@
+// The 'Cancel' Buttons should be rendered with the inverse colours compared to the standard buttons with Text.
+// class should be implemented by suppliing: 
+// uiCls: 'abp-cancel',
+
+.x-button.abp-cancel.x-has-text, .x-button.abp-cancel.x-has-text.x-has-icon.text-btn {
+    background-color: $abp-white;
+    color: $abp-vivid-blue;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $abp-vivid-blue;
+
+    .x-inner-el {
+        .x-text-el {
+            color: $abp-vivid-blue;
+        }
+    }
+    &.x-pressing {
+        background-color: $abp-white;
+        border-color: $abp-selected-blue;
+
+        .x-inner-el {
+            .x-text-el {
+                color: $abp-selected-blue;
+            }
+        }
+    }
+    &.x-disabled {
+        background-color: $abp-disabled-grey;
+        border-color: $abp-grey;
+        .x-inner-el {
+            .x-text-el {
+                color: $abp-nevada;
+            }
+        }
+    }
+}
+
+@mixin abp-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button.abp-cancel.x-has-text:not(.x-disabled), .x-button.abp-cancel.x-has-text.x-has-icon.text-btn:not(.x-disabled) {
+                background-color: $abp-white;
+                border-color: $base-color;
+
+                .x-inner-el {
+                    .x-text-el {
+                        color: $base-color;
+                    }
+                }
+
+                &.x-pressing {
+                    background-color: $abp-white;
+                    border-color: $selected-color;
+                    .x-inner-el {
+                        .x-text-el {
+                            color: $selected-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-text-button-theme();

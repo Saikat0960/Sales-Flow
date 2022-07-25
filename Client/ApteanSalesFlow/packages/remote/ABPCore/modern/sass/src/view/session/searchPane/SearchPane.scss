@@ -1,0 +1,65 @@
+.abp-searchpane {
+    background: $abp-background-grey;
+}
+.abp-searchpane-header {
+    padding: 0px 5px 0px 5px;
+    border-bottom: 1px solid $abp-grey;
+}
+
+.abp-searchpane-header-searchfield {
+    .icon-magnifying-glass:before {
+        content: $apteanico-mini-magnifying-glass;
+        font-size: 16px;
+    }
+    .x-input-wrap-el {
+        border: 1px solid $abp-grey;
+    }
+}
+.abp-search-resultsplaceholder {
+    color: $abp-grey;
+    font-size: 1.25em;
+    font-style: italic;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+.abp-search-resultsplaceholder-icon {
+    color: $abp-light-grey;
+    font-size: 6rem;
+    margin-bottom: 25px;
+}
+
+.abp-singleselect-search-button.x-button.x-has-text.x-icon-align-left  {
+    height: 40px;
+    .x-inner-el {
+        background: $abp-white;
+        border: none;
+        padding-left: 14px;
+        color: $abp-nevada;
+    }
+    .x-icon-el {
+        font-size: 24px;
+        margin-right: 17px;
+        color: $abp-nevada;
+    }
+}
+
+.x-mask.abp-modal-mask-transparent {
+    background-color: transparent;
+}
+
+@mixin abp-singleselect-search-button-theme-mixin() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .abp-singleselect-search-button.abp-singleselect-search-button-selected.x-button.x-has-text.x-icon-align-left {
+                .x-text-el,
+                .x-icon-el {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+@include abp-singleselect-search-button-theme-mixin();

@@ -1,0 +1,64 @@
+/*$abpforms-template-image-width: 35px;
+$abpforms-template-image-height: 35px;
+
+.abp-list-view-template-singleLineItem,
+.abp-list-view-template-singleLineItemWithTrigger,
+.abp-list-view-template-twoLineItem,
+.abp-list-view-template-twoLineItemWithTrigger,
+.abp-list-view-template-threeLineItem,
+.abp-list-view-template-threeLineItemWithTrigger {
+    .x-cells-el {
+        // cell wrapper
+        .abp-forms-list-view-image-cell { // Image Cells
+            width: $abpforms-template-image-width !important;
+            height: $abpforms-template-image-height;
+            //border-radius: 100%;
+            overflow: hidden;
+            .x-body-el.x-gridcell-body-el {
+                height: 100%;
+                width: 100%;
+                padding: 0px !important;
+                div {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            img {
+                max-height: unset !important;
+                max-width: unset !important;
+                height: $abpforms-template-image-width;
+                width: $abpforms-template-image-height;
+            }
+        }
+        .a-gridcell-second {
+            .x-body-el.x-gridcell-body-el {
+                // Cell Text
+                font-weight: 300;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.a-abpbuttoncell-trigger {
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+// .abp-list-view {
+    .abp-list-view-template-singleLineItem,
+    .abp-list-view-template-singleLineItemWithTrigger,
+    .abp-list-view-template-twoLineItem,
+    .abp-list-view-template-twoLineItemWithTrigger,
+    .abp-list-view-template-threeLineItem,
+    .abp-list-view-template-threeLineItemWithTrigger {
+        .x-cells-el {
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+            .x-tool-dock {
+                flex: unset;
+            }
+        }
+    }
+// }
+*/

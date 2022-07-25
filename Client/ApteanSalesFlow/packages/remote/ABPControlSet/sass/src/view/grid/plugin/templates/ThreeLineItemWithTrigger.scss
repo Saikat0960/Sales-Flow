@@ -1,0 +1,202 @@
+.abp-list-view-template-threeLineItemWithTrigger {
+    .abp-list-view-template-threeLineItemWithTrigger {
+        min-height: 63px;
+    }
+    .abp-list-view .abp-list-view-cellColumn {
+        position: absolute;
+        flex: unset;
+        flex-grow: unset;
+        overflow: unset;
+        display: flex;
+    }
+
+    .x-cells-el {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-0 { // Image
+            // Image
+            height: 50px;
+            top: 8px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-1 { // Bold Text
+            // First Text Line
+            align-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-body-el.x-gridcell-body-el {
+                    // Cell Text
+                    font-weight: 400;
+                    font-size: 14px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+            .abp-list-view-field.abp-list-view-field-1,
+            tbody,
+            tr,
+            td {
+                display: flex;
+                align-items: center;
+            }
+            left: $abpforms-template-image-width + 15px;
+            top: 7px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-2 { // Line Two Regular text
+            // Trigger
+            left: $abpforms-template-image-width + 15px;
+            bottom: 19px;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-gridcell-body-el {
+                    color: $abp-dark-grey;
+                }
+            }
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-3 { // Line Three Regular text
+            // Trigger
+            left: $abpforms-template-image-width + 15px;
+            bottom: 3px;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-gridcell-body-el {
+                    color: $abp-dark-grey;
+                }
+            }
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-4 { // Trigger
+            // Trigger
+            right: 0;
+            top: 0;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            .abp-list-view-field.abp-list-view-field-2,
+            tbody,
+            tr,
+            .abp-list-view-field-value,
+            .a-gridcell-trigger {
+                display: flex !important;
+                align-items: center;
+                width: auto !important;
+            }
+        }
+    }
+}
+
+.abp-list-grid-threeLineItemWithTrigger {
+    .abp-list-view-template-threeLineItemWithTrigger {
+        min-height: 63px;
+    }
+    .abp-list-view .abp-list-view-cellColumn {
+        position: absolute;
+        flex: unset;
+        flex-grow: unset;
+        overflow: unset;
+        display: flex;
+    }
+
+    .x-cells-el {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-0 { // Image
+            // Image
+            height: 50px;
+            top: 8px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-1 { // Bold Text
+            // First Text Line
+            align-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-body-el.x-gridcell-body-el {
+                    // Cell Text
+                    font-weight: 400;
+                    font-size: 14px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+            .abp-list-view-field.abp-list-view-field-1,
+            tbody,
+            tr,
+            td {
+                display: flex;
+                align-items: center;
+            }
+            left: $abpforms-template-image-width + 15px;
+            top: 7px;
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-2 { // Line Two Regular text
+            // Trigger
+            left: $abpforms-template-image-width + 15px;
+            bottom: 19px;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-gridcell-body-el {
+                    color: $abp-dark-grey;
+                }
+            }
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-3 { // Line Three Regular text
+            // Trigger
+            left: $abpforms-template-image-width + 15px;
+            bottom: 3px;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            .abp-list-view-field-value {
+                min-height: unset !important;
+                padding: 0px;
+                .x-gridcell-body-el {
+                    color: $abp-dark-grey;
+                }
+            }
+        }
+        .abp-list-view-cellColumn.abp-list-view-cellColumn-4 { // Trigger
+            // Trigger
+            right: 0;
+            top: 0;
+            width: auto;
+            flex-grow: unset;
+            flex-basis: unset;
+            .abp-list-view-field.abp-list-view-field-2,
+            tbody,
+            tr,
+            .abp-list-view-field-value,
+            .a-gridcell-trigger {
+                display: flex !important;
+                align-items: center;
+                width: auto !important;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,21 @@
+// Form Required Star Icon
+@mixin requiredStar($color) {
+    font-family: apteanico-mini;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    vertical-align: text-top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: static;
+    font-size: 10px;
+    line-height: 12px;
+    content: $apteanico-mini-star;
+    padding-left: 1px;
+    color: $color;
+}
+@mixin absoluteStar {
+    position: absolute;
+    top: 4px;
+    right: 3px;
+}

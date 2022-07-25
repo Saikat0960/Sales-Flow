@@ -1,0 +1,34 @@
+@include panel-ui(
+    $ui: 'abpcard',
+
+    $header-background-color: $abp-card-header-bg-color,
+    $header-border-color: $abp-light-grey,
+    $header-border-style: $abp-card-border-style,
+    $header-color: $abp-black,
+    $header-font-weight: $abp-font-thick,
+    $header-font-size: $abp-panel-header-font,
+    $header-padding: $abp-card-header-padding,
+
+    $border-color: $abp-light-grey,
+    $border-width: $abp-card-border-width,
+    $border-radius: $abp-card-border-radius,
+    );
+    
+/*This is a workaround to this class; Need to take a look at removing 
+This style from the ABPTheme. */
+
+.abpcard {
+    .x-panel-header-abpcard-horizontal {
+        padding: $abp-card-header-padding;
+        margin: $abp-card-header-margin;
+        top: $abpcard-header-text-position;
+        left: $abpcard-header-text-position;
+        right: $abpcard-header-text-position;
+        border: $abpcard-header-border-none;
+    }
+ 
+    .x-panel-abpcard .x-tool .a-tool-custom-unsafe .x-box-item .x-tool-default .x-tool-after-title {
+        box-shadow: $abpcard-box-shadow;
+    }
+
+}

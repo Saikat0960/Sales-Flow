@@ -1,0 +1,32 @@
+.mixin-trigger {
+    height: 100%;
+    width: 100%;
+    .mixin-trigger-tool {
+        outline-offset: -1px !important;
+        height: 100%;
+        width: 100%;
+    }
+}
+// Remove the mixin triggers default icon.
+.mixin-trigger.x-form-trigger-cmp:before {
+    content: unset;
+}
+
+.mixin-trigger.x-form-trigger-cmp {
+    width: 32px;
+    background: white;
+    padding: 1px;
+    .mixin-trigger-tool {
+        height: 24px;
+        width: 30px;
+        outline-offset: 0px !important;
+        .x-tool-tool-el {
+        line-height: 26px;
+        height: 100%;
+        font-weight: $abp-font-bold;
+        margin-left: auto;
+        margin-right: auto;
+        color: $abp-deep-grey;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.interactions-toolbar.x-toolbar-default {
+    background-color: $abp-light-grey;
+    border-width: 0px 0px 1px 0px !important;
+    border-color: $abp-grey;
+    padding: 0px;
+    .x-btn-icon-el {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,227 @@
+@import './panel/mixins/index';
+@import './panel/accordion';
+
+// Base Styles
+.x-panel {
+    .x-panelheader.x-horizontal {
+        min-height: 30px;
+    }
+    .x-paneltitle {
+        padding: 0px;
+    }
+    .x-paneltool .x-icon-el {
+        color: $abp-grey;
+    }
+    .x-panel-body-el {
+        border-top: none;
+    }
+    .x-panelheader-body-el {
+        border-bottom: solid 1px $abp-grey;
+    }
+}
+
+// Transitions
+.x-panel {
+    .x-paneltitle {
+        transition: color $abp-transition-duration $abp-transition-type;
+    }
+    .x-paneltool.x-pressed .x-icon-el {
+        transition: color $abp-modern-transition-duration $abp-transition-type;
+    }
+}
+@include abp-default-panel();
+
+//////////////////////// COPIED FROM CLASSIC ////////////////////////
+// @include abp-panel-theme();
+
+/* Panel Transitions */
+// .x-panel {
+//     .x-panel-header {
+//         transition: border-color $abp-transition-duration $abp-transition-type, background-color $abp-transition-duration $abp-transition-type;
+//     }
+//     .x-panel-header-title {
+//         transition: color $abp-transition-duration $abp-transition-type;
+//     }
+// }
+//
+// .x-panel {
+//     > .x-panel-header {
+//         transition: box-shadow 200ms;
+//     }
+//     > .x-panel-bodyWrap {
+//         > .x-panel-body {
+//             transition: box-shadow 200ms;
+//         }
+//     }
+//     &.abp-scrolled { // our ABPHeaderPanel applies this class on scroll
+//         > .x-panel-header {
+//             box-shadow: 0px -2px 12px 0px $abp-shadow;
+//         }
+//     }
+// }
+//
+// /* Forced Overrides for Sencha Applied Styles */
+//
+// /* Remove inner .x-panel-body border from panels with { border: true }.
+//    We already have a border on .x-panel so do not want this extra border. */
+// .x-panel-default-outer-border-trbl {
+//     border-width: 0px !important;
+// }
+//
+// /*  Panel Header Bottom Border
+//     NOTE: Sencha forcibly overrides framed panel body borders with the attatched .x-noborder-trbl class.
+//             Sepcifically, .x-noborder-trbl { border-width: 0px !important; }
+//
+//             NOTE: Is this possibly due to the way we have coded our components?  Do panels need {border: true} set?
+//
+//             As such, the following var is useless in achieving a framed panel body top border.
+//             Check Panel.scss and associtated theme mixins for panel header border styles.
+//
+//     $panel-frame-body-border-width: 1px 0px 0px 0px;
+// */
+// .x-panel-header.x-docked-top:not(.x-collapsed) {
+//     border-bottom-width: 1px !important;
+//     border-style: solid;
+//     border-color: $abp-grey;
+// }
+// /* Max height - for if input added to header. */
+// .x-panel-header {
+//     max-height: 42px;
+//     display: flex;
+//     align-items: center;
+// }
+//
+// /* Framed Base Theme Styles
+//     NOTE: Sencha applies "-framed" to the end of the ui name when a panel is framed.
+//             Using the panel ui and setting the ui to "default-framed" overrides the
+//             vars in /vars/Panel.scss.  Rather than re-coding the UI and vars, we will
+//             use sass, for less code.
+// */
+//
+// .x-panel-body-default-framed.x-noborder-trbl {
+//     border-width: 1px 0px 0px !important;
+// }
+//
+// .x-panel-default-framed {
+//     .x-panel-header-default-framed-top {
+//         border-color: $abp-vivid-blue;
+//     }
+//     .x-panel-header-title-default-framed {
+//         color: $base-color;
+//     }
+// }
+
+////////////////////////////////////////////////////////////////
+
+
+
+//////////////// OLD ////////////////////
+// @import './panel/index.scss';
+//
+@include panel-ui(
+    $ui: 'grey',
+    $background-color: $abp-background-grey,
+    $body-background-color:  $abp-background-grey
+);
+
+@include panel-ui(
+    $ui: 'lightgrey',
+    $background-color: $abp-light-grey,
+    $body-background-color:  $abp-light-grey
+);
+//
+// // Themed Panel
+// @include abp-panel-theme();
+// // Themed Accordion Panel
+// @include abp-accordion-panel-theme();
+// // Themed Transparent Tabs Tab Panel
+// @include abp-transparent-tabs-tabpanel();
+//
+// // Available Panel UI vars
+// // $ui,
+// // $xtype,
+// // $header-xtype,
+// // $title-xtype,
+// // $tool-xtype,
+// // $background-color,
+// // $border-color,
+// // $border-width,
+// // $border-style,
+// // $border-radius,
+// // $border-radius-big,
+// // $body-background-color,
+// // $body-color,
+// // $body-border-color,
+// // $body-border-width,
+// // $body-border-style,
+// // $body-font-weight,
+// // $body-font-size,
+// // $body-font-size-big,
+// // $body-line-height,
+// // $body-line-height-big,
+// // $body-font-family,
+// // $body-padding,
+// // $body-padding-big,
+// // $header-background-color,
+// // $header-background-gradient,
+// // $header-color,
+// // $header-border-color,
+// // $header-border-width,
+// // $header-border-style,
+// // $header-font-weight,
+// // $header-font-size,
+// // $header-font-size-big,
+// // $header-line-height,
+// // $header-line-height-big,
+// // $header-font-family,
+// // $header-padding,
+// // $header-padding-big,
+// // $header-title-padding,
+// // $header-title-padding-big,
+// // $header-title-opacity,
+// // $header-shadow,
+// // $header-z-index,
+// // $header-min-height,
+// // $header-min-height-big,
+// // $header-icon-color,
+// // $header-icon-size,
+// // $header-icon-size-big,
+// // $header-icon-font-size,
+// // $header-icon-font-size-big,
+// // $header-icon-horizontal-spacing,
+// // $header-icon-horizontal-spacing-big,
+// // $header-icon-vertical-spacing,
+// // $header-icon-vertical-spacing-big,
+// // $header-icon-opacity,
+// // $tool-color,
+// // $tool-hovered-color,
+// // $tool-pressed-color,
+// // $tool-disabled-color,
+// // $tool-background-color,
+// // $tool-hovered-background-color,
+// // $tool-pressed-background-color,
+// // $tool-disabled-background-color,
+// // $tool-opacity,
+// // $tool-hovered-opacity,
+// // $tool-pressed-opacity,
+// // $tool-disabled-opacity,
+// // $tool-border-radius,
+// // $tool-border-radius-big,
+// // $tool-size,
+// // $tool-size-big,
+// // $tool-font-size,
+// // $tool-font-size-big,
+// // $tool-spacing,
+// // $tool-spacing-big,
+// // $tool-cursor,
+// // $tool-disabled-cursor,
+// // $tool-focused-outline-width,
+// // $tool-focused-outline-style,
+// // $tool-focused-outline-color,
+// // $tool-focused-outline-offset,
+// // $anchor-border-color,
+// // $anchor-background-color,
+// // $anchor-height,
+// // $anchor-width,
+// // $anchor-margin,
+// // $manage-borders

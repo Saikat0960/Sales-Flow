@@ -1,0 +1,17 @@
+@import './ABPControlSet/index.scss';
+
+$enable-big: false;
+
+// Font Sizes - modern
+$modern-font-sizes: (
+    text: (
+        small: 0.7rem,
+        medium: 0.8rem,
+        large: 0.9rem
+    ),
+    icon: (
+        small: 20px,
+        medium: 24px,
+        large: 28px
+    )
+);

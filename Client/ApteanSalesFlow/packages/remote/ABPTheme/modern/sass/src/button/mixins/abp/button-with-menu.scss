@@ -1,0 +1,20 @@
+.x-button.x-has-menu {
+    .x-arrow-el {
+        width: auto;
+    }
+    &.small {
+        .x-arrow-el:before {
+            font-size: $abp-button-menu-small-icon-size;
+        }
+    }
+    &.medium {
+        .x-arrow-el:before {
+            font-size: $abp-button-menu-medium-icon-size;
+        }
+    }
+    &.large {
+        .x-arrow-el:before {
+            font-size: $abp-button-menu-large-icon-size;
+        }
+    }
+}

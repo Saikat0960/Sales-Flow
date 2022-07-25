@@ -1,0 +1,495 @@
+/*
+    NOTE: This file is added to include the Ext JS v6.6 Modern Time Field - remove duplicate code once updated to v6.6 or greater.
+*/
+
+/*
+ * @class Ext.field.trigger.Time
+ */
+
+/*
+ * @var {number}
+ * Time Trigger width
+ */
+ $timetrigger-width: dynamic(null);
+
+ /*
+  * @var {number}
+  * Time Trigger width in the {@link Global_CSS#$enable-big big} sizing scheme
+  */
+ $timetrigger-width-big: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger background-color
+  */
+ $timetrigger-background-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger background-color when hovered
+  */
+ $timetrigger-hovered-background-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger background-color when pressed
+  */
+ $timetrigger-pressed-background-color: dynamic(null);
+
+ /*
+  * @var {string}
+  * Time Trigger icon
+  */
+ $timetrigger-icon: dynamic($apteanico-mini-clock);
+
+ /*
+  * @var {color}
+  * Time Trigger icon color
+  */
+ $timetrigger-icon-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger icon color when hovered
+  */
+ $timetrigger-hovered-icon-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger icon color when pressed
+  */
+ $timetrigger-pressed-icon-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger icon background-color
+  */
+ $timetrigger-icon-background-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger icon background-color when hovered
+  */
+ $timetrigger-hovered-icon-background-color: dynamic(null);
+
+ /*
+  * @var {color}
+  * Time Trigger icon background-color when pressed
+  */
+ $timetrigger-pressed-icon-background-color: dynamic(null);
+
+ /*
+  * @var {number/list}
+  * Time Trigger icon border-radius
+  */
+ $timetrigger-icon-border-radius: dynamic(null);
+
+ /*
+  * @var {number}
+  * Time Trigger icon size
+  */
+ $timetrigger-icon-size: dynamic(null);
+
+ /*
+  * @var {number}
+  * Time Trigger icon size in the {@link Global_CSS#$enable-big big} sizing scheme
+  */
+ $timetrigger-icon-size-big: dynamic(null);
+
+ /*
+  * @var {number}
+  * Time Trigger icon font-size
+  */
+ $timetrigger-icon-font-size: dynamic(null);
+
+ /*
+  * @var {number}
+  * Time Trigger icon font-size in the {@link Global_CSS#$enable-big big} sizing scheme
+  */
+ $timetrigger-icon-font-size-big: dynamic(null);
+
+ /*
+  * Creates a visual theme for a Time Trigger.
+  *
+  * @param {string} $ui
+  * The name of the UI being created. Can not included spaces or special punctuation
+  * (used in CSS class names).
+  *
+  * @param {String} [$xtype=timetrigger] (protected) The {@link Ext.Class#xtype} to use
+  * in CSS selectors.  For use by UI mixins of derived classes.
+  *
+  * @param {number} $width
+  * Time Trigger width
+  *
+  * @param {number} $width-big
+  * Time Trigger width in the {@link Global_CSS#$enable-big big} sizing scheme
+  *
+  * @param {color} $background-color
+  * Time Trigger background-color
+  *
+  * @param {color} $hovered-background-color
+  * Time Trigger background-color when hovered
+  *
+  * @param {color} $pressed-background-color
+  * Time Trigger background-color when pressed
+  *
+  * @param {string} $icon
+  * Time Trigger icon
+  *
+  * @param {color} $icon-color
+  * Time Trigger icon color
+  *
+  * @param {color} $hovered-icon-color
+  * Time Trigger icon color when hovered
+  *
+  * @param {color} $pressed-icon-color
+  * Time Trigger icon color when pressed
+  *
+  * @param {color} $icon-background-color
+  * Time Trigger icon background-color
+  *
+  * @param {color} $hovered-icon-background-color
+  * Time Trigger icon background-color when hovered
+  *
+  * @param {color} $pressed-icon-background-color
+  * Time Trigger icon background-color when pressed
+  *
+  * @param {number/list} $icon-border-radius
+  * Time Trigger icon border-radius
+  *
+  * @param {number} $icon-size
+  * Time Trigger icon size
+  *
+  * @param {number} $icon-size-big
+  * Time Trigger icon size in the {@link Global_CSS#$enable-big big} sizing scheme
+  *
+  * @param {number} $icon-font-size
+  * Time Trigger icon font-size
+  *
+  * @param {number} $icon-font-size-big
+  * Time Trigger icon font-size in the {@link Global_CSS#$enable-big big} sizing scheme
+  */
+ @mixin timetrigger-ui(
+     $ui: null,
+     $xtype: timetrigger,
+     $width: null,
+     $width-big: null,
+     $background-color: null,
+     $hovered-background-color: null,
+     $pressed-background-color: null,
+     $icon: null,
+     $icon-color: null,
+     $hovered-icon-color: null,
+     $pressed-icon-color: null,
+     $icon-background-color: null,
+     $hovered-icon-background-color: null,
+     $pressed-icon-background-color: null,
+     $icon-border-radius: null,
+     $icon-size: null,
+     $icon-size-big: null,
+     $icon-font-size: null,
+     $icon-font-size-big: null
+ ) {
+     $arguments: intersect-arguments(timetrigger-ui, trigger-ui);
+
+     @include trigger-ui($arguments...);
+ }
+
+ /*
+ * @class Ext.panel.TimeHeader
+ */
+
+/*
+ * @var {color}
+ * Time Header background color
+ */
+$timeheader-background-color: dynamic($base-color);
+
+/*
+ * @var {color}
+ * Time Header text color
+ */
+$timeheader-color: dynamic($light-color);
+
+/*
+ * @var {number}
+ * Time Header minutes width
+ */
+$timeheader-minutes-width: dynamic(75px);
+
+/*
+ * @var {number}
+ * Time Header padding
+ */
+$timeheader-padding: dynamic(10px 40px);
+
+@mixin timeheader-ui(
+    $ui: null,
+    $background-color: null,
+    $color: null,
+    $minutes-width: null,
+    $padding: null,
+    $xtype: analogtimeheader
+) {
+
+    $ui-suffix: ui-suffix($ui);
+    .#{$prefix}#{$xtype}#{$ui-suffix} {
+
+        .#{$prefix}header-position-left & {
+            // Required for flexbox issue on iOS 10
+            height: 100%;
+
+            .#{$prefix}header-el {
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                width: 190px;
+            }
+
+            .#{$prefix}meridiem-wrapper-el {
+                height: auto;
+                padding-left: 0;
+            }
+
+            .#{$prefix}time-el {
+                font-size: 42px;
+            }
+        }
+
+
+        .#{$prefix}header-el {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: $background-color;
+            height: 100px;
+            padding: $padding;
+            color: $color;
+            @include no-select;
+        }
+
+        .#{$prefix}meridiem-wrapper-el {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: 12px;
+            height: 100%;
+        }
+
+        .#{$prefix}time-wrapper-el {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .#{$prefix}time-el {
+            font-size: 68px;
+            line-height: normal;
+        }
+
+        .#{$prefix}time-el, .#{$prefix}meridiem-el {
+            user-select: none;
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        .#{$prefix}time-el.active, .#{$prefix}meridiem-el.active {
+            opacity: 1;
+        }
+
+        .#{$prefix}time-el.#{$prefix}minute-el {
+            flex: 1;
+            text-align: left;
+        }
+
+        .#{$prefix}time-el.#{$prefix}hour-el {
+            flex: 1;
+            text-align: right;
+        }
+    }
+}
+/*
+ * @class Ext.panel.TimeView
+ */
+
+/*
+ * @var {color}
+ * Analog Time View background color
+ */
+ $timeview-background-color: dynamic($background-color);
+
+ /*
+  * @var {color}
+  * Analog Time View Analog Picker background color
+  */
+ $timeview-analog-picker-background-color: dynamic(#E0E0E0);
+
+ /*
+  * @var {color}
+  * Analog Time View Analog Picker text color
+  */
+ $timeview-analog-picker-color: dynamic($color);
+
+ /*
+  * @var {color}
+  * Analog Time View Analog Picker text color for active items
+  */
+ $timeview-analog-picker-active-color: dynamic($light-color);
+
+ /*
+  * @var {color}
+  * Analog Time View Analog Picker Clock hand color
+  */
+ $timeview-analog-picker-hand-color: dynamic($base-color);
+
+ /*
+  * @var {color}
+  * Analog Time View Analog Picker Clock hand color
+  */
+ $timeview-analog-picker-hand-dot-color: dynamic($background-color);
+
+ @mixin timeview-ui(
+     $ui: null,
+     $background-color: null,
+     $analog-picker-background-color: null,
+     $analog-picker-color: null,
+     $analog-picker-active-color: null,
+     $analog-picker-hand-background-color: null,
+     $analog-picker-hand-dot-color: null,
+     $analog-picker-hand-color: null,
+     $xtype: analogtime
+ ) {
+
+     // Bug in edge with psuedo and css properties. using this will de-property the variable
+     $edge-analog-time-hand-background-color: mix(#fff, $analog-picker-hand-color, 0%);
+     $ui-suffix: ui-suffix($ui);
+     .#{$prefix}#{$xtype}#{$ui-suffix} {
+         background-color: $background-color;
+         width: 280px;
+         height: 420px;
+
+         &:not(.#{$prefix}vertical) {
+             width: 420px;
+             height: 280px;
+         }
+
+         .#{$prefix}inner-el {
+             position: relative;
+             display: flex;
+             flex-direction: column;
+             height: 100%;
+         }
+
+         .#{$prefix}wide & {
+             .#{$prefix}inner-el {
+                 flex-direction: row;
+                 width: 100%;
+                 height: auto;
+             }
+         }
+
+         .#{$prefix}picker-wrap-el {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             flex: 1;
+             width: 100%;
+             height: 100%;
+         }
+
+         .#{$prefix}analog-picker-el {
+             position: relative;
+             width: 90%;
+             background-color: $analog-picker-background-color;
+             border-radius: 1000000px;
+
+             // Required for touch dragging in IE11 and Edge
+             touch-action: none;
+             &:before {
+                 content: "";
+                 display: block;
+                 padding-top: 100%;
+             }
+
+             &.animated .#{$prefix}analog-picker-hand-el {
+                 transition: transform 300ms ease-out;
+             }
+
+             &.animated-delayed .#{$prefix}analog-picker-hand-el {
+                 transition: transform 300ms 200ms ease-out;
+             }
+         }
+
+         .#{$prefix}analog-picker-face-el {
+             @include no-select;
+             & > div {
+                 color: $analog-picker-color;
+                 position: absolute;
+                 width: 19px;
+                 text-align: center;
+                 top: 50%;
+                 left: 50%;
+                 margin: -10px;
+                 user-select: none;
+                 cursor: pointer;
+                 transition: color 200ms ease-out;
+                 &.active {
+                     color: $analog-picker-active-color;
+                 }
+             }
+         }
+
+         $size: 2px;
+         $centerSize: 8px;
+         $outerSize: 40px;
+         $dotSize: 4px;
+         .#{$prefix}analog-picker-hand-el {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             background-color: $analog-picker-hand-color;
+             width: 48%;
+             height: $size;
+             transform-origin: center left;
+             transform: rotate(0deg);
+             margin-top: -$size/2;
+
+             .#{$prefix}edge & {
+                 background-color: $edge-analog-time-hand-background-color;
+
+                 &:before, &:after {
+                     background-color: $edge-analog-time-hand-background-color;
+                 }
+             }
+
+             &:before {
+                 position: absolute;
+                 top: -($centerSize/2) + ($size/2);
+                 left: -($centerSize/2);
+                 content: "";
+                 width: $centerSize;
+                 height: $centerSize;
+                 background-color: $analog-picker-hand-color;
+                 border-radius: $centerSize;
+             }
+             &:after {
+                 position: absolute;
+                 top: 0;
+                 right: ($outerSize/2) + ($size/2) - ($dotSize / 2);
+                 content: "";
+                 width: $dotSize;
+                 height: $dotSize;
+                 border-radius: $outerSize;
+                 background-color: $analog-picker-hand-color;
+                 box-shadow: 0 0 0 ($outerSize/2) $analog-picker-hand-color;
+             }
+         }
+
+         .#{$prefix}analog-picker-el.#{$prefix}analog-picker-dot-indicator .#{$prefix}analog-picker-hand-el:after {
+             background-color: $analog-picker-hand-dot-color;
+         }
+     }
+ }
+

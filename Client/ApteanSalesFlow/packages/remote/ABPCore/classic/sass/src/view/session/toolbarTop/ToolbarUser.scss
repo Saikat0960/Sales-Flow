@@ -1,0 +1,107 @@
+// ﻿.toolbar-menu-user {
+// 	background: transparent;
+// 	border-left: 1px solid $black-80;
+// 	border-right: none;
+// 	border-top: none;
+// 	border-bottom: none;
+//
+// 	.toolbar-menu-user-icon {
+// 		transition: background-color 200ms ease;
+//
+// 		font-size: 1.5em;
+// 		padding: 4px;
+// 		border-radius: 50%;
+// 		background-color: $black-80;
+// 		width: 30px !important;
+// 		height: 30px;
+// 	}
+//
+// 	.x-btn-wrap-default-small.x-btn-arrow-right:after {
+// 		font-size: 1.25em;
+// 		content: $apteanico-mini-navigate-down;
+// 		font-family: 'apteanico-mini' !important;
+// 	}
+// }
+//
+// .toolbar-menu-user.toolbar-menu-btn-over {
+// 	.toolbar-menu-user-icon {
+// 		background-color: $black-70;
+// 		color: $white;
+// 	}
+// }
+//
+// .toolbar-menu-user.x-btn.x-btn-menu-active.x-btn-default-small,
+// .toolbar-menu-user.x-btn.x-btn-pressed.x-btn-default-small, {
+// 	background: transparent;
+// }
+//
+// // Styling for the popup menu items
+//
+// .toolusermenu-subbutton {
+// 	background: $black-60;
+// 	border-bottom: 1px solid $black-90;
+//
+// 	.x-menu-item-text {
+// 		color: $white;
+// 		transition: color 0.3s ease;
+// 		font-size: 1.1em;
+// 	}
+// }
+//
+// .toolusermenu-label {
+// 	color: $white;
+// 	height: 32px;
+// 	line-height: 32px;
+// 	padding-left: 5px;
+// 	margin-right: auto;
+//
+// 	.x-form-item-label-inner.x-form-item-label-inner-default {
+// 		height: 100%;
+// 		line-height: 100%;
+// 		font-size: 1.1em;
+// 	}
+// }
+//
+// .toolusermenu-subbutton-form {
+// 	background: $black-60;
+// }
+//
+// .toolusermenu-radiofield,
+// .toolusermenu-checkfield {
+// 	background: transparent;
+// 	border-bottom: 1px solid $black-90;
+// 	margin-bottom: 0px;
+// }
+// .toolusermenu-radiofield .x-form-radio-default,
+// .toolusermenu-checkfield .x-form-checkbox-default{
+// 	color: $white;
+// 	font-size: 1.1em;
+// }
+//
+// .toolusermenu-radiofield .x-form-checkbox-focus.x-form-radio-default,
+// .toolusermenu-checkfield .x-form-checkbox-focus.x-form-checkbox-default{
+// 	color: $strong-blue-75;
+// 	font-size: 1.1em;
+// }
+//
+// .toolusermenu-field-over,
+// .toolusermenu-button.x-menu-item-default.x-menu-item-active,
+// .toolusermenu-subbutton.x-menu-item-default.x-menu-item-active {
+// 	background: $deep-blue-75;
+// }
+//
+//
+// .toolusermenu-userinfo-cont {
+// 	background: $background-grey;
+// 	width: 100% !important;
+//     left: 0px !important;
+// 	padding-left: 10px;
+// 	border-bottom: 1px solid $black-30;
+// }
+// .toolusermenu-userinfo {
+// 	background: transparent;
+// 	color: $black;
+// 	font-weight: bold;
+// 	height: 32px;
+// 	line-height: 32px;
+// }

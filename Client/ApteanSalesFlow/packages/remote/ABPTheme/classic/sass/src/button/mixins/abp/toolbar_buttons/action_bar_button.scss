@@ -1,0 +1,22 @@
+.x-toolbar.x-toolbar-abp-action-bar {
+    .x-btn.x-btn-disabled.icon,
+    .x-btn.x-btn-disabled.text {
+        background-color: transparent;
+    }
+}
+
+@mixin abp-dark-toolbar-button-theme() {
+    @each $theme, $map in $abp-themes {
+
+        .#{$theme} {
+            .x-toolbar.x-toolbar-abp-action-bar {
+                .x-btn.x-btn-disabled.icon,
+                .x-btn.x-btn-disabled.text {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+@include abp-dark-toolbar-button-theme();

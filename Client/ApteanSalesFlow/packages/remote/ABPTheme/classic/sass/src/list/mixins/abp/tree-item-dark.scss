@@ -1,0 +1,46 @@
+// Dark Button Mixins Ex: Main Menu Items
+// Transitions
+.x-container-menuitem.x-dark {
+    transition: background-color $abp-transition-duration $abp-transition-type,
+                border-color $abp-transition-duration $abp-transition-type;
+}
+// Main Menu Swap To Button Base Styles
+.x-container-menuitem.x-dark {
+    padding: 10px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0px 0 0px 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+    &.x-hover {
+        border-color: $abp-vivid-blue;
+        background-color: $abp-selected-blue;
+    }
+
+    .x-treelist-item-shorthand {
+        color: $abp-dark-grey;
+        background-color: $abp-white;
+    }
+}
+/*  Main Menu Swap To Button Theme
+        This abp-MainMenu-menu-item-dark-button mixin applies to the ABP Main Menu.
+        The first item in the Main Menu, "Swap To", is a custom component extending Sencha's "Component", not a button or menu item.
+        That will make the UI for the Swap To Button a special case.  Rather than using a Button UI, we will have to use css.
+        NOTE: If the Swap To button is ever re-coded, this UI may become useless.
+*/
+@mixin abp-swap-to-menu-item-dark() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+        .#{$theme} {
+            .x-container-menuitem.x-dark {
+                &.x-hover {
+                    border-color: $base-color;
+                    background-color: $selected-color;
+                }
+            }
+        }
+    }
+}

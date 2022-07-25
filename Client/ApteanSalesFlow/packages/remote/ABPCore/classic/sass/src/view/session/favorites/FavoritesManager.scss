@@ -1,0 +1,142 @@
+// TODO: Make UI for popup windows
+// .favoriteseditpanel is also used as headlines popup window class
+.favoriteseditpanel {
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: $abp-vivid-blue;
+
+    .x-panel-header-default .x-tool-tool-el {
+        font-size: 1.25em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .x-panel-header-title-default {
+        font-size: 1.2em;
+    }
+}
+
+.favorites-addgroup {
+    height: 32px;
+    transition: background-color 300ms, border-color 300ms;
+
+    .x-btn-wrap {
+        height: auto;
+    }
+}
+
+.favorites-addgroup.x-btn.x-btn-disabled.x-btn-default-toolbar-small {
+    background-color: $abp-disabled-grey;
+    border: 1px solid $abp-grey;
+
+    &.x-btn .x-btn-wrap .x-btn-icon .x-btn-icon-el {
+        color: $abp-nevada !important;
+    }
+}
+
+.x-tree-icon-parent-expanded {
+    color: $abp-white;
+}
+
+.x-tree-arrows .x-grid-tree-node-expanded .x-tree-expander {
+    color: $abp-white;
+}
+
+$transparent-white: rgba(225, 225, 225, 0);
+$opaque-red: rgba(225, 100, 100, 0.8);
+$solid-white: rgba(225, 225, 225, 1);
+
+@keyframes heartbeat-inner {
+    0% {
+        transform: scale(1);
+        color: $transparent-white;
+    }
+
+    25% {
+        transform: scale(1.1);
+        color: $opaque-red;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    75% {
+        transform: scale(1.1);
+        color: $opaque-red;
+    }
+
+    100% {
+        transform: scale(1);
+        color: $transparent-white;
+    }
+}
+
+@keyframes heartbeat-outter {
+    0% {
+        transform: scale(1);
+        color: $solid-white;
+    }
+
+    25% {
+        transform: scale(1.1);
+        color: $opaque-red;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    75% {
+        transform: scale(1.1);
+        color: $opaque-red;
+    }
+
+    100% {
+        transform: scale(1);
+        color: $solid-white;
+    }
+}
+
+@mixin abp-favoritesmanager-theme() {
+
+    @each $theme,
+    $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .favorites-manager-panel .x-title-text {
+                color: $base-color;
+            }
+
+            .favoriteseditpanel {
+                border-top-color: $base-color;
+            }
+
+            .x-toolbar .x-btn.icon.favorites-addgroup {
+                background-color: $base-color;
+                border-color: $base-color;
+
+                &.x-btn .x-btn-wrap .x-btn-icon .x-btn-icon-el {
+                    color: $abp-white !important;
+                }
+
+                &.x-btn-over {
+                    background-color: $hover-color;
+                    border-color: $hover-color;
+                }
+
+                &.x-btn-pressed {
+                    background-color: $selected-color;
+                    border-color: $selected-color;
+                }
+            }
+
+        }
+    }
+}
+
+@include abp-favoritesmanager-theme();

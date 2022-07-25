@@ -1,0 +1,62 @@
+.abp-currencybox {
+    display: flex;
+    align-content: center;
+    border-style: none !important;
+
+    .x-form-item-body {
+        border-style: solid;
+        border-width: 1px !important;
+        border-color: $abp-grey;
+    }
+
+    .x-form-item-body:focus-within {
+        border-style: solid;
+        border-width: 1px !important;
+        border-color: $abp-vivid-blue !important;
+    }
+
+    .x-body-el {
+        border-style: solid;
+        border-width: 1px !important;
+    }
+
+    .x-body-el:focus-within * {
+        border-style: solid;
+        border-width: 1px !important;
+        border-color: $abp-vivid-blue !important;
+    }
+}
+
+.abp-currency-left * {
+    border-style: none !important;
+    border-right-width: 0px !important;
+}
+
+.abp-currency-right * {
+    border-style: none !important;
+    border-left-width: 0px !important;
+}
+
+/* this doesn't appear to be used - it's overridden */
+/* .abp-currency-number {
+    font-weight: $abp-font-thicker;
+} */
+
+.abp-currency-combo {
+    /* this gets overridden */
+    /* font-weight: $abp-font-normal; */
+    width: 67px;
+
+    .x-form-trigger-default {
+        width: 5px !important;
+        padding-right: 2px !important;
+    }
+}
+
+.abp-currency-combo-single {
+    border-right: $abp-grey solid 1px !important;
+}
+
+.abp-currency-combo-single-right {
+    border-left: $abp-grey solid 1px !important;
+}

@@ -1,0 +1,17 @@
+@mixin abp-default-panel() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-panel {
+                .x-paneltitle {
+                    color: $base-color;
+                }
+                .x-paneltool.x-pressed .x-icon-el {
+                    color: $selected-color;
+                }
+            }
+        }
+    }
+}

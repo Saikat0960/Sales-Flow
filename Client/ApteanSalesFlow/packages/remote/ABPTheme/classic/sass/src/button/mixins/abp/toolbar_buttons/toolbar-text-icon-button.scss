@@ -1,0 +1,62 @@
+// Toolbar Text-Icon Button Common Styles
+.x-toolbar .x-btn.text.icon,
+.toolbar-menu-button.x-btn.text.icon,
+.x-segmented-button .x-btn.text.icon {
+    .x-btn-arrow-right:after {
+        color: $abp-deep-grey;
+    }
+    &.x-btn-over {
+        .x-btn-arrow-right:after {
+            color: $abp-hover-blue;
+        }
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+        .x-btn-arrow-right:after {
+            color: $abp-selected-blue;
+        }
+    }
+    &.x-btn-disabled {
+        background-color: transparent;
+        border-color: transparent;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+    }
+}
+
+@mixin abp-toolbar-text-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-toolbar .x-btn.text.icon,
+            .toolbar-menu-button.x-btn.text.icon,
+            .x-segmented-button .x-btn.text.icon {
+                .x-btn-arrow-right:after {
+                    color: $abp-deep-grey;
+                }
+                &.x-btn-over {
+                    .x-btn-arrow-right:after {
+                        color: $hover-color;
+                    }
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+                    .x-btn-arrow-right:after {
+                        color: $selected-color;
+                    }
+                }
+                &.x-btn-disabled {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: $abp-nevada;
+                    .x-btn-arrow:after {
+                        color: $abp-nevada;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-text-icon-button-theme();

@@ -1,0 +1,48 @@
+﻿.settings-title {
+   font-size: 2em;
+   color: $abp-deep-grey;
+   text-align: center;
+   font-weight: normal;
+}
+.settings-text {
+    text-align: center;
+    padding: 0px;
+    margin: 0px 10px 0px 10px;
+}
+.settings-text h1 {
+    font-weight: normal;
+    font-size: 30px;
+}
+.docked-check {
+	color: $white;
+	font-size: 17px;
+	font-family: arial;
+	cursor: pointer;
+	cursor: hand;
+	margin-top : 3px !important;
+	top: 0px !important;
+}
+.docked-box {
+	margin-right: 10px !important;
+	background-color: $black-60 !important;
+	height: 25px;
+	width: 25px;
+	background-image: none !important;
+	border:1px solid $black-20 !important;
+	border-radius: 5px !important;
+	cursor: pointer !important;
+	cursor: hand !important;
+}
+.docked-box:focus {
+    border: 2px solid $white !important;
+    background-color: $black-60 !important;
+}
+.docked-box:hover {
+    border:1px solid $black-20 !important;
+    background-color: #888888 !important;
+}
+.docked-container {
+	margin-top: 7px !important;
+	cursor: pointer !important;
+	cursor: hand !important;
+}

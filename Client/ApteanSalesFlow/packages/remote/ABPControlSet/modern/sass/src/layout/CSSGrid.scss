@@ -1,0 +1,10 @@
+.css-grid-container {
+    .x-panel .x-panelheader .x-panelheader-body-el {
+        border-bottom: solid 1px $abp-grey;
+    }
+}
+.css-grid-container-item-body {
+    .x-panel-body-el.css-grid-container {
+        border-top: none;
+    }
+}

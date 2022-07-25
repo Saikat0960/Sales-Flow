@@ -1,0 +1,314 @@
+$abpforms-template-image-width: 45px;
+$abpforms-template-image-height: 45px;
+$abpforms-template-min-row-height: $abpforms-template-image-height + 5;
+$abpforms-template-min-col-width: $abpforms-template-image-width + 15;
+$abpforms-cell-font-weight: 300;
+$abpforms-cell-font-size: 13px;
+
+.x-listitem.x-gridrow.abp-list-view-template-namedAreaGrid {
+    //font-size: 18px;
+    .x-cells-el {
+        display: grid;
+        //grid-template-columns: repeat(4, minmax(1fr, max-content));
+        //grid-template-rows: repeat(4, minmax(1rem, max-content));
+        grid-template-areas: "a1 b1" // c1" d1 e1"
+                            "a2 b2" //c2" d2 e2"
+                            //"a3 b3 c3" d3 e3"
+                            //"a4 b4 c4 d4 e4"
+                            //"a5 b5 c5 d5 e5"
+    }
+}
+
+@for $i from 0 through 5 {
+    @for $j from 0 through 5 {
+        .abp-list-view-template-grid-rows-#{$i}-columns-#{$j}.abp-list-view-template-namedAreaGrid.x-gridrow.x-listitem {
+           // padding: 10px;
+           grid-template-columns: repeat($j, minmax(1fr, max-content));
+           grid-template-rows: repeat(#{$i}, minmax(1rem, max-content));
+            .x-cells-el {
+               // grid-template-columns: inherit;
+               // grid-template-rows: inherit;
+                align-items: center;
+                display: grid;
+
+                td {
+                    border-spacing: 0px;
+                    overflow: hidden;
+                    max-width: 100%;
+                }
+
+                .abp-list-view-field-value.abp-grid-cell-type-abpimagecell {
+                    min-height: 3.1rem;
+                }
+                .abp-list-view-field-value.abp-grid-cell-type-gridcell {
+                    min-height: unset;
+                    height: inherit;
+                    display: unset;
+                    .x-gridcell-body-el {
+                        padding: unset;
+                        width: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+@for $i from 0 through 5 {
+    @for $j from 0 through 5 {
+        .abp-list-view-template-grid-rows-#{$i}-columns-#{$j}:not(.abp-flex-grid):not(.abp-list-view-template-namedAreaGrid) {
+            padding: 10px;
+            grid-template-columns: repeat($j, auto);
+            grid-template-rows: repeat(#{$i}, 1rem);
+            .x-cells-el {        
+                display: grid !important;
+                align-items: unset !important;
+                grid-template-columns: inherit;
+                grid-template-rows: inherit;
+                justify-items: flex-start;
+
+                .abp-list-view-cellColumn {
+                        flex-grow: unset;
+                        flex: unset;
+                        padding: unset;
+                        overflow: unset;
+                        align-items: unset;
+                        display: -ms-grid;
+                        display: grid;
+                        grid-auto-flow: unset;
+                        grid-auto-columns: unset;
+                        grid-auto-rows: unset;
+                        &.abp-list-view-cellColumn-0 {
+                            justify-content: left;
+                        }
+                        &.abp-list-justify-left {
+                            text-align: left;
+                        }
+                        &.abp-list-justify-center {
+                            text-align: center;
+                            margin: 0 auto;
+                            padding-left: 0 !important;
+                        }
+                        &.abp-list-justify-right {
+                            text-align: right;
+                        }
+                        @for $k from 0 through 4 {
+                            &.abp-list-view-cellColumn-#{$k}{
+                                grid-column: $k + 1;
+                                grid-template-rows: inherit;
+                                /*@if $k > 0 {
+                                    padding-left: 10px;
+                                }*/
+                            }
+                        }
+                        @for $l from 0 through 4 {
+                            .abp-list-view-field-#{$l} {
+                                grid-row: $l;
+                            }
+                        }
+                        .abp-list-view-field {
+                            display: grid;
+                            justify-content: unset;
+                            .abp-list-view-field-value {
+                                min-height: unset;
+                                height: 1rem;
+                                display: unset;
+                                .x-gridcell-body-el {
+                                    padding: unset;
+                                    width: inherit;
+                                }
+                            }
+                        }      
+                        .x-align-left.x-gridcell[id*='abpimagecell'] {
+                            display: unset;
+                        }
+                }
+                .abp-list-view-cellColumn-fill {
+                    grid-row-start: 1;
+                    grid-row-end: $i + 1;
+                    min-width: #{$i}rem;
+                    min-height: #{$i}rem;
+                    width: #{$i}rem;
+                    height: #{$i}rem;
+                    display: unset !important;
+
+                    .abp-list-view-field {
+                        align-content: center;
+                    }
+
+                    .abp-forms-list-view-image-cell img{
+                        max-height: unset !important;
+                        max-width: unset !important;
+                        height: 48px;
+                        width: 48px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@for $i from 0 through 5 {
+    @for $j from 0 through 5 {
+        .abp-list-view-template-grid-rows-#{$i}-columns-#{$j}.abp-flex-grid {
+            padding: 10px;
+            .x-cells-el {        
+                display: flex !important;
+                align-items: center;
+                //grid-template-columns: max-content repeat($j - 1, auto);
+                //grid-template-rows: repeat(#{$i}, 33%);
+
+                .abp-list-view-cellColumn {
+                        flex-grow: 1;
+                        flex: 1;
+                        padding: unset;
+                        overflow: unset;
+                        align-items: center;
+                        align-content: center;
+                        display: -ms-grid;
+                        display: flex;
+                        flex-direction: column;
+                        grid-auto-flow: unset;
+                        grid-auto-columns: unset;
+                        grid-auto-rows: unset;
+                        height: 100%;
+                        &.abp-list-justify-left {
+                            text-align: left;
+                        }
+                        &.abp-list-justify-center {
+                            text-align: center;
+                        }
+                        &.abp-list-justify-right {
+                            text-align: right;
+                        }
+                        
+                        /*@for $k from 0 through 4 {
+                            &.abp-list-view-cellColumn-#{$k}{
+                                grid-column: $k + 1;
+                                grid-template-rows: repeat($i, 1rem);
+                            }
+                        }
+                        @for $l from 0 through 4 {
+                            .abp-list-view-field-#{$l} {
+                                grid-row: $l;
+                            }
+                        }*/
+                        .abp-list-view-field {
+                            .abp-list-view-field-value {
+                                min-height: unset;
+                                height: 1rem;
+                                display: unset;
+                                .x-gridcell-body-el {
+                                    padding: unset;
+                                }
+                            }
+                        }      
+                        .x-align-left.x-gridcell[id*='abpimagecell'] {
+                            display: unset;
+                        }
+                }
+                .abp-list-view-cellColumn-fill {
+
+                    .abp-list-view-field {
+                        align-content: center;
+                    }
+
+                    .abp-forms-list-view-image-cell img{
+                        max-height: unset !important;
+                        max-width: unset !important;
+                        height: 48px;
+                        width: 48px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+.abp-list-view-template-singleLineItem,
+.abp-list-view-template-singleLineItemWithTrigger,
+.abp-list-view-template-twoLineItem,
+.abp-list-view-template-twoLineItemWithTrigger,
+.abp-list-view-template-threeLineItem,
+.abp-list-view-template-threeLineItemWithTrigger {
+    .x-cells-el {
+        // cell wrapper
+        align-items: center;
+        .abp-forms-list-view-image-cell, .abp-forms-icon-cell { // Image Cells
+            width: $abpforms-template-image-width !important;
+            height: $abpforms-template-image-height;
+            //border-radius: 100%;
+            overflow: hidden;
+            .x-body-el.x-gridcell-body-el {
+                height: 100%;
+                width: 100%;
+                padding: 0px !important;
+                div {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            img {
+                max-height: unset !important;
+                max-width: unset !important;
+                height: $abpforms-template-image-width;
+                width: $abpforms-template-image-height;
+            }
+        }
+        .a-gridcell-second {
+            .x-body-el.x-gridcell-body-el {
+                // Cell Text
+                font-weight: $abpforms-cell-font-weight;
+                font-size: $abpforms-cell-font-size;
+            }
+        }
+
+        .x-widgetcell-body-el{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.a-abpbuttoncell-trigger {
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+// .abp-list-view {
+    .abp-list-view-template-singleLineItem,
+    .abp-list-view-template-singleLineItemWithTrigger,
+    .abp-list-view-template-twoLineItem,
+    .abp-list-view-template-twoLineItemWithTrigger,
+    .abp-list-view-template-threeLineItem,
+    .abp-list-view-template-threeLineItemWithTrigger {
+        height: auto;
+        overflow: hidden;
+        .x-cells-el {
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+            .x-tool-dock {
+                flex: unset;
+            }
+        }
+    }
+// }
+
+
+@mixin abp-list-view-trigger-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+
+        .#{$theme} {
+            .abp-list-view-trigger{
+                .x-icon-el{
+                    color: $base-color !important;
+                }
+            }
+        }
+    }
+}
+@include abp-list-view-trigger-theme();
+

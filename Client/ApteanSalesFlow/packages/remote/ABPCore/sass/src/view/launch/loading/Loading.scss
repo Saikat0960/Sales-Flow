@@ -1,0 +1,309 @@
+﻿.ABP-preauth-loading {
+	background-image: $background-img;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bootstrap-loading {
+    padding-top: 20px;
+    font-size: 20px;
+    color: $white;
+    font-family: "Arial";
+}
+
+.bootstrap-loading-dot1 {
+    display:inline-block;
+    -webkit-animation: first_dot 3s linear infinite;
+    -moz-animation: first_dot 3s linear infinite;
+    -ms-animation: first_dot 3s linear infinite;
+    -o-animation: first_dot 3s linear infinite;
+    animation: first_dot 3s linear infinite;
+}
+
+.bootstrap-loading-dot2 {
+    display:inline-block;
+    -webkit-animation: second_dot 3s linear infinite;
+    -moz-animation: second_dot 3s linear infinite;
+    -ms-animation: second_dot 3s linear infinite;
+    -o-animation: second_dot 3s linear infinite;
+    animation: second_dot 3s linear infinite;
+}
+
+.bootstrap-loading-dot3 {
+    display:inline-block;
+    -webkit-animation: third_dot 3s linear infinite;
+    -moz-animation: third_dot 3s linear infinite;
+    -ms-animation: third_dot 3s linear infinite;
+    -o-animation: third_dot 3s linear infinite;
+    animation: third_dot 3s linear infinite;
+}
+
+@-webkit-keyframes first_dot {
+    0% {
+        opacity: 0;
+    }
+
+    24% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes first_dot {
+    0% {
+        opacity: 0;
+    }
+
+    24% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes first_dot {
+    0% {
+        opacity: 0;
+    }
+
+    24% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes first_dot {
+    0% {
+        opacity: 0;
+    }
+
+    24% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes first_dot {
+    0% {
+        opacity: 0;
+    }
+
+    24% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*Second Dot*/
+@-webkit-keyframes second_dot {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes second_dot {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes second_dot {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes second-dot {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes second_dot {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*Third Dot*/
+@-webkit-keyframes third_dot {
+    0% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes third_dot {
+    0% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes third_dot {
+    0% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes third_dot {
+    0% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes third_dot {
+    0% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

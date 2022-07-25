@@ -1,0 +1,269 @@
+$mode: map-get($nightmode-theme, 'nightmode_class');
+
+$background: map-get($nightmode-theme, 'container_body_background');
+$base-color: map-get($nightmode-theme, 'container_body_text');
+$border-color: map-get($nightmode-theme, 'container_panel_border');
+$rightpane-background: map-get($nightmode-theme, 'container_rightpane_background');
+$rightpane-base-color: map-get($nightmode-theme, 'container_rightpane_text');
+$headerbar-background: map-get($nightmode-theme, 'container_headerbar_background');
+$headerbar-base-color: map-get($nightmode-theme, 'container_headerbar_text');
+
+.#{$mode} {
+    /* .abp-action-center, .dashboardbar {
+        background-color: $background;
+        color: $base-color;
+
+        .x-surface {
+            background-color: darken($background, 2);
+            color: $base-color;
+        }
+    } */
+
+    /* .x-panel-basewidgettile, .x-panel-body-basewidgettile {
+        background-color: darken($background, 2);
+        border-color: darken($background, 2);
+    } */
+
+    .x-panel-header {
+        background-color: $headerbar-background;
+
+        &.x-docked-top:not(.x-collapsed) {
+            border-color: $border-color;
+        }
+
+        .x-panel-header-title {
+            color: $headerbar-base-color;
+        }
+    }
+
+    .x-fieldset {
+        background-color: $background;
+
+        .x-accordion-layout-ct {
+            background-color: $background;
+        }
+
+        .x-fieldset-header-default > .x-fieldset-header-text {
+            color: $base-color;
+        }
+    }
+
+    .x-treelist {
+        background-color: $background;
+
+        .x-treelist-row-over {
+            background-color: lighten($background, 4);
+        }
+
+        .x-treelist-item-icon, .x-treelist-item-tool, .x-treelist-item-expander, .x-treelist-item-text {
+            color: $base-color;
+        }
+    }
+
+    .x-grid-header-ct {
+        background-color: $background;
+    }
+
+    .x-panel-abpgridpanel.x-grid, .x-panel.x-grid {
+        .x-grid-rowbody, .x-panel-body-default, .x-toolbar-default {
+            background-color: $background;
+        }
+    }
+
+    .ag-theme-balham {
+        background-color: $background;
+
+        .ag-header * {
+            color: $base-color;
+        }
+
+        .ag-row {
+            background-color: $background;
+        }
+        .ag-row-odd {
+            background-color: lighten($background, 4);
+        }
+
+        .ag-row-hover {
+            background-color: lighten($background, 8);
+        }
+    }
+
+    .feature-canvas {
+        .x-panel-body-default, .x-toolbar-default, .x-grid-body {
+            background-color: $background;
+            color: $base-color;
+        }
+
+        .dashboard {
+            .x-panel-body-default, .x-toolbar-default, .x-grid-body {
+                background-color: transparent;
+                color: inherit;
+            }
+        }
+        /* .x-panel-basewidgettile, .x-panel-body-basewidgettile {
+            .x-panel-body-default, .x-toolbar-default, .x-grid-body {
+                background-color: darken($background, 2);
+            }
+        } */
+    
+        .x-panel-abpgridpanel.x-grid, .x-panel.x-grid {
+            .x-grid-body .x-grid-item {
+                background-color: $background;
+                color: $base-color;
+
+                .x-tree-icon-leaf, .x-action-col-icon, .x-grid-cell-inner-treecolumn, .x-grid-row-expander, .x-tree-icon-leaf, .x-action-col-icon, .x-grid-cell-inner-treecolumn, .x-grid-row-expander {
+                    color: $base-color;
+                }
+            }
+        }
+
+        .x-panel-header {
+            .x-panel-header-title, .x-tool-tool-el {
+                color: $headerbar-base-color;
+            }
+        }
+    }
+
+    .log-item {
+        .time-wrap {
+            background-color: $background;
+
+            .log-item-time {
+                color: $base-color;
+            }
+        }
+
+        .line-wrap .contents-wrap {
+            color: $base-color;
+        }
+
+        .timeline-epoch {
+            background-color: $background;
+            color: $base-color;
+        }
+    }
+
+    .x-panel-abpgridpanel.x-grid .x-column-header .x-column-header-inner, .x-panel.x-grid .x-column-header .x-column-header-inner {
+        background-color: $headerbar-background;
+        color: $headerbar-base-color;
+    }
+
+    .x-form-item-label-default, .x-form-display-field-default, .x-form-text-default {
+        color: $base-color;
+    }
+
+    .x-form-text-default, .x-form-trigger, .x-form-trigger *, .mixin-trigger.x-form-trigger-cmp {
+        background-color: $headerbar-background;
+
+        .mixin-trigger-tool .x-tool-tool-el {
+            color: $base-color;
+        }
+    }
+
+    .x-form-trigger, .x-form-trigger * {
+        color: $base-color;
+    }
+
+    .x-field.x-item-disabled .x-form-text-default, .x-field.x-item-disabled .x-form-trigger, .x-field.x-item-disabled .x-form-trigger * {
+        background-color: lighten($background, 3);
+        color: darken($base-color, 2);
+    }
+
+    .x-field.x-item-disabled input:disabled, .x-field.x-item-disabled textarea:disabled,
+    .x-form-checkboxgroup.x-item-disabled input:disabled, .x-form-checkboxgroup.x-item-disabled textarea:disabled {
+        -webkit-text-fill-color: $base-color;
+    }
+
+    .x-form-checkbox-default, .x-form-cb-label-default, .x-form-radio-default {
+        color: $rightpane-base-color;
+    }
+
+    .rightpane {
+        .x-panel-default-outer-border-rbl {
+            border: 1px solid $border-color !important;
+        }
+
+        .x-menu-body-lightblue, .x-btn[class*=x-btn-menuitem].x-btn-pressed, .x-btn[class*=x-btn-menuitem].x-btn-menu-active {
+            background-color: $border-color;
+        }
+        
+        /* .x-form-checkbox-default, .x-form-cb-label-default, .x-form-radio-default {
+            color: $rightpane-base-color;
+        } */
+
+        .x-panel-body-default {
+            background-color: $rightpane-background;
+            border-color: $border-color;
+            color: $rightpane-base-color;
+
+            .x-panel-body-lightgrey, .x-panel-lightgrey {
+                background-color: $rightpane-background;
+                border-color: $border-color;
+                color: $rightpane-base-color;
+            }
+        }
+
+        .settings-container-session-labels {
+            background-color: $rightpane-background;
+            color: $rightpane-base-color;
+        }
+
+        .x-btn[class*=x-btn-menuitem]:not(.x-btn-over), .x-btn[class*=x-btn-menuitem].x-btn-over.x-btn-pressed {
+            .x-btn-wrap .x-btn-text .x-btn-inner {
+                color: $rightpane-base-color !important;
+            }
+        }
+
+        .x-panel-header {
+            background-color: $headerbar-background;
+
+            &.x-docked-top:not(.x-collapsed) {
+                border-color: $border-color;
+            }
+
+            .x-panel-header-title, .x-tool-tool-el {
+                color: $headerbar-base-color;
+            }
+        }
+    }
+}
+
+@mixin abp-panel-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+        $background: map-get($map, 'container_headerbar_background');
+        $border: map-get($map, 'container_headerbar_border');
+
+        .#{$theme}.#{$mode} {
+            .dashboardbar {
+                background-color: $base-color;
+
+                .dashboardbar-menubutton.x-btn, .dashboardbar-menubutton.x-btn.x-btn-over, .dashboardbar-menubutton.x-btn.x-btn-pressed {
+                    .x-btn-wrap .x-btn-text .x-btn-inner {
+                        color: $rightpane-base-color;
+                    }
+                }
+
+                .x-btn.icon .x-btn-icon .x-btn-icon-el, .x-btn.icon.text .x-btn-icon .x-btn-icon-el {
+                    color: $rightpane-base-color;
+                }
+            }
+
+
+            .feature-canvas {
+                .x-panel-header {
+                    background-color: $base-color;
+                }
+            }
+
+            .ag-theme-balham {
+                .ag-row-hover {
+                    background-color: $rightpane-background;
+                }
+            }
+        }
+    }
+}

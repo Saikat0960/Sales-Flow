@@ -1,0 +1,102 @@
+// Layout Styles - Aligns tree list items into a grid with 3 columns
+.x-component.tree-grid {
+    .x-treelist-root-container > .x-treelist-item > .x-treelist-row {
+        .x-treelist-item-icon {
+            font-size: 1.25em;
+        }
+        .x-treelist-item-text {
+            white-space: normal;
+            max-width: calc(100% - 45px); // subtract 45 for expander icon width and margin between
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .x-treelist-item-expander {
+            line-height: 0;
+        }
+    }
+    .x-treelist-item-collapsed {
+        .x-treelist-container {
+            height: 0px;
+        }
+    }
+    .x-treelist-container {
+        display: flex !important; // important to keep display set while in animate open/close
+        flex-wrap: wrap;
+        height: auto;
+        transition: height 300ms ease;
+        .x-treelist-item {
+            width: 31%;
+            margin: 4px 1%;
+            &:last-child {
+                margin-bottom: 12px;
+            }
+            .x-treelist-row {
+                border-width: 0px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .x-treelist-item-wrap {
+            padding: 2px;
+        }
+        .x-treelist-item .x-treelist-row .x-treelist-item-wrap {
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+            margin-left: 0px !important; // to override sencha applied margin
+            .x-treelist-item-icon {
+                position: static;
+                display: flex;
+                justify-content: center;
+            }
+            .x-treelist-item-text {
+                margin: 0;
+                font-size: 12px;
+                white-space: normal;
+                line-height: normal;
+                max-width: 100%;
+                text-align: center;
+            }
+            .x-treelist-item-icon {
+                font-size: 26px;
+            }
+        }
+
+        .x-treelist-item-shorthand{
+            visibility: hidden;
+            opacity: 0;
+            padding: 2px 4px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .show-shortcuts {
+            .x-treelist-item-shorthand{
+                visibility: visible;
+                opacity: 1;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+// Styles for $ui: tree-grid abptreelist-light
+.x-component.tree-grid.x-treelist-light {
+    .x-treelist-root-container {
+        > .x-treelist-item > .x-treelist-row {
+            border: solid $abp-grey 1px;
+            background-color: $abp-white;
+            border-width: 0 0 1px 0;
+        }
+    }
+    .x-treelist-container {
+        box-shadow: inset 0px 4px 5px -3px rgba(73,87,91, 0.3), inset 0px -2px 5px -3px rgba(73,87,91, 0.3);
+        .x-treelist-item {
+            .x-treelist-row {
+                border-width: 0px;
+            }
+        }
+    }
+}

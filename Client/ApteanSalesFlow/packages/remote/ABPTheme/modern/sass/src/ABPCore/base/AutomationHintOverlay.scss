@@ -1,0 +1,27 @@
+.automation-hint {
+    border: 2px solid red;
+    color: white;
+    font-weight: bold;
+	font-size: 0.9em;
+    background: rgba(255,0,0,0.3);
+	position: absolute;
+}
+.automation-hint-disabled:hover {
+    border: 2px solid yellow;
+    text-shadow: 0 0 2px #000000;
+    background: rgba(255,255,0,0.3);
+}
+.automation-over-top.x-panel.x-floating {
+	background: rgba(255,255,255,0.2);
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	border: none !important;
+}
+.automation-over-top.x-panel.x-floating .x-panel-inner {
+	background: transparent;
+}
+.automation-over-top .x-panel.x-floating .x-panel-inner {
+	background: transparent;
+}

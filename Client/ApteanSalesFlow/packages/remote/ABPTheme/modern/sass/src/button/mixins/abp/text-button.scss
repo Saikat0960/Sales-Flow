@@ -1,0 +1,64 @@
+// Text Button
+.x-button.x-has-text, .x-button.x-has-text.x-has-icon.text-btn {
+    background-color: $abp-vivid-blue;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $abp-vivid-blue;
+    .x-inner-el {
+        .x-text-el {
+            color: $abp-white;
+        }
+    }
+    &.x-pressing {
+        background-color: $abp-selected-blue;
+        .x-inner-el {
+            .x-text-el {
+                color: $abp-white;
+            }
+        }
+    }
+    &.x-disabled {
+        background-color: $abp-disabled-grey;
+        border-color: $abp-grey;
+        .x-inner-el {
+            .x-text-el {
+                color: $abp-nevada;
+            }
+        }
+    }
+}
+
+// Transitions
+.x-button.x-has-text, .x-button.x-has-text.x-has-icon.text-btn {
+    transition: background-color $abp-modern-transition-duration $abp-transition-type,
+                border-color $abp-modern-transition-duration $abp-transition-type;
+    .x-inner-el {
+        .x-text-el {
+            transition: color $abp-modern-transition-duration $abp-transition-type
+        }
+    }
+}
+
+@mixin abp-text-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-button.x-has-text:not(.x-disabled), .x-button.x-has-text.x-has-icon.text-btn:not(.x-disabled) {
+                background-color: $base-color;
+                border-color: $base-color;
+                &.x-pressing {
+                    background-color: $selected-color;
+                    border-color: $selected-color;
+                    .x-inner-el {
+                        .x-text-el {
+                            color: $abp-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-text-button-theme();

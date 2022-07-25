@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesModuleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AR_Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shipment_Number" Type="Int32" Nullable="false" />
+    <Property Name="SO_Number" Type="Int32" />
+    <Property Name="Customer_Id" Type="Int32" />
+    <Property Name="Billing_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Total_Price" Type="Double" />
+    <Property Name="Due_Date" Type="DateTime" Precision="0" />
+    <Property Name="Billing_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Billing_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Billing_Country_Id" Type="Int32" Nullable="false" />
+    <Property Name="Billing_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_AR_Invoice_Country" FromRole="AR_Invoice" ToRole="Country" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_AR_Invoice_Customer" FromRole="AR_Invoice" ToRole="Customer" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK_AR_Invoice_Sales_Order" FromRole="AR_Invoice" ToRole="Sales_Order" />
+    <NavigationProperty Name="Shipment" Relationship="Self.FK_AR_Invoice_Shipment" FromRole="AR_Invoice" ToRole="Shipment" />
+  </EntityType>
+  <EntityType Name="Bin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Capacity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Warehouse_Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_Bin_Warehouse" FromRole="Bin" ToRole="Warehouse" />
+    <NavigationProperty Name="Parts" Relationship="Self.FK_INV_Bin" FromRole="Bin" ToRole="Part" />
+  </EntityType>
+  <EntityType Name="BOM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Component" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Established_Date" Type="DateTime" Precision="0" />
+    <Property Name="Currency_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Quotes" Relationship="Self.FK__Quote__CompanyId__01142BA1" FromRole="Company" ToRole="Quote" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__SO__CompanyId__114A936A" FromRole="Company" ToRole="Sales_Order" />
+    <NavigationProperty Name="Currency" Relationship="Self.FK_Comp_CUR" FromRole="Company" ToRole="Currency" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AR_Invoice" Relationship="Self.FK_AR_Invoice_Country" FromRole="Country" ToRole="AR_Invoice" />
+    <NavigationProperty Name="Currencies" Relationship="Self.FK_Currency_Country" FromRole="Country" ToRole="Currency" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Country" FromRole="Country" ToRole="Customer" />
+    <NavigationProperty Name="Customers1" Relationship="Self.FK_Customer_Country1" FromRole="Country" ToRole="Customer" />
+    <NavigationProperty Name="Quotes" Relationship="Self.FK_Quote_Country" FromRole="Country" ToRole="Quote" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK_Sales_Order_Country" FromRole="Country" ToRole="Sales_Order" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK_Shipment_Country" FromRole="Country" ToRole="Shipment" />
+    <NavigationProperty Name="Taxes" Relationship="Self.FK_Tax_Country" FromRole="Country" ToRole="Tax" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Currency_Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country_Id" Type="Int32" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK_Comp_CUR" FromRole="Currency" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Currency_Country" FromRole="Currency" ToRole="Country" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Currency" FromRole="Currency" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Billing_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tax" Type="Int32" />
+    <Property Name="Credit_Limit" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Currency" Type="Int32" />
+    <Property Name="Phone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sales_Person_Id" Type="Int32" Nullable="false" />
+    <Property Name="Billing_Country_Id" Type="Int32" />
+    <Property Name="Shipping_Country_Id" Type="Int32" />
+    <Property Name="Billing_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Billing_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Billing_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AR_Invoice" Relationship="Self.FK_AR_Invoice_Customer" FromRole="Customer" ToRole="AR_Invoice" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Customer_Country" FromRole="Customer" ToRole="Country" />
+    <NavigationProperty Name="Country1" Relationship="Self.FK_Customer_Country1" FromRole="Customer" ToRole="Country" />
+    <NavigationProperty Name="Currency1" Relationship="Self.FK_Customer_Currency" FromRole="Customer" ToRole="Currency" />
+    <NavigationProperty Name="Quotes" Relationship="Self.FK__Quote__Customer__03F0984C" FromRole="Customer" ToRole="Quote" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK__Ship__Customer__1EA48E88" FromRole="Customer" ToRole="Shipment" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__SO__Customer__14270015" FromRole="Customer" ToRole="Sales_Order" />
+    <NavigationProperty Name="Sales_Person" Relationship="Self.FK_Customer_Sales_Person" FromRole="Customer" ToRole="Sales_Person" />
+    <NavigationProperty Name="Tax1" Relationship="Self.FK_Customer_Tax" FromRole="Customer" ToRole="Tax" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Emp_Dept" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Joining_Date" Type="DateTime" Precision="0" />
+    <Property Name="Hourly_Rate" Type="Double" />
+    <Property Name="Dept_Id" Type="Int32" Nullable="false" />
+    <Property Name="User_Id" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Emp_Dept" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Emp_User" FromRole="Employee" ToRole="User" />
+  </EntityType>
+  <EntityType Name="GL_Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Company_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product_Class" Relationship="Self.FK_Product_Class_GL_Account" FromRole="GL_Account" ToRole="Product_Class" />
+  </EntityType>
+  <EntityType Name="GL_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Parts" Relationship="Self.FK_INV_GRP" FromRole="Group" ToRole="Part" />
+  </EntityType>
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Group_Id" Type="Int32" Nullable="false" />
+    <Property Name="Product_Class_Id" Type="Int32" Nullable="false" />
+    <Property Name="Warehouse_Id" Type="Int32" Nullable="false" />
+    <Property Name="Bin_Id" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="UOM_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bin" Relationship="Self.FK_INV_Bin" FromRole="Part" ToRole="Bin" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_INV_GRP" FromRole="Part" ToRole="Group" />
+    <NavigationProperty Name="Product_Class" Relationship="Self.FK_INV_PCL" FromRole="Part" ToRole="Product_Class" />
+    <NavigationProperty Name="UOM" Relationship="Self.FK_INV_UOM" FromRole="Part" ToRole="UOM" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_INV_WH" FromRole="Part" ToRole="Warehouse" />
+    <NavigationProperty Name="Quote_Items" Relationship="Self.FK_Quote_Items_Part" FromRole="Part" ToRole="Quote_Items" />
+    <NavigationProperty Name="SO_Items" Relationship="Self.FK_SO_Items_Part" FromRole="Part" ToRole="SO_Items" />
+  </EntityType>
+  <EntityType Name="Product_Class">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sales" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Commission" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GL_Account" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="GL_Account1" Relationship="Self.FK_Product_Class_GL_Account" FromRole="Product_Class" ToRole="GL_Account" />
+    <NavigationProperty Name="Parts" Relationship="Self.FK_INV_PCL" FromRole="Product_Class" ToRole="Part" />
+  </EntityType>
+  <EntityType Name="Quote">
+    <Key>
+      <PropertyRef Name="Quote_Number" />
+    </Key>
+    <Property Name="Quote_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="Date_Required" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_Requested" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shipping_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Customer" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Total_Value" Type="Double" Nullable="false" />
+    <Property Name="Sales_Person" Type="Int32" Nullable="false" />
+    <Property Name="Shipping_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_Country_Id" Type="Int32" />
+    <Property Name="Shipping_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__Quote__CompanyId__01142BA1" FromRole="Quote" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Quote_Country" FromRole="Quote" ToRole="Country" />
+    <NavigationProperty Name="Customer1" Relationship="Self.FK__Quote__Customer__03F0984C" FromRole="Quote" ToRole="Customer" />
+    <NavigationProperty Name="Sales_Person1" Relationship="Self.FK__Quote__Sales_per__08B54D69" FromRole="Quote" ToRole="Sales_Person" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__SO__Quote_Number__1AD3FDA4" FromRole="Quote" ToRole="Sales_Order" />
+    <NavigationProperty Name="Quote_Items" Relationship="Self.FK_Quote_Items_Quote" FromRole="Quote" ToRole="Quote_Items" />
+  </EntityType>
+  <EntityType Name="Quote_Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Part_Id" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Quote_Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Part" Relationship="Self.FK_Quote_Items_Part" FromRole="Quote_Items" ToRole="Part" />
+    <NavigationProperty Name="Quote" Relationship="Self.FK_Quote_Items_Quote" FromRole="Quote_Items" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="Routing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Step_Number" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Setup_Time" Type="Double" />
+    <Property Name="Quene_Time" Type="Double" />
+    <Property Name="Capacity" Type="Int32" />
+    <Property Name="Work_Center_Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Work_Center" Relationship="Self.FK_Routing_Work_Center" FromRole="Routing" ToRole="Work_Center" />
+  </EntityType>
+  <EntityType Name="Sales_Order">
+    <Key>
+      <PropertyRef Name="SO_Number" />
+    </Key>
+    <Property Name="SO_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Id" Type="Int32" />
+    <Property Name="Date_Required" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_Requested" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shipping_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Customer" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PO_Number" Type="Int32" Nullable="false" />
+    <Property Name="Tax" Type="Int32" />
+    <Property Name="Total_Value" Type="Double" Nullable="false" />
+    <Property Name="Sales_Person" Type="Int32" Nullable="false" />
+    <Property Name="Quote_Number" Type="Int32" />
+    <Property Name="Shipping_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_Country_Id" Type="Int32" />
+    <Property Name="Shipping_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shipped" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AR_Invoice" Relationship="Self.FK_AR_Invoice_Sales_Order" FromRole="Sales_Order" ToRole="AR_Invoice" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__SO__CompanyId__114A936A" FromRole="Sales_Order" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Sales_Order_Country" FromRole="Sales_Order" ToRole="Country" />
+    <NavigationProperty Name="Customer1" Relationship="Self.FK__SO__Customer__14270015" FromRole="Sales_Order" ToRole="Customer" />
+    <NavigationProperty Name="Quote" Relationship="Self.FK__SO__Quote_Number__1AD3FDA4" FromRole="Sales_Order" ToRole="Quote" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK__Ship__SO_Referen__1DB06A4F" FromRole="Sales_Order" ToRole="Shipment" />
+    <NavigationProperty Name="Sales_Person1" Relationship="Self.FK__SO__Sales_person__19DFD96B" FromRole="Sales_Order" ToRole="Sales_Person" />
+    <NavigationProperty Name="Tax1" Relationship="Self.FK__SO__Tax__18EBB532" FromRole="Sales_Order" ToRole="Tax" />
+    <NavigationProperty Name="SO_Items" Relationship="Self.FK_SO_Items_Sales_Order" FromRole="Sales_Order" ToRole="SO_Items" />
+  </EntityType>
+  <EntityType Name="Sales_Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Territory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Commission" Type="Double" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Sales_Person" FromRole="Sales_Person" ToRole="Customer" />
+    <NavigationProperty Name="Quotes" Relationship="Self.FK__Quote__Sales_per__08B54D69" FromRole="Sales_Person" ToRole="Quote" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__SO__Sales_person__19DFD96B" FromRole="Sales_Person" ToRole="Sales_Order" />
+  </EntityType>
+  <EntityType Name="Shipment">
+    <Key>
+      <PropertyRef Name="Shipment_Number" />
+    </Key>
+    <Property Name="Shipment_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SO_Number" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Customer" Type="Int32" Nullable="false" />
+    <Property Name="Shipping_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tracking_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Shipping_City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Shipping_State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Shipping_Country_Id" Type="Int32" Nullable="false" />
+    <Property Name="Shipping_ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Invoiced" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AR_Invoice" Relationship="Self.FK_AR_Invoice_Shipment" FromRole="Shipment" ToRole="AR_Invoice" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Shipment_Country" FromRole="Shipment" ToRole="Country" />
+    <NavigationProperty Name="Customer1" Relationship="Self.FK__Ship__Customer__1EA48E88" FromRole="Shipment" ToRole="Customer" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__Ship__SO_Referen__1DB06A4F" FromRole="Shipment" ToRole="Sales_Order" />
+  </EntityType>
+  <EntityType Name="SO_Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Part_Id" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="SO_Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Part" Relationship="Self.FK_SO_Items_Part" FromRole="SO_Items" ToRole="Part" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK_SO_Items_Sales_Order" FromRole="SO_Items" ToRole="Sales_Order" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="From" Type="DateTime" Precision="0" />
+    <Property Name="To" Type="DateTime" Precision="0" />
+    <Property Name="Rate" Type="Double" Nullable="false" />
+    <Property Name="Country_Id" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Tax_Country" FromRole="Tax" ToRole="Country" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Tax" FromRole="Tax" ToRole="Customer" />
+    <NavigationProperty Name="Sales_Order" Relationship="Self.FK__SO__Tax__18EBB532" FromRole="Tax" ToRole="Sales_Order" />
+  </EntityType>
+  <EntityType Name="UOM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Abbreviated_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Parts" Relationship="Self.FK_INV_UOM" FromRole="UOM" ToRole="Part" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Emp_User" FromRole="User" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Bins" Relationship="Self.FK_Bin_Warehouse" FromRole="Warehouse" ToRole="Bin" />
+    <NavigationProperty Name="Parts" Relationship="Self.FK_INV_WH" FromRole="Warehouse" ToRole="Part" />
+  </EntityType>
+  <EntityType Name="Work_Calendar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Calendar" Type="DateTime" Precision="0" />
+    <Property Name="No__of_Shifts" Type="Int32" />
+    <Property Name="Work_Center_Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Work_Center" Relationship="Self.FK_WC_Calendar_Work_Center" FromRole="Work_Calendar" ToRole="Work_Center" />
+  </EntityType>
+  <EntityType Name="Work_Center">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Setup_Time" Type="Double" Nullable="false" />
+    <Property Name="Move_Time" Type="Double" />
+    <Property Name="Capacity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Routings" Relationship="Self.FK_Routing_Work_Center" FromRole="Work_Center" ToRole="Routing" />
+    <NavigationProperty Name="Work_Calendar" Relationship="Self.FK_WC_Calendar_Work_Center" FromRole="Work_Center" ToRole="Work_Calendar" />
+  </EntityType>
+  <Association Name="FK_AR_Invoice_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="AR_Invoice" Type="Self.AR_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AR_Invoice">
+        <PropertyRef Name="Billing_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AR_Invoice_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="AR_Invoice" Type="Self.AR_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AR_Invoice">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AR_Invoice_Sales_Order">
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="0..1" />
+    <End Role="AR_Invoice" Type="Self.AR_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Order">
+        <PropertyRef Name="SO_Number" />
+      </Principal>
+      <Dependent Role="AR_Invoice">
+        <PropertyRef Name="SO_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AR_Invoice_Shipment">
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="1" />
+    <End Role="AR_Invoice" Type="Self.AR_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipment">
+        <PropertyRef Name="Shipment_Number" />
+      </Principal>
+      <Dependent Role="AR_Invoice">
+        <PropertyRef Name="Shipment_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bin_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Bin" Type="Self.Bin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bin">
+        <PropertyRef Name="Warehouse_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_Bin">
+    <End Role="Bin" Type="Self.Bin" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Bin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quote__CompanyId__01142BA1">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Quote" Type="Self.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SO__CompanyId__114A936A">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Company_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comp_CUR">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="Currency_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Currency_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Currency" Type="Self.Currency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Currency">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Billing_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Country1">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Shipping_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Quote" Type="Self.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="Shipping_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Order_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Shipping_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shipment_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="Shipping_Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tax_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Tax" Type="Self.Tax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tax">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quote__Customer__03F0984C">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Quote" Type="Self.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ship__Customer__1EA48E88">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SO__Customer__14270015">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Sales_Person">
+    <End Role="Sales_Person" Type="Self.Sales_Person" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Sales_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Tax">
+    <End Role="Tax" Type="Self.Tax" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Tax" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_Dept">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Dept_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Class_GL_Account">
+    <End Role="GL_Account" Type="Self.GL_Account" Multiplicity="1" />
+    <End Role="Product_Class" Type="Self.Product_Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GL_Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_Class">
+        <PropertyRef Name="GL_Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_GRP">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_PCL">
+    <End Role="Product_Class" Type="Self.Product_Class" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Class">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Product_Class_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_UOM">
+    <End Role="UOM" Type="Self.UOM" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UOM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="UOM_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_WH">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Warehouse_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Items_Part">
+    <End Role="Part" Type="Self.Part" Multiplicity="1" />
+    <End Role="Quote_Items" Type="Self.Quote_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Part">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quote_Items">
+        <PropertyRef Name="Part_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_Items_Part">
+    <End Role="Part" Type="Self.Part" Multiplicity="1" />
+    <End Role="SO_Items" Type="Self.SO_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Part">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SO_Items">
+        <PropertyRef Name="Part_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quote__Sales_per__08B54D69">
+    <End Role="Sales_Person" Type="Self.Sales_Person" Multiplicity="1" />
+    <End Role="Quote" Type="Self.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="Sales_Person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SO__Quote_Number__1AD3FDA4">
+    <End Role="Quote" Type="Self.Quote" Multiplicity="0..1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="Quote_Number" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Quote_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Items_Quote">
+    <End Role="Quote" Type="Self.Quote" Multiplicity="1" />
+    <End Role="Quote_Items" Type="Self.Quote_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="Quote_Number" />
+      </Principal>
+      <Dependent Role="Quote_Items">
+        <PropertyRef Name="Quote_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routing_Work_Center">
+    <End Role="Work_Center" Type="Self.Work_Center" Multiplicity="1" />
+    <End Role="Routing" Type="Self.Routing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Center">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Routing">
+        <PropertyRef Name="Work_Center_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ship__SO_Referen__1DB06A4F">
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Order">
+        <PropertyRef Name="SO_Number" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="SO_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SO__Sales_person__19DFD96B">
+    <End Role="Sales_Person" Type="Self.Sales_Person" Multiplicity="1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Sales_Person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SO__Tax__18EBB532">
+    <End Role="Tax" Type="Self.Tax" Multiplicity="0..1" />
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Order">
+        <PropertyRef Name="Tax" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_Items_Sales_Order">
+    <End Role="Sales_Order" Type="Self.Sales_Order" Multiplicity="1" />
+    <End Role="SO_Items" Type="Self.SO_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Order">
+        <PropertyRef Name="SO_Number" />
+      </Principal>
+      <Dependent Role="SO_Items">
+        <PropertyRef Name="SO_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WC_Calendar_Work_Center">
+    <End Role="Work_Center" Type="Self.Work_Center" Multiplicity="1" />
+    <End Role="Work_Calendar" Type="Self.Work_Calendar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Center">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Work_Calendar">
+        <PropertyRef Name="Work_Center_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SalesModuleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AR_Invoice" EntityType="Self.AR_Invoice" />
+    <EntitySet Name="Bins" EntityType="Self.Bin" />
+    <EntitySet Name="BOMs" EntityType="Self.BOM" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="GL_Account" EntityType="Self.GL_Account" />
+    <EntitySet Name="GL_Category" EntityType="Self.GL_Category" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="Parts" EntityType="Self.Part" />
+    <EntitySet Name="Product_Class" EntityType="Self.Product_Class" />
+    <EntitySet Name="Quotes" EntityType="Self.Quote" />
+    <EntitySet Name="Quote_Items" EntityType="Self.Quote_Items" />
+    <EntitySet Name="Routings" EntityType="Self.Routing" />
+    <EntitySet Name="Sales_Order" EntityType="Self.Sales_Order" />
+    <EntitySet Name="Sales_Person" EntityType="Self.Sales_Person" />
+    <EntitySet Name="Shipments" EntityType="Self.Shipment" />
+    <EntitySet Name="SO_Items" EntityType="Self.SO_Items" />
+    <EntitySet Name="Taxes" EntityType="Self.Tax" />
+    <EntitySet Name="UOMs" EntityType="Self.UOM" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
+    <EntitySet Name="Work_Calendar" EntityType="Self.Work_Calendar" />
+    <EntitySet Name="Work_Center" EntityType="Self.Work_Center" />
+    <AssociationSet Name="FK_AR_Invoice_Country" Association="Self.FK_AR_Invoice_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="AR_Invoice" EntitySet="AR_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AR_Invoice_Customer" Association="Self.FK_AR_Invoice_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="AR_Invoice" EntitySet="AR_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AR_Invoice_Sales_Order" Association="Self.FK_AR_Invoice_Sales_Order">
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+      <End Role="AR_Invoice" EntitySet="AR_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AR_Invoice_Shipment" Association="Self.FK_AR_Invoice_Shipment">
+      <End Role="Shipment" EntitySet="Shipments" />
+      <End Role="AR_Invoice" EntitySet="AR_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bin_Warehouse" Association="Self.FK_Bin_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Bin" EntitySet="Bins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_Bin" Association="Self.FK_INV_Bin">
+      <End Role="Bin" EntitySet="Bins" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quote__CompanyId__01142BA1" Association="Self.FK__Quote__CompanyId__01142BA1">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SO__CompanyId__114A936A" Association="Self.FK__SO__CompanyId__114A936A">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comp_CUR" Association="Self.FK_Comp_CUR">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Currency_Country" Association="Self.FK_Currency_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Currency" EntitySet="Currencies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Country" Association="Self.FK_Customer_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Country1" Association="Self.FK_Customer_Country1">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Country" Association="Self.FK_Quote_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Order_Country" Association="Self.FK_Sales_Order_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shipment_Country" Association="Self.FK_Shipment_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tax_Country" Association="Self.FK_Tax_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Tax" EntitySet="Taxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Currency" Association="Self.FK_Customer_Currency">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quote__Customer__03F0984C" Association="Self.FK__Quote__Customer__03F0984C">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ship__Customer__1EA48E88" Association="Self.FK__Ship__Customer__1EA48E88">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SO__Customer__14270015" Association="Self.FK__SO__Customer__14270015">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Sales_Person" Association="Self.FK_Customer_Sales_Person">
+      <End Role="Sales_Person" EntitySet="Sales_Person" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Tax" Association="Self.FK_Customer_Tax">
+      <End Role="Tax" EntitySet="Taxes" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_Dept" Association="Self.FK_Emp_Dept">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_User" Association="Self.FK_Emp_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Class_GL_Account" Association="Self.FK_Product_Class_GL_Account">
+      <End Role="GL_Account" EntitySet="GL_Account" />
+      <End Role="Product_Class" EntitySet="Product_Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_GRP" Association="Self.FK_INV_GRP">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_PCL" Association="Self.FK_INV_PCL">
+      <End Role="Product_Class" EntitySet="Product_Class" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_UOM" Association="Self.FK_INV_UOM">
+      <End Role="UOM" EntitySet="UOMs" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_WH" Association="Self.FK_INV_WH">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Items_Part" Association="Self.FK_Quote_Items_Part">
+      <End Role="Part" EntitySet="Parts" />
+      <End Role="Quote_Items" EntitySet="Quote_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_Items_Part" Association="Self.FK_SO_Items_Part">
+      <End Role="Part" EntitySet="Parts" />
+      <End Role="SO_Items" EntitySet="SO_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quote__Sales_per__08B54D69" Association="Self.FK__Quote__Sales_per__08B54D69">
+      <End Role="Sales_Person" EntitySet="Sales_Person" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SO__Quote_Number__1AD3FDA4" Association="Self.FK__SO__Quote_Number__1AD3FDA4">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Items_Quote" Association="Self.FK_Quote_Items_Quote">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="Quote_Items" EntitySet="Quote_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routing_Work_Center" Association="Self.FK_Routing_Work_Center">
+      <End Role="Work_Center" EntitySet="Work_Center" />
+      <End Role="Routing" EntitySet="Routings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ship__SO_Referen__1DB06A4F" Association="Self.FK__Ship__SO_Referen__1DB06A4F">
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SO__Sales_person__19DFD96B" Association="Self.FK__SO__Sales_person__19DFD96B">
+      <End Role="Sales_Person" EntitySet="Sales_Person" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SO__Tax__18EBB532" Association="Self.FK__SO__Tax__18EBB532">
+      <End Role="Tax" EntitySet="Taxes" />
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_Items_Sales_Order" Association="Self.FK_SO_Items_Sales_Order">
+      <End Role="Sales_Order" EntitySet="Sales_Order" />
+      <End Role="SO_Items" EntitySet="SO_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WC_Calendar_Work_Center" Association="Self.FK_WC_Calendar_Work_Center">
+      <End Role="Work_Center" EntitySet="Work_Center" />
+      <End Role="Work_Calendar" EntitySet="Work_Calendar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

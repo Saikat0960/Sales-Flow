@@ -1,0 +1,33 @@
+.abp-notifications-category-panel {
+    border: none;
+    margin: 5px 0px;
+
+    .x-panel-header-title-default {
+        color: $abp-deep-grey;
+    }
+
+    .x-panel-header-default {
+        background-color: $abp-white;
+        border: none !important;
+
+        .x-tool-tool-el {
+            font-size: 16px;
+            font-weight: 300;
+            color: $abp-deep-grey;
+			width: 16px;
+			height: 16px;
+		}
+    }
+
+    .x-panel-header-default-horizontal.x-header-noborder {
+        padding: 5px
+    }
+
+    .x-panel-body-default {
+        background-color: $abp-white;
+    }
+
+    .notifications-hideshow-history {
+        cursor: pointer;
+    }
+}

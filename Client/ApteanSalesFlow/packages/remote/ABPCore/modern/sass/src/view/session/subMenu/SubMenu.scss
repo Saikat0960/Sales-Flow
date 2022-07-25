@@ -1,0 +1,18 @@
+﻿.x-button.x-button-no-icon.ABP-submenu-button {
+	margin: 0px;
+	background: $black-30;
+	height: 40px;
+	border-bottom: 1px solid $black-80;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	color: $black;
+	border-radius: 0px;
+}
+.ABP-submenu {
+	padding: 0px;
+}
+.x-button.x-button-no-icon.ABP-submenu-button.ABP-submenu-buttonpressed {
+	background: $strong-blue;
+	color: $white;
+}

@@ -1,0 +1,10 @@
+@import "./ABPImage/ImageDisplay.scss"; // ABPImage in ReadOnly Mode
+@import "./ABPImage/ImageNew.scss"; // ABPImage first time Image Upload
+@import "./ABPImage/ImageEdit.scss"; // ABPImage file exists, Edit Mode
+
+.abp-image,
+.abp-image-upload {
+    &.x-field:not(.x-field-solo).x-layout-vbox-item {
+        padding-bottom: 0px;
+    }
+}

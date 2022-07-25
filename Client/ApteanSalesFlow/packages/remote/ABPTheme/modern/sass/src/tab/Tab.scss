@@ -1,0 +1,73 @@
+// Ext.tab.Tab Theme Overrides
+.x-tab .x-badge-el {
+    text-align: center;
+    font-weight: 300;
+    font-size: 10px;
+    min-width: 18px;
+}
+
+.x-tab.x-button.x-has-text:not(.x-has-icon) .x-inner-el,
+.x-tab.x-button.x-has-icon:not(.x-has-text) .x-inner-el {
+    border-color: $abp-selected-blue;
+    background-color: $abp-selected-blue;
+}
+.x-tab.x-button.x-has-text:not(.x-has-icon).x-active .x-inner-el,
+.x-tab.x-button.x-has-icon:not(.x-has-text).x-active .x-inner-el {
+    border-color: $abp-vivid-blue;
+    background-color: $abp-vivid-blue;
+}
+
+.x-tabbar-transparent {
+    .x-tab.x-button.x-has-text:not(.x-has-icon) .x-inner-el,
+    .x-tab.x-button.x-has-icon:not(.x-has-text) .x-inner-el {
+        border-color: transparent;
+        background-color: transparent;
+    }
+}
+
+$notification-statuses: (
+    '.abp-badge-priority-alert': $abp-alert-red,
+    '.abp-badge-priority-warning': $abp-sierra,
+    '.abp-badge-priority-success': $abp-green,
+    '.abp-badge-priority-info': $abp-lucid-blue
+);
+// Notification Badge Status Themes
+@mixin notificationBadgeColors() {
+    @each $status in $notification-statuses {
+        #{$status} {
+            .x-badge-el {
+                background-color: map-get($notification-statuses, $status) !important;
+            }
+        }
+    }
+}
+@include notificationBadgeColors();
+
+// Themed Tab
+@mixin abp-tab-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-tab.x-button.x-has-text:not(.x-has-icon) .x-inner-el,
+            .x-tab.x-button.x-has-icon:not(.x-has-text) .x-inner-el {
+                border-color: $selected-color;
+                background-color: $selected-color;
+            }
+            .x-tab.x-button.x-has-text:not(.x-has-icon).x-active .x-inner-el,
+            .x-tab.x-button.x-has-icon:not(.x-has-text).x-active .x-inner-el {
+                border-color: $base-color;
+                background-color: $base-color;
+            }
+            .x-tabbar-transparent {
+                .x-tab.x-button.x-has-text:not(.x-has-icon) .x-inner-el,
+                .x-tab.x-button.x-has-icon:not(.x-has-text) .x-inner-el {
+                    border-color: transparent;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+@include abp-tab-theme();

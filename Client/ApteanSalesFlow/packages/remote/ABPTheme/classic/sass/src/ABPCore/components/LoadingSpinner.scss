@@ -1,0 +1,66 @@
+
+//$offset: 187; // r=30 c=188.5
+$offset: 124; // r=20 c=125.66
+$duration: 1.4s;
+
+.abp-loading-spinner {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: rgba(255, 255, 255, 0.55);
+
+   .abp-loading-spinner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+   .abp-loading-spinner-msg {
+       margin-bottom: 12px;
+   }
+
+   .abp-loading-spinner-msg-text {
+       font-size: 1.2em;
+       text-shadow: 0 0 2px white;
+   }
+
+   .abp-loading-spinner-svg {
+    animation: rotator $duration linear infinite;
+  
+    .abp-loading-spinner-path {
+      stroke-dasharray: $offset;
+      stroke-dashoffset: 0;
+      transform-origin: center;
+      //color: $base-color;
+      animation:
+        dash $duration ease-in-out infinite, 
+        colors ($duration*4) ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}

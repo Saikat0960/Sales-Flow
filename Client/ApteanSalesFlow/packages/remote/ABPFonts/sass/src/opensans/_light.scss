@@ -1,0 +1,8 @@
+/* BEGIN Light */
+@font-face {
+	font-family: 'Open Sans';
+	@include fontdef-woff($FontPath: $abp-font-path, $FontName: $RobotoFontName, $FontVersion: $RobotoFontVersion, $FontType: "light");
+	font-weight: 300;
+	font-style: normal;
+}
+/* END Light */

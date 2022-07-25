@@ -1,0 +1,89 @@
+// Toolbar Icon Button Common Styles
+.x-toolbar .x-btn.icon,
+.toolbar-menu-button.x-btn.icon,
+.x-segmented-button .x-btn.icon {
+    color: $abp-deep-grey;
+    background-color: transparent;
+    border-width: 0 0 5px 0;
+    .x-btn-inner {
+        // Button Text Color
+        color: $abp-deep-grey;
+    }
+    &.x-btn-over {
+        background-color: transparent;
+        &.x-segmented-button-item{
+            border-color: $abp-selected-blue;
+        }
+    }
+    &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+        background-color: transparent;
+        border-color: $abp-selected-blue;
+    }
+    &.x-btn-disabled {
+        background-color: transparent;
+        border-color: transparent;
+        color: $abp-nevada;
+        .x-btn-arrow:after {
+            color: $abp-nevada;
+        }
+    }
+}
+
+// Keboard Mode
+.x-keyboard-mode {
+    .x-toolbar .x-btn.icon,
+    .toolbar-menu-button.x-btn.icon,
+    .x-segmented-button .x-btn.icon {
+        &.x-focus {
+            background-color: transparent;
+            border-color: $abp-selected-blue;
+        }
+    }
+}
+
+@mixin abp-toolbar-icon-button-theme() {
+    @each $theme, $map in $abp-themes {
+        $base-color: map-get($map, 'base_color');
+        $hover-color: map-get($map, 'hover_color');
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-toolbar .x-btn.icon,
+            .toolbar-menu-button.x-btn.icon,
+            .x-segmented-button .x-btn.icon {
+                background-color: transparent;
+                &.x-btn-over {
+                    background-color: transparent;
+                    &.x-segmented-button-item{
+                        border-color: $selected-color;
+                    }
+                }
+                &.x-btn-pressed, &.x-btn-focused, &.x-btn-menu-active {
+                    background-color: transparent;
+                    border-color: $selected-color;
+                }
+                &.x-btn-disabled {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: $abp-nevada;
+                    .x-btn-arrow:after {
+                        color: $abp-nevada;
+                    }
+                }
+            }
+
+            // Keboard Mode
+            &.x-keyboard-mode {
+                .x-toolbar .x-btn.icon,
+                .toolbar-menu-button.x-btn.icon,
+                .x-segmented-button .x-btn.icon {
+                    &.x-focus {
+                        background-color: transparent;
+                        border-color: $selected-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@include abp-toolbar-icon-button-theme();

@@ -1,0 +1,54 @@
+// Bottom border color different than top in variables.
+.x-window-header-default {
+    border-bottom-color: $abp-grey;
+}
+
+// Theme Specific Differences
+@mixin abp-theme-window-mixin() {
+    @each $theme, $map in $abp-themes {
+        .#{$theme} {
+            $base-color: map-get($map, 'base_color');
+            .x-window-header-default {
+                border-top-color: $base-color;
+                color: $base-color;
+                .x-window-header-title-default > .x-title-text-default {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+@include abp-theme-window-mixin();
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    transition: all $abp-transition-duration;
+}
+::-webkit-scrollbar:hover {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track Bar */
+::-webkit-scrollbar-track {
+   //@debug box-shadow: inset 0 0 4px $abp-grey;
+    border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: darken($abp-light-grey, 10%);
+    border-radius: 6px;
+    transition: all $abp-transition-duration;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darken($abp-light-grey, 10%);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: $abp-grey;
+}

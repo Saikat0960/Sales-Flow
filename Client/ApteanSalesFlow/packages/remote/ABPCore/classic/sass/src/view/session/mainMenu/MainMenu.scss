@@ -1,0 +1,191 @@
+// @import '../../base/popUp/PopUpList';
+// @include extjs-panel-ui(
+//     $ui: 'abpmainmenu',
+//     // $xtype: 'container',
+//     // $header-xtype: 'container',
+//     $ui-header-background-color: $abp-black,
+//     $ui-body-background-color: $abp-black
+// );
+//
+.nav-search-cont {
+    .nav-search-field {
+        // override x- style to remove border from nav search field
+        .x-form-trigger-wrap {
+            border: 0px;
+        }
+
+        .x-form-text-default {
+            min-height: 32px;
+        }
+        .nav-search-trigger {
+            font: 20px/30px "apteanico-mini" !important;
+
+        }
+        .nav-search-trigger:before {
+            content: "\e205";
+        }
+    }
+}
+
+
+@keyframes starburst {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1) rotate(20deg);
+        color: #FFFF00;
+    }
+    50% {
+        transform: scale(1);
+        color:#F4CB1E;
+    }
+    75% {
+        transform: scale(1.1) rotate(-20deg);
+        color: #FFFF00;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes starburst-min {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.5) rotate(20deg);
+        color: #FFFF00;
+    }
+    50% {
+        transform: scale(1);
+        color:#F4CB1E;
+    }
+    75% {
+        transform: scale(0.5) rotate(-20deg);
+        color: #FFFF00;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes fav-updated {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.x-treelist-item.animate-starburst {
+    > .x-treelist-row {
+        .x-treelist-item-icon.icon-favorite {
+            animation-name: starburst;
+            animation-duration: 750ms;
+            animation-iteration-count: 1;
+            transition: color 750ms ease-in-out;
+
+            &:before{
+                content: $favIcon-Full;
+            }
+        }
+    }
+}
+.x-treelist-item.animate-starburst-min {
+    > .x-treelist-row {
+        .x-treelist-item-icon.icon-favorite {
+            animation-name: starburst-min;
+            animation-duration: 750ms;
+            animation-iteration-count: 1;
+            transition: color 750ms ease-in-out;
+
+            &:before{
+                content: $favIcon-Empty;
+            }
+        }
+    }
+}
+.x-treelist-item.animate-fav-update {
+    > .x-treelist-row {
+        .x-treelist-item-icon.icon-favorite {
+            animation-name: fav-updated;
+            animation-duration: 750ms;
+            animation-iteration-count: 1;
+            transition: color 750ms ease-in-out;
+
+            &:before{
+                content: $favIcon-Updated;
+            }
+        }
+    }
+}
+// Available Classic Panel UI Vars
+// $ui,
+// $ui-border-color,
+// $ui-border-radius,
+// $ui-border-width,
+// $ui-padding,
+// $ui-header-color,
+// $ui-header-font-family,
+// $ui-header-font-size,
+// $ui-header-font-weight,
+// $ui-header-line-height,
+// $ui-header-border-color,
+// $ui-header-border-width,
+// $ui-header-border-style,
+// $ui-header-focus-outline-color,
+// $ui-header-focus-outline-style,
+// $ui-header-focus-outline-width,
+// $ui-header-focus-outline-offset,
+// $ui-header-focus-color,
+// $ui-header-focus-background-color,
+// $ui-header-background-color,
+// $ui-header-background-gradient,
+// $ui-header-inner-border-color,
+// $ui-header-inner-border-width,
+// $ui-header-text-padding,
+// $ui-header-text-margin,
+// $ui-header-text-transform,
+// $ui-header-padding,
+// $ui-header-icon-width,
+// $ui-header-icon-height,
+// $ui-header-icon-spacing,
+// $ui-header-icon-background-position,
+// $ui-header-glyph-color,
+// $ui-header-glyph-opacity,
+// $ui-header-noborder-adjust,
+// $ui-tool-spacing,
+// $ui-tool-background-image,
+// $ui-tool-glyph-color,
+// $ui-tool-focus-outline-color,
+// $ui-tool-focus-outline-style,
+// $ui-tool-focus-outline-width,
+// $ui-tool-focus-outline-offset,
+// $ui-tool-focus-color,
+// $ui-tool-focus-background-color,
+// $ui-tool-focus-background-image,
+// $ui-body-color,
+// $ui-body-border-color,
+// $ui-body-border-width,
+// $ui-body-border-style,
+// $ui-body-background-color,
+// $ui-body-font-size,
+// $ui-body-font-weight,
+// $ui-body-font-family,
+// $ui-background-stretch-top,
+// $ui-background-stretch-bottom,
+// $ui-background-stretch-right,
+// $ui-background-stretch-left,
+// $ui-include-border-management-rules,
+// $ui-wrap-border-color,
+// $ui-wrap-border-width,
+// $ui-ignore-frame-padding,
+// $ui-label

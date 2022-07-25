@@ -1,0 +1,84 @@
+.x-segmentedbutton {
+    // Regular
+    .x-button.x-has-text:not(.x-disabled),
+    .x-button.x-has-icon:not(.x-disabled) {
+        background-color: transparent;
+        border-color: transparent;
+        border-width: 0 0 0 0;
+        .x-inner-el {
+            background-color: transparent;
+            border-color: transparent;
+            border-width: 0 0 5px 0;
+        }
+        .x-inner-el .x-text-el,
+        .x-inner-el .x-icon-el,
+        .x-arrow-el {
+            color: $abp-deep-grey;
+        }
+
+        // Pressed, Pressing, Focused
+        &.x-pressed,
+        &.x-pressing,
+        &.x-focused {
+            background-color: transparent;
+            .x-inner-el .x-text-el,
+            .x-inner-el .x-icon-el,
+            .x-arrow-el {
+                color: $abp-selected-blue;
+            }
+            .x-inner-el {
+                border-color: $abp-selected-blue;
+            }
+        }
+    }
+
+    // Disabled
+    .x-button.x-has-text.x-disabled,
+    .x-button.x-has-icon.x-disabled {
+        background-color: transparent;
+        border-color: transparent;
+        border-width: 0 0 5px 0;
+        .x-inner-el .x-text-el,
+        .x-inner-el .x-icon-el,
+        .x-arrow-el {
+            color: $abp-nevada;
+        }
+    }
+}
+
+@mixin segemented-text-button-theme-mixin() {
+    @each $theme, $map in $abp-themes {
+        $selected-color: map-get($map, 'selected_color');
+
+        .#{$theme} {
+            .x-segmentedbutton {
+                // Regular
+                .x-button.x-has-text:not(.x-disabled),
+                .x-button.x-has-icon:not(.x-disabled) {
+                    .x-inner-el .x-text-el,
+                    .x-inner-el .x-icon-el,
+                    .x-arrow-el {
+                        color: $abp-deep-grey;
+                    }
+
+                    // Pressed, Pressing, Focused
+                    &.x-pressed,
+                    &.x-pressing,
+                    &.x-focused {
+                        border-color: $selected-color;
+                        .x-inner-el .x-text-el,
+                        .x-inner-el .x-icon-el,
+                        .x-arrow-el {
+                            color: $selected-color;
+                        }
+                        .x-inner-el {
+                            border-color: $selected-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include segemented-text-button-theme-mixin();

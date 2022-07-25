@@ -1,0 +1,52 @@
+// ABPImage New Image - No image has been uploaded yet.
+.abp-image-upload.new-image {
+    .x-filefield {
+        &:before {
+            // pencil icon
+            visibility: hidden;
+            display: none;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+    .x-filetrigger {
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        .x-button {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    // Clear Button
+    .image-clear {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    // Placholder Image - "Click here to upload".
+    .placeholder-img-wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        .x-body-el {
+            height: 100%;
+        }
+        .x-img-background {
+            height: 100%;
+            width: 100%;
+            background-image: url('ABPControlSet/img/temp_abpimage-placeholder.png') !important;
+        }
+        .x-img {
+            opacity: 1;
+        }
+    }
+}
